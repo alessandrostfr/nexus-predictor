@@ -1,82 +1,122 @@
-import { Activity, CalendarDays, Database, Github, Music2 } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { getEditions, getHealthStatus } from './api/client.js';
+import { BarChart3, Database, LayoutDashboard } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+
+import {
+  getEditionPrediction,
+  getEditions,
+  getFabrikVenue,
+  getGenres,
+  getHealthStatus,
+} from './api/client.js';
+import { AppHeader } from './components/AppHeader.jsx';
+import { BottomNavigation } from './components/BottomNavigation.jsx';
+import { DashboardShell } from './pages/DashboardShell.jsx';
+import { DataSourcesShell } from './pages/DataSourcesShell.jsx';
+import { PredictionsShell } from './pages/PredictionsShell.jsx';
+
+const DEFAULT_YEAR = 2026;
+
+const NAV_ITEMS = [
+  { id: 'overview', label: 'Inicio', icon: LayoutDashboard },
+  { id: 'data', label: 'Datos', icon: Database },
+  { id: 'predictions', label: 'Predicción', icon: BarChart3 },
+];
+
+const INITIAL_SHELL_DATA = {
+  health: null,
+  editions: [],
+  genres: [],
+  venue: null,
+  prediction: null,
+  isLoading: true,
+  error: null,
+  partialErrors: [],
+};
+
+function readSettledData(result, fallback) {
+  return result.status === 'fulfilled' ? result.value.data : fallback;
+}
+
+function readSettledError(result, label) {
+  if (result.status === 'fulfilled') {
+    return null;
+  }
+
+  return `${label}: ${result.reason?.message ?? 'unknown error'}`;
+}
 
 function App() {
-  const [apiStatus, setApiStatus] = useState('Checking API...');
-  const [editions, setEditions] = useState([]);
+  const [activeView, setActiveView] = useState('overview');
+  const [shellData, setShellData] = useState(INITIAL_SHELL_DATA);
 
   useEffect(() => {
-    async function loadInitialData() {
-      try {
-        // Block 0 only verifies that frontend and backend can talk to each other.
-        const health = await getHealthStatus();
-        const editionResponse = await getEditions();
+    let isMounted = true;
 
-        setApiStatus(health.data.status === 'ok' ? 'API connected' : 'API response received');
-        setEditions(editionResponse.data ?? []);
-      } catch (error) {
-        console.error(error);
-        setApiStatus('API not connected yet');
-        setEditions([]);
+    async function loadShellData() {
+      setShellData((current) => ({ ...current, isLoading: true, error: null }));
+
+      // Block 6 intentionally loads only shell-level data.
+      const [healthResult, editionsResult, genresResult, venueResult, predictionResult] = await Promise.allSettled([
+        getHealthStatus(),
+        getEditions(),
+        getGenres(),
+        getFabrikVenue(),
+        getEditionPrediction(DEFAULT_YEAR, 6),
+      ]);
+
+      if (!isMounted) {
+        return;
       }
+
+      const healthError = readSettledError(healthResult, 'Health');
+      const partialErrors = [
+        readSettledError(editionsResult, 'Editions'),
+        readSettledError(genresResult, 'Genres'),
+        readSettledError(venueResult, 'Venue'),
+        readSettledError(predictionResult, 'Predictions'),
+      ].filter(Boolean);
+
+      setShellData({
+        health: readSettledData(healthResult, null),
+        editions: readSettledData(editionsResult, []),
+        genres: readSettledData(genresResult, []),
+        venue: readSettledData(venueResult, null),
+        prediction: readSettledData(predictionResult, null),
+        isLoading: false,
+        error: healthError,
+        partialErrors,
+      });
     }
 
-    loadInitialData();
+    loadShellData();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
+  const activePage = useMemo(() => {
+    if (activeView === 'data') {
+      return <DataSourcesShell shellData={shellData} />;
+    }
+
+    if (activeView === 'predictions') {
+      return <PredictionsShell shellData={shellData} />;
+    }
+
+    return <DashboardShell shellData={shellData} />;
+  }, [activeView, shellData]);
+
   return (
-    <main className="app-shell">
-      <section className="hero-card">
-        <div className="eyebrow">
-          <Music2 size={16} />
-          Nexus Predictor
-        </div>
+    <div className="nexus-app">
+      <AppHeader activeView={activeView} navItems={NAV_ITEMS} onViewChange={setActiveView} />
 
-        <h1>Festival intelligence for Nexus at Fabrik Madrid.</h1>
+      <main className="app-main" aria-live="polite">
+        {activePage}
+      </main>
 
-        <p className="hero-copy">
-          Minimal, responsive dashboard foundation for researching historical editions,
-          enriching artists and predicting attendance, demand and crowd pressure.
-        </p>
-
-        <div className="status-pill">
-          <Activity size={16} />
-          {apiStatus}
-        </div>
-      </section>
-
-      <section className="grid-section">
-        <article className="info-card">
-          <CalendarDays size={22} />
-          <h2>Edition selector</h2>
-          <p>Seed files are ready for 2022, 2023, 2024, 2025 and 2026.</p>
-          <div className="year-list">
-            {editions.length > 0
-              ? editions.map((edition) => <span key={edition.year}>{edition.year}</span>)
-              : ['2022', '2023', '2024', '2025', '2026'].map((year) => <span key={year}>{year}</span>)}
-          </div>
-        </article>
-
-        <article className="info-card">
-          <Database size={22} />
-          <h2>Data-first roadmap</h2>
-          <p>
-            The next block will replace placeholders with researched public sources,
-            artist lineups, venue capacity and attendance signals.
-          </p>
-        </article>
-
-        <article className="info-card">
-          <Github size={22} />
-          <h2>Git-ready structure</h2>
-          <p>
-            Backend, frontend, docs and research folders are separated so every block
-            can close with a clean commit.
-          </p>
-        </article>
-      </section>
-    </main>
+      <BottomNavigation activeView={activeView} navItems={NAV_ITEMS} onViewChange={setActiveView} />
+    </div>
   );
 }
 

@@ -1,35 +1,34 @@
 # Current roadmap position
 
-## Active block
-
-Block 5 - Predictive scoring engine.
-
 ## Closed blocks
 
 - Block 0 - Environment, structure, Git and GitHub.
-- Block 1 - Historical research and dataset foundation.
-- Block 2 - Backend FastAPI base.
-- Block 3 - Artist enrichment.
-- Block 4 - Subgenre classification.
-
-## Methodology
-
-- Work one complete block per macropaso whenever possible.
-- Deliver a ZIP with the changed files at the end of each block.
-- Do not jump outside the roadmap.
-- Close every block with a Git commit.
-- Report the accumulated estimated project percentage after every block.
+- Block 1 - Historical Nexus and Fabrik dataset foundation.
+- Block 2 - FastAPI backend foundation.
+- Block 3 - Artist enrichment foundation.
+- Block 4 - Hard dance subgenre classification.
+- Block 5 - Demand and attendance prediction engine.
 
 ## Current block scope
 
-Block 5 adds the prediction foundation:
+Block 6 builds the minimalist responsive React shell:
 
-- Interpretable artist demand score.
-- Initial 2026 attendance prediction with low/mid/high range.
-- Transparent scoring factors for every prediction.
-- Endpoints prepared for the future React dashboard.
-- Local JSON snapshot generation for predictions.
+- Mobile-first dark visual system.
+- App layout and navigation.
+- Reusable frontend cards and empty/loading/error states.
+- Centralized API client for shell-level backend data.
+- Prepared screens for dashboard, data and prediction views.
+
+## Not included yet
+
+The following items remain intentionally outside Block 6 and belong to later roadmap blocks:
+
+- Full artist ranking UX.
+- Artist profile/detail pages.
+- Advanced filters and charts.
+- Room/timetable pressure model.
+- Deployment and final QA polish.
 
 ## Next block
 
-Block 6 - Minimalist responsive frontend shell.
+Block 7 - Dashboard, rankings and artist profiles.
