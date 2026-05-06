@@ -1,0 +1,173 @@
+{
+  "status": "block_04_genre_overrides",
+  "description": "Manual subgenre corrections for Nexus Predictor Block 4. These values always win over rule-based classification.",
+  "taxonomy": [
+    {
+      "name": "Hardstyle",
+      "parent": "Hard Dance",
+      "description": "General hardstyle when a more precise euphoric/raw/classic label is not safe.",
+      "aliases": ["hardstyle", "hard dance"],
+      "priority": 40
+    },
+    {
+      "name": "Euphoric Hardstyle",
+      "parent": "Hardstyle",
+      "description": "Melodic hardstyle focused on uplifting leads, vocals and emotional melodies.",
+      "aliases": ["euphoric", "euphoric hardstyle", "melodic hardstyle"],
+      "priority": 70
+    },
+    {
+      "name": "Rawstyle",
+      "parent": "Hardstyle",
+      "description": "Raw hardstyle with darker kicks and heavier sound design.",
+      "aliases": ["raw", "rawstyle", "raw hardstyle"],
+      "priority": 80
+    },
+    {
+      "name": "Xtra Raw",
+      "parent": "Rawstyle",
+      "description": "Extra raw / gated-kick focused rawstyle with modern heavy kicks.",
+      "aliases": ["xtra raw", "extra raw", "xtra-raw", "extra-raw", "gated kick"],
+      "priority": 90
+    },
+    {
+      "name": "Hardcore",
+      "parent": "Hard Dance",
+      "description": "Mainstream hardcore and millennium hardcore.",
+      "aliases": ["hardcore", "mainstream hardcore", "millennium hardcore"],
+      "priority": 60
+    },
+    {
+      "name": "Uptempo Hardcore",
+      "parent": "Hardcore",
+      "description": "Fast, high-energy uptempo hardcore.",
+      "aliases": ["uptempo", "uptempo hardcore"],
+      "priority": 85
+    },
+    {
+      "name": "Frenchcore",
+      "parent": "Hardcore",
+      "description": "Frenchcore and melodic/fast hardcore crossover.",
+      "aliases": ["frenchcore"],
+      "priority": 82
+    },
+    {
+      "name": "Industrial Hardcore",
+      "parent": "Hardcore",
+      "description": "Industrial, dark or experimental hardcore.",
+      "aliases": ["industrial", "industrial hardcore", "crossbreed"],
+      "priority": 82
+    },
+    {
+      "name": "Terror / Speedcore",
+      "parent": "Hardcore",
+      "description": "Terror, speedcore and extreme hardcore edges.",
+      "aliases": ["terror", "speedcore", "terrorcore"],
+      "priority": 95
+    },
+    {
+      "name": "Hard Techno / Hard Dance",
+      "parent": "Hard Dance",
+      "description": "Hard techno, rave and hard dance acts that are not clearly hardstyle/hardcore.",
+      "aliases": ["hard techno", "rave", "hard dance", "techno"],
+      "priority": 55
+    },
+    {
+      "name": "Classic / Legacy Hardstyle",
+      "parent": "Hardstyle",
+      "description": "Classic, legacy or old-school hardstyle artists and sets.",
+      "aliases": ["classic hardstyle", "legacy hardstyle", "oldschool hardstyle", "classics"],
+      "priority": 75
+    },
+    {
+      "name": "Mainstage Hard Dance",
+      "parent": "Hard Dance",
+      "description": "Mainstage-facing hard dance / EDM crossover acts.",
+      "aliases": ["mainstage", "edm crossover", "festival hard dance"],
+      "priority": 50
+    },
+    {
+      "name": "Happy Hardcore",
+      "parent": "Hardcore",
+      "description": "Happy hardcore and UK hardcore influenced artists.",
+      "aliases": ["happy hardcore", "uk hardcore"],
+      "priority": 78
+    },
+    {
+      "name": "Freestyle / Hard Dance",
+      "parent": "Hard Dance",
+      "description": "Freestyle, jumpstyle, tekstyle or mixed hard dance artists.",
+      "aliases": ["freestyle", "jumpstyle", "tekstyle", "hard dance"],
+      "priority": 52
+    },
+    {
+      "name": "MC / Host",
+      "parent": "Other",
+      "description": "MCs, hosts and non-DJ stage hosts.",
+      "aliases": ["mc", "host"],
+      "priority": 100
+    },
+    {
+      "name": "Unknown",
+      "parent": null,
+      "description": "Not enough reliable data yet.",
+      "aliases": [],
+      "priority": 0
+    }
+  ],
+  "keyword_rules": {
+    "Terror / Speedcore": ["terror", "speedcore", "terrorcore", "drokz", "the satan"],
+    "Uptempo Hardcore": ["uptempo", "gpf", "drs", "deadly guns", "lil texas", "dark horror", "spitnoise", "barber", "partyraiser", "unproven"],
+    "Frenchcore": ["frenchcore", "sefa", "dr. peacock", "dr peacock", "peacock", "remzcore", "billx", "floxytek", "jkll"],
+    "Industrial Hardcore": ["industrial", "ophidian", "kruelty", "n-vitral", "n vitral", "industrial hardcore", "crossbreed"],
+    "Xtra Raw": ["xtra raw", "dual damage", "adjuzt", "mutilator", "krowdexx", "deezl", "exproz", "so juice", "the straikerz"],
+    "Rawstyle": ["rawstyle", "raw hardstyle", "raw", "sub zero project", "radical redemption", "rejecta", "the purge", "rooler", "sickmode", "rebelion", "malice", "warface", "hard driver", "phuture noize", "devin wild", "gunz for hire", "vertile", "unresolved", "riot shift", "anderex"],
+    "Classic / Legacy Hardstyle": ["classic", "legacy", "classics", "headhunterz", "wildstylez", "frontliner", "showtek", "noisecontrollers", "tnt", "technoboy", "tuneboy", "the prophet", "pavo", "zany", "tatanka"],
+    "Euphoric Hardstyle": ["euphoric", "adrenalize", "atmozfears", "da tweekaz", "sound rush", "brennan heart", "coone", "primeshock", "jay reeve", "stormerz", "keltek", "wasted penguinz"],
+    "Happy Hardcore": ["happy hardcore", "uk hardcore", "darren styles", "tweekacore"],
+    "Freestyle / Hard Dance": ["freestyle", "jumpstyle", "tekstyle", "mandy", "mark with a k", "dr rude", "ruthless", "russian village boys", "lny tnz"],
+    "Mainstage Hard Dance": ["mainstage", "timmy trumpet", "ben nicky"],
+    "Hard Techno / Hard Dance": ["hard techno", "rave", "techno", "santa salut dj set"],
+    "Hardcore": ["hardcore", "angerfist", "anime", "mad dog", "korsakoff", "re-style", "endymion", "neophyte", "tha playah", "miss k8", "evil activities", "furyan", "noize suppressor", "ruffneck", "paul elstak"]
+  },
+  "artist_overrides": [
+    {"slug": "angerfist", "main_genre": "Hardcore", "confidence": "high", "reason": "Core mainstream hardcore headliner."},
+    {"slug": "anime", "main_genre": "Hardcore", "confidence": "high", "reason": "Hardcore artist seed and known hardcore act."},
+    {"slug": "adrenalize", "main_genre": "Euphoric Hardstyle", "confidence": "high", "reason": "Euphoric hardstyle artist and seed."},
+    {"slug": "atmozfears", "main_genre": "Euphoric Hardstyle", "confidence": "high", "reason": "Euphoric hardstyle artist and seed."},
+    {"slug": "da-tweekaz", "main_genre": "Euphoric Hardstyle", "confidence": "high", "reason": "Melodic/euphoric hardstyle act."},
+    {"slug": "brennan-heart", "main_genre": "Euphoric Hardstyle", "confidence": "high", "reason": "Legacy/euphoric hardstyle artist."},
+    {"slug": "wildstylez", "main_genre": "Euphoric Hardstyle", "confidence": "high", "reason": "Euphoric hardstyle artist with classic relevance."},
+    {"slug": "headhunterz", "main_genre": "Classic / Legacy Hardstyle", "confidence": "high", "reason": "Legacy hardstyle headliner."},
+    {"slug": "project-one", "main_genre": "Classic / Legacy Hardstyle", "confidence": "high", "reason": "Duo project associated with Headhunterz and Wildstylez.", "artist_kind": "duo_project", "related_canonical_artists": ["Headhunterz", "Wildstylez"], "manual_review": true},
+    {"slug": "frontliner", "main_genre": "Classic / Legacy Hardstyle", "confidence": "high", "reason": "Classic/legacy hardstyle act."},
+    {"slug": "showtek", "main_genre": "Classic / Legacy Hardstyle", "confidence": "high", "reason": "Legacy hardstyle/mainstage act in the context of Nexus."},
+    {"slug": "noisecontrollers", "main_genre": "Classic / Legacy Hardstyle", "confidence": "high", "reason": "Classic hardstyle act."},
+    {"slug": "sub-zero-project", "main_genre": "Rawstyle", "confidence": "high", "reason": "Raw/mainstage rawstyle act."},
+    {"slug": "phuture-noize", "main_genre": "Rawstyle", "confidence": "high", "reason": "Rawstyle artist and seed."},
+    {"slug": "devin-wild", "main_genre": "Rawstyle", "confidence": "high", "reason": "Rawstyle artist and seed."},
+    {"slug": "radical-redemption", "main_genre": "Rawstyle", "confidence": "high", "reason": "Rawstyle artist and seed."},
+    {"slug": "rejecta", "main_genre": "Rawstyle", "confidence": "high", "reason": "Rawstyle artist and seed."},
+    {"slug": "the-purge", "main_genre": "Rawstyle", "confidence": "high", "reason": "Rawstyle artist and seed."},
+    {"slug": "rooler", "main_genre": "Rawstyle", "confidence": "high", "reason": "Rawstyle artist and seed."},
+    {"slug": "sickmode", "main_genre": "Rawstyle", "confidence": "high", "reason": "Rawstyle artist and seed."},
+    {"slug": "dual-damage", "main_genre": "Xtra Raw", "confidence": "high", "reason": "Xtra raw seed and modern heavy raw act."},
+    {"slug": "kruelty", "main_genre": "Industrial Hardcore", "confidence": "high", "reason": "Industrial hardcore seed."},
+    {"slug": "ophidian", "main_genre": "Industrial Hardcore", "confidence": "high", "reason": "Industrial hardcore seed."},
+    {"slug": "n-vitral-bombsquad", "main_genre": "Industrial Hardcore", "confidence": "high", "reason": "N-Vitral live/collective hardcore project.", "artist_kind": "live_or_collective", "related_canonical_artists": ["N-Vitral"], "manual_review": true},
+    {"slug": "dr-peacock", "main_genre": "Frenchcore", "confidence": "high", "reason": "Frenchcore artist seed."},
+    {"slug": "peacock", "main_genre": "Frenchcore", "confidence": "high", "reason": "Poster shorthand for Dr. Peacock."},
+    {"slug": "peacock-in-concert", "main_genre": "Frenchcore", "confidence": "high", "reason": "Special show by Dr. Peacock.", "artist_kind": "special_show", "related_canonical_artists": ["Dr. Peacock"], "manual_review": true},
+    {"slug": "sefa", "main_genre": "Frenchcore", "confidence": "high", "reason": "Frenchcore artist seed."},
+    {"slug": "deadly-guns", "main_genre": "Uptempo Hardcore", "confidence": "high", "reason": "Uptempo hardcore artist seed."},
+    {"slug": "drs", "main_genre": "Uptempo Hardcore", "confidence": "high", "reason": "Uptempo hardcore artist seed."},
+    {"slug": "gpf", "main_genre": "Uptempo Hardcore", "confidence": "high", "reason": "Uptempo hardcore artist seed."},
+    {"slug": "lil-texas", "main_genre": "Uptempo Hardcore", "confidence": "high", "reason": "Uptempo hardcore artist seed."},
+    {"slug": "the-dark-horror", "main_genre": "Uptempo Hardcore", "confidence": "high", "reason": "Uptempo hardcore artist seed."},
+    {"slug": "darren-styles", "main_genre": "Happy Hardcore", "confidence": "high", "reason": "Happy hardcore / UK hardcore artist."},
+    {"slug": "mandy", "main_genre": "Freestyle / Hard Dance", "confidence": "high", "reason": "Freestyle/hard dance seed."},
+    {"slug": "spoontech-legacy", "main_genre": "Rawstyle", "confidence": "medium", "reason": "Spoontech label legacy show; keep separate from Faceless as a special performance.", "artist_kind": "label_show", "related_canonical_artists": ["Faceless"], "manual_review": true},
+    {"slug": "slaughterhouse", "main_genre": "Industrial Hardcore", "confidence": "medium", "reason": "Special project by Deadly Guns and N-Vitral; treated as show-level entry.", "artist_kind": "duo_project", "related_canonical_artists": ["Deadly Guns", "N-Vitral"], "manual_review": true},
+    {"slug": "mc-activate", "main_genre": "MC / Host", "confidence": "high", "reason": "MC / host entry."}
+  ]
+}
