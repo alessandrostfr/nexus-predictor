@@ -1,51 +1,64 @@
-"""Validate Block 1 JSON dataset files.
+"""Validate the researched JSON dataset and SQLite seed.
 
-Run from the backend folder with the virtual environment active:
+Run from `backend/` with the virtual environment active:
 
     python scripts/validate_dataset.py
 """
 
-import json
-from pathlib import Path
 
+from pathlib import Path
+import sys
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = BACKEND_DIR / "app" / "data"
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
+
+from app.db.database import SessionLocal
+from app.repositories.json_repository import JsonSeedRepository
+from app.services.database_seed_service import get_database_status, seed_database_from_json
+
+repository = JsonSeedRepository()
 
 
-def read_json(path: Path) -> dict:
-    """Read a JSON file and return its parsed content."""
-    with path.open("r", encoding="utf-8") as file:
-        return json.load(file)
+def validate_json_seed() -> None:
+    """Validate the minimum JSON dataset needed by the API."""
+    editions = repository.list_editions()
+    artist_index = repository.get_artist_index()
+    venue = repository.get_venue()
+
+    assert len(editions) == 5, "Expected exactly five Nexus edition files."
+    assert {edition["year"] for edition in editions} == {2022, 2023, 2024, 2025, 2026}
+
+    edition_2026 = repository.get_edition(2026)
+    assert edition_2026 is not None, "The 2026 edition file is missing."
+    assert len(edition_2026.get("lineup", [])) >= 60, "The 2026 lineup looks incomplete."
+
+    artists = artist_index.get("artists", [])
+    assert len(artists) >= 100, "The artist index should contain historical artists."
+    assert any(artist["slug"] == "project-one" for artist in artists), "Project One is missing."
+
+    rooms = venue.get("rooms", [])
+    assert len(rooms) >= 6, "Fabrik room seed should include several areas."
+    assert any(room["name"] == "Main Room" for room in rooms), "Main Room is missing."
+
+
+def validate_sqlite_seed() -> None:
+    """Reset SQLite from JSON and verify row counts."""
+    with SessionLocal() as db:
+        seed_database_from_json(db, reset=True)
+        status = get_database_status(db)
+
+    assert status["seeded"] is True, "SQLite database was not seeded."
+    assert status["editions"] == 5, "SQLite edition count is wrong."
+    assert status["artists"] >= 100, "SQLite artist count is too low."
+    assert status["rooms"] >= 6, "SQLite room count is too low."
 
 
 def main() -> None:
-    """Validate the minimum dataset contract used by the API and tests."""
-    edition_files = sorted((DATA_DIR / "editions").glob("*.json"))
-
-    if len(edition_files) != 5:
-        raise RuntimeError(f"Expected 5 edition files, found {len(edition_files)}.")
-
-    for edition_file in edition_files:
-        edition = read_json(edition_file)
-        year = edition.get("year")
-        lineup = edition.get("lineup", [])
-
-        if not year:
-            raise RuntimeError(f"{edition_file} does not include a year.")
-
-        if not lineup:
-            raise RuntimeError(f"{edition_file} does not include lineup data.")
-
-        print(f"OK {year}: {len(lineup)} performances")
-
-    venue = read_json(DATA_DIR / "venue" / "fabrik_rooms.json")
-    print(f"OK venue rooms: {len(venue.get('rooms', []))}")
-
-    artist_index = read_json(DATA_DIR / "artists" / "artist_index.json")
-    print(f"OK artists: {artist_index.get('total_artists')}")
-
-    print("Dataset validation completed.")
+    """Run all dataset validations."""
+    validate_json_seed()
+    validate_sqlite_seed()
+    print("Dataset JSON and SQLite seed validation completed successfully.")
 
 
 if __name__ == "__main__":
