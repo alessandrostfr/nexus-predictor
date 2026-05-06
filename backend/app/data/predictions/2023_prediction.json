@@ -1,0 +1,3364 @@
+{
+  "year": 2023,
+  "edition_name": "Nexus Festival 2023",
+  "generated_at": "2026-05-06T23:01:29.893778+00:00",
+  "source_status": "interpretable_scoring_v1",
+  "attendance": {
+    "year": 2023,
+    "predicted_low": 4494,
+    "predicted_mid": 5351,
+    "predicted_high": 6314,
+    "confidence": "low",
+    "method": "interpretable_historical_growth_model_v1",
+    "baseline_years": [
+      2022
+    ],
+    "factors": [
+      {
+        "key": "historical_baseline",
+        "label": "Historical baseline",
+        "contribution": 5200.0,
+        "max_contribution": 5200.0,
+        "explanation": "Uses the latest historical attendance seed as the baseline because exact public attendance is not confirmed."
+      },
+      {
+        "key": "lineup_size",
+        "label": "Lineup size",
+        "contribution": 0.0,
+        "max_contribution": 22.0,
+        "explanation": "Current lineup has 36 artists, increasing expected draw compared with smaller editions."
+      },
+      {
+        "key": "event_duration",
+        "label": "Event duration",
+        "contribution": 0.0,
+        "max_contribution": 14.0,
+        "explanation": "Current duration seed is 12 hours."
+      },
+      {
+        "key": "stage_count",
+        "label": "Stage count",
+        "contribution": 0.0,
+        "max_contribution": 12.0,
+        "explanation": "Current stage count seed is 6."
+      },
+      {
+        "key": "top_artist_demand",
+        "label": "Top artist demand",
+        "contribution": 0.0,
+        "max_contribution": 18.0,
+        "explanation": "Average demand score of the top 12 predicted artists is 52.8."
+      },
+      {
+        "key": "returning_artists",
+        "label": "Returning artists",
+        "contribution": 2.92,
+        "max_contribution": 12.0,
+        "explanation": "24% of the current lineup has previous Nexus history in the dataset."
+      }
+    ],
+    "notes": [
+      "Attendance is a prediction range, not an official figure.",
+      "Historical attendance inputs remain low-confidence seeds until official attendance by edition is found.",
+      "The model will become stronger when timetable, stage assignment and ticketing signals are available."
+    ]
+  },
+  "top_artist_predictions": [
+    {
+      "year": 2023,
+      "slug": "angerfist",
+      "name": "Angerfist",
+      "rank": 1,
+      "main_genre": "Hardcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 79.0,
+      "crowd_risk": "high",
+      "confidence": "high",
+      "performance_names": [
+        "Angerfist"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 5,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Hardcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 22.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "gpf",
+      "name": "GPF",
+      "rank": 2,
+      "main_genre": "Uptempo Hardcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 72.0,
+      "crowd_risk": "high",
+      "confidence": "high",
+      "performance_names": [
+        "GPF"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 4,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 16.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Uptempo Hardcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 14.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "malice",
+      "name": "Malice",
+      "rank": 3,
+      "main_genre": "Rawstyle",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 58.0,
+      "crowd_risk": "medium",
+      "confidence": "medium",
+      "performance_names": [
+        "Malice"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 3,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 16.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Rawstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "mad-dog",
+      "name": "Mad Dog",
+      "rank": 4,
+      "main_genre": "Hardcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 57.0,
+      "crowd_risk": "medium",
+      "confidence": "medium",
+      "performance_names": [
+        "Mad Dog"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 4,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Hardcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "sefa",
+      "name": "Sefa",
+      "rank": 5,
+      "main_genre": "Frenchcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 57.0,
+      "crowd_risk": "medium",
+      "confidence": "medium",
+      "performance_names": [
+        "Sefa"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 4,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Frenchcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "radical-redemption",
+      "name": "Radical Redemption",
+      "rank": 6,
+      "main_genre": "Rawstyle",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 50.0,
+      "crowd_risk": "medium",
+      "confidence": "medium",
+      "performance_names": [
+        "Radical Redemption"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 16.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Rawstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 16.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "da-tweekaz",
+      "name": "Da Tweekaz",
+      "rank": 7,
+      "main_genre": "Euphoric Hardstyle",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 48.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Da Tweekaz"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 4,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 14.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Euphoric Hardstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 16.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "dr-peacock",
+      "name": "Dr. Peacock",
+      "rank": 8,
+      "main_genre": "Frenchcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 47.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Dr. Peacock"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Frenchcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 14.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "re-style",
+      "name": "Re-Style",
+      "rank": 9,
+      "main_genre": "Hardcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 45.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Re-Style"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 3,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Hardcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 12.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "sub-zero-project-live",
+      "name": "Sub Zero Project Live",
+      "rank": 10,
+      "main_genre": "Rawstyle",
+      "artist_kind": "live",
+      "is_special_show": false,
+      "demand_score": 42.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Sub Zero Project Live"
+      ],
+      "performance_types": [
+        "live"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 16.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Rawstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 8.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): live."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "rebelion",
+      "name": "Rebelion",
+      "rank": 11,
+      "main_genre": "Rawstyle",
+      "artist_kind": "special_show",
+      "is_special_show": true,
+      "demand_score": 39.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Rebelion"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 16.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Rawstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 5.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": [
+        "Special show/project: keep separated from canonical artist matching."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "the-gang",
+      "name": "The Gang",
+      "rank": 12,
+      "main_genre": "Rawstyle",
+      "artist_kind": "duo_project",
+      "is_special_show": true,
+      "demand_score": 39.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "The Gang (Rooler & Sickmode)"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 16.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Rawstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 5.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": [
+        "Special show/project: keep separated from canonical artist matching."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "killshot",
+      "name": "KillShot",
+      "rank": 13,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 38.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Killshot"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "reborn",
+      "name": "Reborn",
+      "rank": 14,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 38.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Reborn"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 4,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "vicente-one-more-time",
+      "name": "Vicente One More Time",
+      "rank": 15,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 38.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Vicente One More Time"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 4,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "yeyo",
+      "name": "Yeyo",
+      "rank": 16,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 38.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Yeyo"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 5,
+      "previous_appearance_years": [
+        2022
+      ],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 6.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: [2022]."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 10.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 8.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "dj-the-prophet",
+      "name": "DJ The Prophet",
+      "rank": 17,
+      "main_genre": "Classic / Legacy Hardstyle",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 36.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "DJ The Prophet"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Classic / Legacy Hardstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "tatanka",
+      "name": "Tatanka",
+      "rank": 18,
+      "main_genre": "Classic / Legacy Hardstyle",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 36.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Tatanka"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Classic / Legacy Hardstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "the-straikerz",
+      "name": "The Straikerz",
+      "rank": 19,
+      "main_genre": "Xtra Raw",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 35.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "The Straikerz"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 17.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Xtra Raw by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "deadly-guns",
+      "name": "Deadly Guns",
+      "rank": 20,
+      "main_genre": "Uptempo Hardcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 34.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Deadly Guns"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 16.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Uptempo Hardcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "drs",
+      "name": "DRS",
+      "rank": 21,
+      "main_genre": "Uptempo Hardcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 34.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "DRS"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 3,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 16.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Uptempo Hardcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "billx",
+      "name": "Billx",
+      "rank": 22,
+      "main_genre": "Frenchcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 33.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Billx"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Frenchcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "floxytek",
+      "name": "Floxytek",
+      "rank": 23,
+      "main_genre": "Frenchcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 33.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Floxytek"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Frenchcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "furyan",
+      "name": "Furyan",
+      "rank": 24,
+      "main_genre": "Hardcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 33.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Furyan"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Hardcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "jkll",
+      "name": "JKLL",
+      "rank": 25,
+      "main_genre": "Frenchcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 33.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "JKLL"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Frenchcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "tha-playah",
+      "name": "Tha Playah",
+      "rank": 26,
+      "main_genre": "Hardcore",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 33.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Tha Playah"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 15.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Hardcore by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "sound-rush",
+      "name": "Sound Rush",
+      "rank": 27,
+      "main_genre": "Euphoric Hardstyle",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 32.0,
+      "crowd_risk": "low",
+      "confidence": "medium",
+      "performance_names": [
+        "Sound Rush"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 3,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 14.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Euphoric Hardstyle by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "ben-nicky",
+      "name": "Ben Nicky",
+      "rank": 28,
+      "main_genre": "Mainstage Hard Dance",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 30.0,
+      "crowd_risk": "very_low",
+      "confidence": "medium",
+      "performance_names": [
+        "Ben Nicky"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 12.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Mainstage Hard Dance by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "slug": "d-block",
+      "name": "D-Block",
+      "rank": 29,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 19.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "D-Block & S-Te-Fan"
+      ],
+      "performance_types": [
+        "collaboration"
+      ],
+      "appearance_count": 3,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 5.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): collaboration."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "s-te-fan",
+      "name": "S-Te-Fan",
+      "rank": 30,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 19.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "D-Block & S-Te-Fan"
+      ],
+      "performance_types": [
+        "collaboration"
+      ],
+      "appearance_count": 3,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 5.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): collaboration."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "act-of-rage",
+      "name": "Act of Rage",
+      "rank": 31,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 14.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "Act of Rage"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "chaotic-hostility",
+      "name": "Chaotic Hostility",
+      "rank": 32,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 14.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "Chaotic Hostility"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "d-fence",
+      "name": "D-Fence",
+      "rank": 33,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 14.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "D-Fence"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 2,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "d-strub",
+      "name": "D-Strub",
+      "rank": 34,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 14.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "D-Strub"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "ncrypta",
+      "name": "Ncrypta",
+      "rank": 35,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 14.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "Ncrypta"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "wild-motherfuckers",
+      "name": "Wild Motherfuckers",
+      "rank": 36,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 14.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "Wild Motherfuckers"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    },
+    {
+      "year": 2023,
+      "slug": "zatox",
+      "name": "Zatox",
+      "rank": 37,
+      "main_genre": "Unknown",
+      "artist_kind": "artist",
+      "is_special_show": false,
+      "demand_score": 14.0,
+      "crowd_risk": "very_low",
+      "confidence": "low",
+      "performance_names": [
+        "Zatox"
+      ],
+      "performance_types": [
+        "solo"
+      ],
+      "appearance_count": 1,
+      "previous_appearance_years": [],
+      "factors": [
+        {
+          "key": "base_lineup_presence",
+          "label": "Lineup presence",
+          "contribution": 18.0,
+          "max_contribution": 18.0,
+          "explanation": "Every confirmed 2026 lineup artist starts with a base score."
+        },
+        {
+          "key": "historical_appearances",
+          "label": "Historical Nexus appearances",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Previous Nexus years in dataset: none."
+        },
+        {
+          "key": "returning_artist",
+          "label": "Returning artist bonus",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Returning artists are more likely to have an established Nexus audience."
+        },
+        {
+          "key": "recent_presence",
+          "label": "Recent presence",
+          "contribution": 0.0,
+          "max_contribution": 8.0,
+          "explanation": "Adds weight if the artist appeared in the last two researched editions."
+        },
+        {
+          "key": "genre_strength",
+          "label": "Subgenre demand context",
+          "contribution": 5.0,
+          "max_contribution": 18.0,
+          "explanation": "Classified as Unknown by the Block 4 genre system."
+        },
+        {
+          "key": "manual_hype_signal",
+          "label": "Manual hype signal",
+          "contribution": 0.0,
+          "max_contribution": 24.0,
+          "explanation": "Editable MVP hype signal for iconic projects, headliners and very high-interest acts."
+        },
+        {
+          "key": "performance_format",
+          "label": "Performance format",
+          "contribution": 0.0,
+          "max_contribution": 10.0,
+          "explanation": "Current performance type(s): solo."
+        },
+        {
+          "key": "special_show",
+          "label": "Special show handling",
+          "contribution": 0.0,
+          "max_contribution": 5.0,
+          "explanation": "Special shows and label concepts can concentrate demand beyond a normal solo set."
+        },
+        {
+          "key": "unknown_genre_penalty",
+          "label": "Unknown genre penalty",
+          "contribution": -6.0,
+          "max_contribution": 0.0,
+          "explanation": "Artist still needs reliable subgenre classification, so confidence is reduced."
+        },
+        {
+          "key": "manual_review_penalty",
+          "label": "Manual review penalty",
+          "contribution": -3.0,
+          "max_contribution": 0.0,
+          "explanation": "Unknown artists marked for review are scored conservatively until curated."
+        }
+      ],
+      "notes": [
+        "Needs manual genre review before the prediction should be considered stable."
+      ]
+    }
+  ],
+  "genre_distribution": [
+    {
+      "name": "Unknown",
+      "artist_count": 13,
+      "percentage": 35.14,
+      "raw": {
+        "name": "Unknown",
+        "artist_count": 13,
+        "parent": null,
+        "description": "Not enough reliable data yet.",
+        "aliases": []
+      }
+    },
+    {
+      "name": "Frenchcore",
+      "artist_count": 5,
+      "percentage": 13.51,
+      "raw": {
+        "name": "Frenchcore",
+        "artist_count": 5,
+        "parent": "Hardcore",
+        "description": "Frenchcore and melodic/fast hardcore crossover.",
+        "aliases": [
+          "frenchcore"
+        ]
+      }
+    },
+    {
+      "name": "Hardcore",
+      "artist_count": 5,
+      "percentage": 13.51,
+      "raw": {
+        "name": "Hardcore",
+        "artist_count": 5,
+        "parent": "Hard Dance",
+        "description": "Mainstream hardcore and millennium hardcore.",
+        "aliases": [
+          "hardcore",
+          "mainstream hardcore",
+          "millennium hardcore"
+        ]
+      }
+    },
+    {
+      "name": "Rawstyle",
+      "artist_count": 5,
+      "percentage": 13.51,
+      "raw": {
+        "name": "Rawstyle",
+        "artist_count": 5,
+        "parent": "Hardstyle",
+        "description": "Raw hardstyle with darker kicks and heavier sound design.",
+        "aliases": [
+          "raw",
+          "rawstyle",
+          "raw hardstyle"
+        ]
+      }
+    },
+    {
+      "name": "Uptempo Hardcore",
+      "artist_count": 3,
+      "percentage": 8.11,
+      "raw": {
+        "name": "Uptempo Hardcore",
+        "artist_count": 3,
+        "parent": "Hardcore",
+        "description": "Fast, high-energy uptempo hardcore.",
+        "aliases": [
+          "uptempo",
+          "uptempo hardcore"
+        ]
+      }
+    },
+    {
+      "name": "Classic / Legacy Hardstyle",
+      "artist_count": 2,
+      "percentage": 5.41,
+      "raw": {
+        "name": "Classic / Legacy Hardstyle",
+        "artist_count": 2,
+        "parent": "Hardstyle",
+        "description": "Classic, legacy or old-school hardstyle artists and sets.",
+        "aliases": [
+          "classic hardstyle",
+          "legacy hardstyle",
+          "oldschool hardstyle",
+          "classics"
+        ]
+      }
+    },
+    {
+      "name": "Euphoric Hardstyle",
+      "artist_count": 2,
+      "percentage": 5.41,
+      "raw": {
+        "name": "Euphoric Hardstyle",
+        "artist_count": 2,
+        "parent": "Hardstyle",
+        "description": "Melodic hardstyle focused on uplifting leads, vocals and emotional melodies.",
+        "aliases": [
+          "euphoric",
+          "euphoric hardstyle",
+          "melodic hardstyle"
+        ]
+      }
+    },
+    {
+      "name": "Mainstage Hard Dance",
+      "artist_count": 1,
+      "percentage": 2.7,
+      "raw": {
+        "name": "Mainstage Hard Dance",
+        "artist_count": 1,
+        "parent": "Hard Dance",
+        "description": "Mainstage-facing hard dance / EDM crossover acts.",
+        "aliases": [
+          "mainstage",
+          "edm crossover",
+          "festival hard dance"
+        ]
+      }
+    },
+    {
+      "name": "Xtra Raw",
+      "artist_count": 1,
+      "percentage": 2.7,
+      "raw": {
+        "name": "Xtra Raw",
+        "artist_count": 1,
+        "parent": "Rawstyle",
+        "description": "Extra raw / gated-kick focused rawstyle with modern heavy kicks.",
+        "aliases": [
+          "xtra raw",
+          "extra raw",
+          "xtra-raw",
+          "extra-raw",
+          "gated kick"
+        ]
+      }
+    }
+  ],
+  "total_artist_predictions": 37
+}

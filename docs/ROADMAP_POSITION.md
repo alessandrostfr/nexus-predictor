@@ -2,7 +2,15 @@
 
 ## Active block
 
-Block 3 - Artist enrichment.
+Block 5 - Predictive scoring engine.
+
+## Closed blocks
+
+- Block 0 - Environment, structure, Git and GitHub.
+- Block 1 - Historical research and dataset foundation.
+- Block 2 - Backend FastAPI base.
+- Block 3 - Artist enrichment.
+- Block 4 - Subgenre classification.
 
 ## Methodology
 
@@ -14,14 +22,14 @@ Block 3 - Artist enrichment.
 
 ## Current block scope
 
-Block 3 adds the artist enrichment foundation:
+Block 5 adds the prediction foundation:
 
-- Spotify client for image, links, top tracks and latest releases when credentials are configured.
-- Last.fm client for public bio, top tracks, listeners and playcount when an API key is configured.
-- MusicBrainz client for aliases, country and release metadata.
-- Local JSON cache at `backend/app/data/artists/enriched_artists.json`.
-- Artist profile API ready for the frontend.
+- Interpretable artist demand score.
+- Initial 2026 attendance prediction with low/mid/high range.
+- Transparent scoring factors for every prediction.
+- Endpoints prepared for the future React dashboard.
+- Local JSON snapshot generation for predictions.
 
 ## Next block
 
-Block 4 - Subgenre classification.
+Block 6 - Minimalist responsive frontend shell.

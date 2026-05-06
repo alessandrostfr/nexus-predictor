@@ -18,3 +18,5 @@ SOURCES_DIR = DATA_DIR / "sources"
 ARTIST_PROFILE_CACHE_PATH = ARTISTS_DIR / "enriched_artists.json"
 GENRE_OVERRIDES_PATH = ARTISTS_DIR / "genre_overrides.json"
 MANUAL_OVERRIDES_PATH = ARTISTS_DIR / "manual_overrides.json"
+
+PREDICTIONS_DIR = DATA_DIR / "predictions"
