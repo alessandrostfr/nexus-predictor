@@ -1,0 +1,17 @@
+{
+  "year": 2022,
+  "name": "Nexus Festival 2022",
+  "status": "placeholder_pending_research",
+  "venue": "Fabrik Madrid",
+  "date_start": null,
+  "date_end": null,
+  "attendance": {
+    "estimated": null,
+    "source_url": null,
+    "confidence": "pending"
+  },
+  "stages": [],
+  "lineup": [],
+  "sources": [],
+  "notes": "This file will be completed during Block 1 with verified public sources."
+}

@@ -1,0 +1,31 @@
+{
+  "venue": "Fabrik Madrid",
+  "status": "placeholder_pending_research",
+  "rooms": [
+    {
+      "name": "Main Room",
+      "min_capacity": null,
+      "estimated_capacity": null,
+      "max_capacity": null,
+      "confidence": "pending",
+      "source_url": null
+    },
+    {
+      "name": "Satellite",
+      "min_capacity": null,
+      "estimated_capacity": null,
+      "max_capacity": null,
+      "confidence": "pending",
+      "source_url": null
+    },
+    {
+      "name": "Hangar",
+      "min_capacity": null,
+      "estimated_capacity": null,
+      "max_capacity": null,
+      "confidence": "pending",
+      "source_url": null
+    }
+  ],
+  "notes": "Room names and capacities will be verified during the research block."
+}

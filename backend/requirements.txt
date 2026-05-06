@@ -1,0 +1,27 @@
+# Web API
+fastapi
+uvicorn[standard]
+
+# Configuration
+pydantic
+pydantic-settings
+python-dotenv
+
+# Database layer
+SQLAlchemy
+
+# HTTP clients and data collection helpers
+httpx
+beautifulsoup4
+lxml
+spotipy
+python-slugify
+
+# Data and future prediction work
+numpy
+pandas
+scikit-learn
+
+# Testing and code quality
+pytest
+ruff
