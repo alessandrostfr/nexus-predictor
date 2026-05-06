@@ -1,0 +1,5473 @@
+{
+  "status": "researched_seed",
+  "total_artists": 228,
+  "artists": [
+    {
+      "slug": "acis",
+      "name": "ACIS",
+      "normalized_name": "ACIS",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "ACIS",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "act-of-rage",
+      "name": "Act of Rage",
+      "normalized_name": "Act of Rage",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Act of Rage",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "adaro",
+      "name": "Adaro",
+      "normalized_name": "Adaro",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Adaro",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Adaro",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "adjuzt",
+      "name": "Adjuzt",
+      "normalized_name": "Adjuzt",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Adjuzt vs Imperatorz",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "adrenalize",
+      "name": "Adrenalize",
+      "normalized_name": "Adrenalize",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Adrenalize",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Adrenalize",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Adrenalize",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Adrenalize vs Atmozfears",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 4,
+      "primary_genre_seed": "Euphoric Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "alpha-twins",
+      "name": "Alpha Twins",
+      "normalized_name": "Alpha Twins",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Alpha Twins",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "anderex",
+      "name": "Anderex",
+      "normalized_name": "Anderex",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Anderex",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "andy-the-core",
+      "name": "Andy The Core",
+      "normalized_name": "Andy The Core",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Andy The Core",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "angerfist",
+      "name": "Angerfist",
+      "normalized_name": "Angerfist",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Angerfist",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "Angerfist",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Angerfist",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Angerfist",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Angerfist",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 5,
+      "primary_genre_seed": "Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "anime",
+      "name": "AniMe",
+      "normalized_name": "AniMe",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "AniMe",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "AniMe",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "asfixia",
+      "name": "Asfixia",
+      "normalized_name": "Asfixia",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Asfixia",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Asfixia",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Asfixia",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "atmozfears",
+      "name": "Atmozfears",
+      "normalized_name": "Atmozfears",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Atmozfears",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Atmozfears b2b Sound Rush",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Adrenalize vs Atmozfears",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Euphoric Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "azdat",
+      "name": "Azdat",
+      "normalized_name": "Azdat",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Azdat",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "barber",
+      "name": "Barber",
+      "normalized_name": "Barber",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Barber vs Unproven",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Barber",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ben-nicky",
+      "name": "Ben Nicky",
+      "normalized_name": "Ben Nicky",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Ben Nicky",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "big-bastard",
+      "name": "Big Bastard",
+      "normalized_name": "Big Bastard",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Big Bastard",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "bigotek",
+      "name": "Bigotek",
+      "normalized_name": "Bigotek",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Bigotek",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "billx",
+      "name": "Billx",
+      "normalized_name": "Billx",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Billx",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "blutonium-boys",
+      "name": "Blutonium Boys",
+      "normalized_name": "Blutonium Boys",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Blutonium Boys",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "brennan-heart",
+      "name": "Brennan Heart",
+      "normalized_name": "Brennan Heart",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Brennan Heart presents Blademasterz",
+          "performance_type": "special_show",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Brennan Heart",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Brennan Heart",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Euphoric Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "broken-minds",
+      "name": "Broken Minds",
+      "normalized_name": "Broken Minds",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Broken Minds",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "brey",
+      "name": "Børey",
+      "normalized_name": "Børey",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Børey",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "chaos-poison",
+      "name": "Chaos Poison",
+      "normalized_name": "Chaos Poison",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Chaos Poison",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Chaos Poison",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "chaotic-hostility",
+      "name": "Chaotic Hostility",
+      "normalized_name": "Chaotic Hostility",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Chaotic Hostility",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "chapter-v",
+      "name": "Chapter V",
+      "normalized_name": "Chapter V",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Chapter V",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "code-black",
+      "name": "Code Black",
+      "normalized_name": "Code Black",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Code Black",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "coone",
+      "name": "Coone",
+      "normalized_name": "Coone",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Coone",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Coone",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Coone",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024,
+        2025
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "cryogenic",
+      "name": "Cryogenic",
+      "normalized_name": "Cryogenic",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Cryogenic",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "cybergore-nightmare-engine",
+      "name": "Cybergore: Nightmare Engine",
+      "normalized_name": "Cybergore: Nightmare Engine",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Cybergore: Nightmare Engine",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "d-block",
+      "name": "D-Block",
+      "normalized_name": "D-Block",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "D-Block & S-Te-Fan",
+          "performance_type": "collaboration",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "D-Block & S-Te-Fan",
+          "performance_type": "collaboration",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "D-Block & S-Te-Fan",
+          "performance_type": "collaboration",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2024,
+        2025
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "d-charged",
+      "name": "D-Charged",
+      "normalized_name": "D-Charged",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "D-Charged",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "d-fence",
+      "name": "D-Fence",
+      "normalized_name": "D-Fence",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "D-Fence",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "D-Fence",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2024
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "d-strub",
+      "name": "D-Strub",
+      "normalized_name": "D-Strub",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "D-Strub",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "da-tweekaz",
+      "name": "Da Tweekaz",
+      "normalized_name": "Da Tweekaz",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Da Tweekaz",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Da Tweekaz",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Da Tweekaz",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Da Tweekaz",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 4,
+      "primary_genre_seed": "Euphoric Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "darren-styles",
+      "name": "Darren Styles",
+      "normalized_name": "Darren Styles",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Darren Styles",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Happy Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "davide-sonar",
+      "name": "Davide Sonar",
+      "normalized_name": "Davide Sonar",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Davide Sonar",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Davide Sonar",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "davy",
+      "name": "Davy",
+      "normalized_name": "Davy",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Davy",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "deadly-guns",
+      "name": "Deadly Guns",
+      "normalized_name": "Deadly Guns",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Deadly Guns",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Deadly Guns",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Uptempo Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "deepack",
+      "name": "Deepack",
+      "normalized_name": "Deepack",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Deepack",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "deetox",
+      "name": "Deetox",
+      "normalized_name": "Deetox",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Deetox",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "deezl-pres-aeon",
+      "name": "Deezl pres. Aeon",
+      "normalized_name": "Deezl pres. Aeon",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Deezl pres. Aeon",
+          "performance_type": "special_show",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "devin-wild",
+      "name": "Devin Wild",
+      "normalized_name": "Devin Wild",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Devin Wild",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Phuture Noize and Devin Wild",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Devin Wild",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Rawstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "devizz",
+      "name": "Devizz",
+      "normalized_name": "Devizz",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Devizz",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "digital-punk",
+      "name": "Digital Punk",
+      "normalized_name": "Digital Punk",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Digital Punk",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dikke-baap",
+      "name": "Dikke Baap",
+      "normalized_name": "Dikke Baap",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Dikke Baap",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dimitri-k",
+      "name": "Dimitri K",
+      "normalized_name": "Dimitri K",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Dimitri K",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Sickmode b2b Dimitri K",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "divisium",
+      "name": "Divisium",
+      "normalized_name": "Divisium",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Divisium",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dj-balas",
+      "name": "DJ Balas",
+      "normalized_name": "DJ Balas",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "DJ Balas",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Papero vs DJ Balas",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "DJ Balas",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dj-marta",
+      "name": "DJ Marta",
+      "normalized_name": "DJ Marta",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "DJ Marta vs Raul Ortiz",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "DJ Marta vs Raul Ortiz",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dj-marti",
+      "name": "DJ Marti",
+      "normalized_name": "DJ Marti",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "DJ Marti b2b DKR",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dj-the-prophet",
+      "name": "DJ The Prophet",
+      "normalized_name": "DJ The Prophet",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "DJ The Prophet",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dkr",
+      "name": "DKR",
+      "normalized_name": "DKR",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "DJ Marti b2b DKR",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "donkey-rollers",
+      "name": "Donkey Rollers",
+      "normalized_name": "Donkey Rollers",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Donkey Rollers",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dr-donk",
+      "name": "Dr Donk",
+      "normalized_name": "Dr Donk",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "GPF b2b Dr Donk",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Dr. Donk",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dr-evil",
+      "name": "Dr Evil",
+      "normalized_name": "Dr Evil",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Dr Evil",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Dr. Evil",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dr-peacock",
+      "name": "Dr. Peacock",
+      "normalized_name": "Dr. Peacock",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Dr. Peacock",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Dr. Peacock b2b Sefa",
+          "performance_type": "b2b",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2024
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Frenchcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dr-rude",
+      "name": "Dr. Rude",
+      "normalized_name": "Dr. Rude",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Dr. Rude",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "drokz",
+      "name": "Drokz",
+      "normalized_name": "Drokz",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Drokz",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Drokz",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "drs",
+      "name": "DRS",
+      "normalized_name": "DRS",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "DRS",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "DRS",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "DRS vs F. Noize",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Uptempo Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dual-damage",
+      "name": "Dual Damage",
+      "normalized_name": "Dual Damage",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Dual Damage",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Dual Damage",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Dual Damage",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Xtra Raw",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "dystance",
+      "name": "Dystance",
+      "normalized_name": "Dystance",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Dystance",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ender",
+      "name": "Ender",
+      "normalized_name": "Ender",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Ender",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Ender",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Ender",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "endymion",
+      "name": "Endymion",
+      "normalized_name": "Endymion",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Endymion",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Endymion",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "estasia",
+      "name": "Estasia",
+      "normalized_name": "Estasia",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Estasia",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "evil-activities",
+      "name": "Evil Activities",
+      "normalized_name": "Evil Activities",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Evil Activities",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "exproz-pres-the-jailbreaker",
+      "name": "Exproz pres. The Jailbreaker",
+      "normalized_name": "Exproz pres. The Jailbreaker",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Exproz pres. The Jailbreaker",
+          "performance_type": "special_show",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "f-noize",
+      "name": "F. Noize",
+      "normalized_name": "F. Noize",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "DRS vs F. Noize",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "f-noize-classics-uptempo",
+      "name": "F.Noize Classics Uptempo",
+      "normalized_name": "F.Noize Classics Uptempo",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "F.Noize Classics Uptempo",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "faceless",
+      "name": "Faceless",
+      "normalized_name": "Faceless",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Faceless",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "floxytek",
+      "name": "Floxytek",
+      "normalized_name": "Floxytek",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Floxytek",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "fraw",
+      "name": "Fraw",
+      "normalized_name": "Fraw",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Fraw",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "fraw-pres-supernova",
+      "name": "Fraw pres. Supernova",
+      "normalized_name": "Fraw pres. Supernova",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Fraw pres. Supernova",
+          "performance_type": "special_show",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "frontliner",
+      "name": "Frontliner",
+      "normalized_name": "Frontliner",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Frontliner",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Classic / Legacy Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "furyan",
+      "name": "Furyan",
+      "normalized_name": "Furyan",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Furyan",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "gezellige-uptempo",
+      "name": "Gezellige Uptempo",
+      "normalized_name": "Gezellige Uptempo",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Gezellige Uptempo",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Gezellige Uptempo",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "gpf",
+      "name": "GPF",
+      "normalized_name": "GPF",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "GPF",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "GPF",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "GPF b2b Dr Donk",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "GPF",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "appearance_count": 4,
+      "primary_genre_seed": "Uptempo Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "guizcore",
+      "name": "Guizcore",
+      "normalized_name": "Guizcore",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Guizcore",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "gunz-for-hire",
+      "name": "Gunz for Hire",
+      "normalized_name": "Gunz for Hire",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Gunz for Hire",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Gunz for Hire",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "hard-driver",
+      "name": "Hard Driver",
+      "normalized_name": "Hard Driver",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Hard Driver vs The Purge",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "hardsuel",
+      "name": "Hardsuel",
+      "normalized_name": "Hardsuel",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Hardsuel",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "headhunterz",
+      "name": "Headhunterz",
+      "normalized_name": "Headhunterz",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Headhunterz",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Classic / Legacy Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "hermanos-kapiya",
+      "name": "Hermanos Kapiya",
+      "normalized_name": "Hermanos Kapiya",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Hermanos Kapiya",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Hermanos Kapiya",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "iissabo",
+      "name": "Iissabo",
+      "normalized_name": "Iissabo",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Iissabo",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "imperatorz",
+      "name": "Imperatorz",
+      "normalized_name": "Imperatorz",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Adjuzt vs Imperatorz",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Imperatorz",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "infliction",
+      "name": "Infliction",
+      "normalized_name": "Infliction",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Infliction",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ivo-madkiller",
+      "name": "Ivo Madkiller",
+      "normalized_name": "Ivo Madkiller",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Ivo Madkiller",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "jair-time",
+      "name": "Jair Time",
+      "normalized_name": "Jair Time",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Jair Time",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "jason-cluff",
+      "name": "Jason Cluff",
+      "normalized_name": "Jason Cluff",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Jason Cluff",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "jay-reeve",
+      "name": "Jay Reeve",
+      "normalized_name": "Jay Reeve",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Jay Reeve",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "jimmy-the-sound",
+      "name": "Jimmy The Sound",
+      "normalized_name": "Jimmy The Sound",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Jimmy The Sound",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Jimmy The Sound",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "jkll",
+      "name": "JKLL",
+      "normalized_name": "JKLL",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "JKLL",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "juandy-power",
+      "name": "Juandy Power",
+      "normalized_name": "Juandy Power",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Juandy Power",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Juandy Power",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Juandy Power",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "juliex",
+      "name": "Juliex",
+      "normalized_name": "Juliex",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Revealer vs Juliex",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "kaoss",
+      "name": "Kaöss",
+      "normalized_name": "Kaöss",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Kaöss",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Kaöss",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "keltek",
+      "name": "Keltek",
+      "normalized_name": "Keltek",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Keltek",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "kili",
+      "name": "Kili",
+      "normalized_name": "Kili",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Kili",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "killshot",
+      "name": "KillShot",
+      "normalized_name": "KillShot",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "KillShot",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "Killshot",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "korsakoff",
+      "name": "Korsakoff",
+      "normalized_name": "Korsakoff",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Korsakoff b2b Re-Style (Millennium Set)",
+          "performance_type": "b2b",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Korsakoff vs Re-Style",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "kronos",
+      "name": "Kronos",
+      "normalized_name": "Kronos",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Kronos",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "krowdexx",
+      "name": "Krowdexx",
+      "normalized_name": "Krowdexx",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Krowdexx",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "krowdexx-we-the-loudest",
+      "name": "Krowdexx: We The Loudest",
+      "normalized_name": "Krowdexx: We The Loudest",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Krowdexx: We The Loudest",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "kruelty",
+      "name": "Kruelty",
+      "normalized_name": "Kruelty",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Kruelty",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Kruelty",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Industrial Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "kursez",
+      "name": "Kursez",
+      "normalized_name": "Kursez",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Kursez",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "lekkerfaces",
+      "name": "Lekkerfaces",
+      "normalized_name": "Lekkerfaces",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Lekkerfaces",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "levenkhan",
+      "name": "Levenkhan",
+      "normalized_name": "Levenkhan",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Levenkhan",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "lil-texas",
+      "name": "Lil Texas",
+      "normalized_name": "Lil Texas",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Lil Texas",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Lil Texas",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Lil Texas",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Uptempo Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "lny-tnz",
+      "name": "LNY TNZ",
+      "normalized_name": "LNY TNZ",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "LNY TNZ",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "los-ruinas",
+      "name": "Los Ruinas",
+      "normalized_name": "Los Ruinas",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Los Ruinas",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Los Ruinas",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "lunakorpz",
+      "name": "Lunakorpz",
+      "normalized_name": "Lunakorpz",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Lunakorpz",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mad-dog",
+      "name": "Mad Dog",
+      "normalized_name": "Mad Dog",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Mad Dog",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "Mad Dog",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Mad Dog",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Mad Dog",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "appearance_count": 4,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "major-conspiracy",
+      "name": "Major Conspiracy",
+      "normalized_name": "Major Conspiracy",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Major Conspiracy",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "malice",
+      "name": "Malice",
+      "normalized_name": "Malice",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Malice",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "Malice",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Malice",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023,
+        2025
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mandy",
+      "name": "Mandy",
+      "normalized_name": "Mandy",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Mandy",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Mandy",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Mandy",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Freestyle / Hard Dance",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "manifest-destiny",
+      "name": "Manifest Destiny",
+      "normalized_name": "Manifest Destiny",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Manifest Destiny",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mark-with-a-k",
+      "name": "Mark With A K",
+      "normalized_name": "Mark With A K",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Mark With A K & MC Chuky",
+          "performance_type": "collaboration",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "massive-disorder",
+      "name": "Massive Disorder",
+      "normalized_name": "Massive Disorder",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Massive Disorder",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "max-enforcer",
+      "name": "Max Enforcer",
+      "normalized_name": "Max Enforcer",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Max Enforcer",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mbk",
+      "name": "MBK",
+      "normalized_name": "MBK",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "MBK",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mc-activate",
+      "name": "MC Activate",
+      "normalized_name": "MC Activate",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "MC Activate",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mdma",
+      "name": "MDMA",
+      "normalized_name": "MDMA",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "MDMA",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mish",
+      "name": "Mish",
+      "normalized_name": "Mish",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Mish",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Mish",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "miss-k8",
+      "name": "Miss K8",
+      "normalized_name": "Miss K8",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Miss K8",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Miss K8 feat Katerina",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "miss-tempo",
+      "name": "Miss Tempo",
+      "normalized_name": "Miss Tempo",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Miss Tempo",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mortis",
+      "name": "Mortis",
+      "normalized_name": "Mortis",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Mortis & Repeller",
+          "performance_type": "collaboration",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mr-pain",
+      "name": "Mr Pain",
+      "normalized_name": "Mr Pain",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Mr Pain",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Mr Pain",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Mr. Pain",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "mutilator",
+      "name": "Mutilator",
+      "normalized_name": "Mutilator",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "The Straikerz b2b Mutilator",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "n-vitral-bombsquad",
+      "name": "N-Vitral Bombsquad",
+      "normalized_name": "N-Vitral Bombsquad",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "N-Vitral Bombsquad",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Industrial Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ncrypta",
+      "name": "Ncrypta",
+      "normalized_name": "Ncrypta",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Ncrypta",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "neophyte",
+      "name": "Neophyte",
+      "normalized_name": "Neophyte",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Neophyte",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "noisecontrollers",
+      "name": "Noisecontrollers",
+      "normalized_name": "Noisecontrollers",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Noisecontrollers",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Noisecontrollers",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Classic / Legacy Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "noize-suppressor",
+      "name": "Noize Suppressor",
+      "normalized_name": "Noize Suppressor",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Noize Suppressor",
+          "performance_type": "special_show",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "nrg-showcase",
+      "name": "NRG Showcase",
+      "normalized_name": "NRG Showcase",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "NRG Showcase",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ogalla",
+      "name": "Ogalla",
+      "normalized_name": "Ogalla",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Ogalla",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "omnya",
+      "name": "Omnya",
+      "normalized_name": "Omnya",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Omnya",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ophidian",
+      "name": "Ophidian",
+      "normalized_name": "Ophidian",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Ophidian",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Industrial Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "oso-dj",
+      "name": "Oso DJ",
+      "normalized_name": "Oso DJ",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Oso DJ",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "pablo-rup",
+      "name": "Pablo Rup",
+      "normalized_name": "Pablo Rup",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Pablo Rup",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Pablo Rup",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "papero",
+      "name": "Papero",
+      "normalized_name": "Papero",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Papero b2b Tony Massama",
+          "performance_type": "b2b",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Papero vs DJ Balas",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Papero",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "partyraiser",
+      "name": "Partyraiser",
+      "normalized_name": "Partyraiser",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Partyraiser",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "paul-elstak",
+      "name": "Paul Elstak",
+      "normalized_name": "Paul Elstak",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Paul Elstak",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "pavo",
+      "name": "Pavo",
+      "normalized_name": "Pavo",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Pavo",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "peacock",
+      "name": "Peacock",
+      "normalized_name": "Peacock",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Peacock",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Frenchcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "peacock-in-concert",
+      "name": "Peacock In Concert",
+      "normalized_name": "Peacock In Concert",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Peacock In Concert",
+          "performance_type": "special_show",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "perver",
+      "name": "Perver",
+      "normalized_name": "Perver",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Perver",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "phuture-noize",
+      "name": "Phuture Noize",
+      "normalized_name": "Phuture Noize",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Phuture Noize",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Phuture Noize",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Phuture Noize and Devin Wild",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Phuture Noize",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 4,
+      "primary_genre_seed": "Rawstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "pinotello",
+      "name": "Pinotello",
+      "normalized_name": "Pinotello",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Pinotello",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Pinotello",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "pinastyle",
+      "name": "Piñastyle",
+      "normalized_name": "Piñastyle",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Piñastyle",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "po-txi",
+      "name": "Po-Txi",
+      "normalized_name": "Po-Txi",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Po-Txi",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "primeshock",
+      "name": "Primeshock",
+      "normalized_name": "Primeshock",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Primeshock",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Primeshock",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "project-one",
+      "name": "Project One",
+      "normalized_name": "Project One",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Project One",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Classic / Legacy Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "radical-redemption",
+      "name": "Radical Redemption",
+      "normalized_name": "Radical Redemption",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Radical Redemption",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Radical Redemption",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Rawstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ran-d",
+      "name": "Ran-D",
+      "normalized_name": "Ran-D",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Ran-D",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Ran-D",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "raul-b",
+      "name": "Raul B",
+      "normalized_name": "Raul B",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Raul B",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Raul B",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "raul-ortiz",
+      "name": "Raul Ortiz",
+      "normalized_name": "Raul Ortiz",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "DJ Marta vs Raul Ortiz",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "DJ Marta vs Raul Ortiz",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ravelove",
+      "name": "Ravelove",
+      "normalized_name": "Ravelove",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Ravelove by Sickmode & Mish",
+          "performance_type": "special_show",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "re-style",
+      "name": "Re-Style",
+      "normalized_name": "Re-Style",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Re-Style",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Korsakoff b2b Re-Style (Millennium Set)",
+          "performance_type": "b2b",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Re-Style",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Korsakoff vs Re-Style",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2024,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "rebelion",
+      "name": "Rebelion",
+      "normalized_name": "Rebelion",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Rebelion",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Rebelion presents Overdose: The Final Dose",
+          "performance_type": "special_show",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2023,
+        2024
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "rebelion-beyond-the-horizon",
+      "name": "Rebelion: Beyond The Horizon",
+      "normalized_name": "Rebelion: Beyond The Horizon",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Rebelion: Beyond The Horizon",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "reborn",
+      "name": "Reborn",
+      "normalized_name": "Reborn",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Reborn",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "Reborn",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Reborn",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Reborn",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "appearance_count": 4,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "rejecta",
+      "name": "Rejecta",
+      "normalized_name": "Rejecta",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Rejecta vs Unresolved",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Rejecta",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Rawstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "remzcore",
+      "name": "Remzcore",
+      "normalized_name": "Remzcore",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Remzcore",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "repeller",
+      "name": "Repeller",
+      "normalized_name": "Repeller",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Mortis & Repeller",
+          "performance_type": "collaboration",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "revealer",
+      "name": "Revealer",
+      "normalized_name": "Revealer",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Revealer vs Juliex",
+          "performance_type": "versus",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "riot-shift",
+      "name": "Riot Shift",
+      "normalized_name": "Riot Shift",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Riot Shift",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "rooler",
+      "name": "Rooler",
+      "normalized_name": "Rooler",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Rooler",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Rooler",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Rooler",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024,
+        2025
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Rawstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "rooster",
+      "name": "Rooster",
+      "normalized_name": "Rooster",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Rooster",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ruffneck",
+      "name": "Ruffneck",
+      "normalized_name": "Ruffneck",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Ruffneck",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ruly",
+      "name": "Ruly",
+      "normalized_name": "Ruly",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Ruly & Traka (Hardcore Classics)",
+          "performance_type": "collaboration",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "russian-village-boys",
+      "name": "Russian Village Boys",
+      "normalized_name": "Russian Village Boys",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Russian Village Boys",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Russian Village Boys",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "ruthless",
+      "name": "Ruthless",
+      "normalized_name": "Ruthless",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Ruthless",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "s-te-fan",
+      "name": "S-Te-Fan",
+      "normalized_name": "S-Te-Fan",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "D-Block & S-Te-Fan",
+          "performance_type": "collaboration",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "D-Block & S-Te-Fan",
+          "performance_type": "collaboration",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "D-Block & S-Te-Fan",
+          "performance_type": "collaboration",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2024,
+        2025
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sanctuary",
+      "name": "Sanctuary",
+      "normalized_name": "Sanctuary",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Sanctuary",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sandwicho",
+      "name": "Sandwicho",
+      "normalized_name": "Sandwicho",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Sandwicho",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "santa-salut-dj-set",
+      "name": "Santa Salut DJ Set",
+      "normalized_name": "Santa Salut DJ Set",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Santa Salut DJ Set",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "santi-aranya",
+      "name": "Santi Aranya",
+      "normalized_name": "Santi Aranya",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Santi Aranya",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sefa",
+      "name": "Sefa",
+      "normalized_name": "Sefa",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Sefa",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "Sefa",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Dr. Peacock b2b Sefa",
+          "performance_type": "b2b",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Sefa",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Sefa",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "appearance_count": 4,
+      "primary_genre_seed": "Frenchcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sergi-blue",
+      "name": "Sergi Blue",
+      "normalized_name": "Sergi Blue",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Sergi Blue",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Sergi Blue",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "showtek",
+      "name": "Showtek",
+      "normalized_name": "Showtek",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Showtek",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Classic / Legacy Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sickmode",
+      "name": "Sickmode",
+      "normalized_name": "Sickmode",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Sickmode",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Sickmode",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Sickmode b2b Dimitri K",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Rawstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sitos-brothers",
+      "name": "Sitos Brothers",
+      "normalized_name": "Sitos Brothers",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Sitos Brothers",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "slaughterhouse",
+      "name": "Slaughterhouse",
+      "normalized_name": "Slaughterhouse",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Slaughterhouse by Deadly Guns and N-Vitral",
+          "performance_type": "special_show",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Slaughterhouse",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2025,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "so-juice",
+      "name": "So Juice",
+      "normalized_name": "So Juice",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "So Juice",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sound-rush",
+      "name": "Sound Rush",
+      "normalized_name": "Sound Rush",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Sound Rush",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Sound Rush",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Atmozfears b2b Sound Rush",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2024,
+        2025
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "spitnoise",
+      "name": "Spitnoise",
+      "normalized_name": "Spitnoise",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Spitnoise",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "spoontech-legacy",
+      "name": "Spoontech Legacy",
+      "normalized_name": "Spoontech Legacy",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Spoontech Legacy by Faceless",
+          "performance_type": "special_show",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "stormerz",
+      "name": "Stormerz",
+      "normalized_name": "Stormerz",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Stormerz",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sub-zero-project",
+      "name": "Sub Zero Project",
+      "normalized_name": "Sub Zero Project",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Sub Zero Project",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Rawstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sub-zero-project-live",
+      "name": "Sub Zero Project Live",
+      "normalized_name": "Sub Zero Project Live",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Sub Zero Project Live",
+          "performance_type": "live",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "sub-zero-project-pres-robot-ravolution",
+      "name": "Sub Zero Project pres. Robot Ravolution",
+      "normalized_name": "Sub Zero Project pres. Robot Ravolution",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Sub Zero Project pres. Robot Ravolution",
+          "performance_type": "special_show",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "taika",
+      "name": "Taika",
+      "normalized_name": "Taika",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Taika",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "tatanka",
+      "name": "Tatanka",
+      "normalized_name": "Tatanka",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Tatanka",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Tatanka",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "technoboy",
+      "name": "Technoboy",
+      "normalized_name": "Technoboy",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Technoboy & Tuneboy",
+          "performance_type": "collaboration",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "teyo",
+      "name": "Teyo",
+      "normalized_name": "Teyo",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Teyo",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "tha-playah",
+      "name": "Tha Playah",
+      "normalized_name": "Tha Playah",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Tha Playah",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "tharken",
+      "name": "Tharken",
+      "normalized_name": "Tharken",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Tharken",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-dark-horror",
+      "name": "The Dark Horror",
+      "normalized_name": "The Dark Horror",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "The Dark Horror",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "The Dark Horror",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "The Dark Horror",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Uptempo Hardcore",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-enlightenment",
+      "name": "The Enlightenment",
+      "normalized_name": "The Enlightenment",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "The Enlightenment by B-Front & Phuture Noize",
+          "performance_type": "special_show",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-gang",
+      "name": "The Gang",
+      "normalized_name": "The Gang",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "The Gang (Rooler & Sickmode)",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "The Gang",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2023,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-gang-live",
+      "name": "The Gang Live",
+      "normalized_name": "The Gang Live",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "The Gang Live",
+          "performance_type": "live",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-purge",
+      "name": "The Purge",
+      "normalized_name": "The Purge",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "The Purge",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Hard Driver vs The Purge",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "The Purge",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Rawstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-saints",
+      "name": "The Saints",
+      "normalized_name": "The Saints",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "The Saints",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-satan",
+      "name": "The Satan",
+      "normalized_name": "The Satan",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "The Satan",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-smiler",
+      "name": "The Smiler",
+      "normalized_name": "The Smiler",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "The Smiler",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "the-straikerz",
+      "name": "The Straikerz",
+      "normalized_name": "The Straikerz",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "The Straikerz",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "The Straikerz b2b Mutilator",
+          "performance_type": "b2b",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "timmy-trumpet",
+      "name": "Timmy Trumpet",
+      "normalized_name": "Timmy Trumpet",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Timmy Trumpet",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "titti",
+      "name": "Titti",
+      "normalized_name": "Titti",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Titti",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "tnt",
+      "name": "TNT",
+      "normalized_name": "TNT",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "TNT",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "TNT aka Technoboy and Tuneboy",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "tony-massama",
+      "name": "Tony Massama",
+      "normalized_name": "Tony Massama",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Papero b2b Tony Massama",
+          "performance_type": "b2b",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "toza",
+      "name": "Toza",
+      "normalized_name": "Toza",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Toza",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Toza",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2026
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "traka",
+      "name": "Traka",
+      "normalized_name": "Traka",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Ruly & Traka (Hardcore Classics)",
+          "performance_type": "collaboration",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "tuneboy",
+      "name": "Tuneboy",
+      "normalized_name": "Tuneboy",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Technoboy & Tuneboy",
+          "performance_type": "collaboration",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "tweekacore",
+      "name": "Tweekacore",
+      "normalized_name": "Tweekacore",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Tweekacore by Da Tweekaz",
+          "performance_type": "special_show",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": true,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "unicorn-on-keta",
+      "name": "Unicorn on Keta",
+      "normalized_name": "Unicorn on Keta",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Unicorn on Keta",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Unicorn On Keta",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "unproven",
+      "name": "Unproven",
+      "normalized_name": "Unproven",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Unproven",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Barber vs Unproven",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025
+      ],
+      "appearance_count": 2,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "unresolved",
+      "name": "Unresolved",
+      "normalized_name": "Unresolved",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Rejecta vs Unresolved",
+          "performance_type": "versus",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "vandal",
+      "name": "Vandal",
+      "normalized_name": "Vandal",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Vandal",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "vandalism",
+      "name": "Vandalism",
+      "normalized_name": "Vandalism",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Vandalism!",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "vasto",
+      "name": "Vasto",
+      "normalized_name": "Vasto",
+      "appearances": [
+        {
+          "year": 2026,
+          "performance_display_name": "Vasto",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2026
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "vertile",
+      "name": "Vertile",
+      "normalized_name": "Vertile",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Vertile",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "vicente-one-more-time",
+      "name": "Vicente One More Time",
+      "normalized_name": "Vicente One More Time",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Vicente One More Time",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "Vicente One More Time",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Vicente One More Time",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Vicente One More Time",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "appearance_count": 4,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "wakan",
+      "name": "Wakan",
+      "normalized_name": "Wakan",
+      "appearances": [
+        {
+          "year": 2024,
+          "performance_display_name": "Wakan",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Wakan",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Wakan",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "warface",
+      "name": "Warface",
+      "normalized_name": "Warface",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Warface",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "wild-motherfuckers",
+      "name": "Wild Motherfuckers",
+      "normalized_name": "Wild Motherfuckers",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Wild Motherfuckers",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "wildstylez",
+      "name": "Wildstylez",
+      "normalized_name": "Wildstylez",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Wildstylez",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Wildstylez",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Wildstylez",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2024,
+        2026
+      ],
+      "appearance_count": 3,
+      "primary_genre_seed": "Euphoric Hardstyle",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "yeyo",
+      "name": "Yeyo",
+      "normalized_name": "Yeyo",
+      "appearances": [
+        {
+          "year": 2022,
+          "performance_display_name": "Yeyo",
+          "performance_type": "solo",
+          "source_key": "ra_2022"
+        },
+        {
+          "year": 2023,
+          "performance_display_name": "Yeyo",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        },
+        {
+          "year": 2024,
+          "performance_display_name": "Yeyo",
+          "performance_type": "solo",
+          "source_key": "ra_2024"
+        },
+        {
+          "year": 2025,
+          "performance_display_name": "Yeyo",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        },
+        {
+          "year": 2026,
+          "performance_display_name": "Yeyo",
+          "performance_type": "solo",
+          "source_key": "user_2026_poster"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "appearance_count": 5,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "yoshiko",
+      "name": "Yoshiko",
+      "normalized_name": "Yoshiko",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Yoshiko",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "zany",
+      "name": "Zany",
+      "normalized_name": "Zany",
+      "appearances": [
+        {
+          "year": 2025,
+          "performance_display_name": "Zany",
+          "performance_type": "solo",
+          "source_key": "ra_2025"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2025
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    },
+    {
+      "slug": "zatox",
+      "name": "Zatox",
+      "normalized_name": "Zatox",
+      "appearances": [
+        {
+          "year": 2023,
+          "performance_display_name": "Zatox",
+          "performance_type": "solo",
+          "source_key": "ra_2023"
+        }
+      ],
+      "manual_review": false,
+      "appearance_years": [
+        2023
+      ],
+      "appearance_count": 1,
+      "primary_genre_seed": "Unknown",
+      "data_status": "seed_from_lineup"
+    }
+  ],
+  "notes": "Artist enrichment, Spotify/Last.fm/MusicBrainz IDs, photos, bios and tracks are intentionally pending for the artist-enrichment block."
+}

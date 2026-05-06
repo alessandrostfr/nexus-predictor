@@ -1,17 +1,1039 @@
 {
   "year": 2026,
-  "name": "Nexus Festival 2026",
-  "status": "placeholder_pending_research",
+  "name": "NEXUS FESTIVAL 2026 at FABRIK",
+  "edition_number": 5,
+  "status": "upcoming_researched_seed",
   "venue": "Fabrik Madrid",
-  "date_start": null,
-  "date_end": null,
-  "attendance": {
-    "estimated": null,
-    "source_url": null,
-    "confidence": "pending"
+  "city": "Humanes de Madrid, Madrid",
+  "date_start": "2026-06-13",
+  "date_end": "2026-06-14",
+  "time_start": "12:00",
+  "time_end": "06:00",
+  "duration_hours": 18,
+  "stage_count": {
+    "confirmed": null,
+    "estimated": 7,
+    "confidence": "low"
   },
-  "stages": [],
-  "lineup": [],
-  "sources": [],
-  "notes": "This file will be completed during Block 1 with verified public sources."
+  "artist_count": 80,
+  "attendance": {
+    "confirmed_total": null,
+    "prediction_seed_low": 8500,
+    "prediction_seed_mid": 11000,
+    "prediction_seed_high": 14000,
+    "confidence": "low",
+    "method": "Initial 2026 prediction seed based on fifth edition status, single 18-hour day, >60 DJ signal and 2025 growth baseline. Will be recalculated by the prediction block.",
+    "signals": [
+      {
+        "type": "official_event_info",
+        "value": "fifth edition; 12:00 to 06:00; hard/raw/industrial/hardcore",
+        "source_key": "fever_2026"
+      },
+      {
+        "type": "scale",
+        "value": "more than 60 international DJs mentioned in ticket-market listing",
+        "source_key": "rebel_2026"
+      },
+      {
+        "type": "lineup_depth",
+        "value": 80,
+        "source_key": "user_2026_poster"
+      }
+    ]
+  },
+  "lineup": [
+    {
+      "display_name": "Adrenalize vs Atmozfears",
+      "artists": [
+        "Adrenalize",
+        "Atmozfears"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Angerfist",
+      "artists": [
+        "Angerfist"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "AniMe",
+      "artists": [
+        "AniMe"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Asfixia",
+      "artists": [
+        "Asfixia"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Azdat",
+      "artists": [
+        "Azdat"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Barber",
+      "artists": [
+        "Barber"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Big Bastard",
+      "artists": [
+        "Big Bastard"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Børey",
+      "artists": [
+        "Børey"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Brennan Heart",
+      "artists": [
+        "Brennan Heart"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Chapter V",
+      "artists": [
+        "Chapter V"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "D-Charged",
+      "artists": [
+        "D-Charged"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Da Tweekaz",
+      "artists": [
+        "Da Tweekaz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Darren Styles",
+      "artists": [
+        "Darren Styles"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Deadly Guns",
+      "artists": [
+        "Deadly Guns"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Devin Wild",
+      "artists": [
+        "Devin Wild"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Devizz",
+      "artists": [
+        "Devizz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dikke Baap",
+      "artists": [
+        "Dikke Baap"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "DJ Balas",
+      "artists": [
+        "DJ Balas"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "DJ Marta vs Raul Ortiz",
+      "artists": [
+        "DJ Marta",
+        "Raul Ortiz"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dr. Donk",
+      "artists": [
+        "Dr. Donk"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dr. Evil",
+      "artists": [
+        "Dr. Evil"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dr. Rude",
+      "artists": [
+        "Dr. Rude"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "DRS vs F. Noize",
+      "artists": [
+        "DRS",
+        "F. Noize"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dual Damage",
+      "artists": [
+        "Dual Damage"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dystance",
+      "artists": [
+        "Dystance"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ender",
+      "artists": [
+        "Ender"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Endymion",
+      "artists": [
+        "Endymion"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Faceless",
+      "artists": [
+        "Faceless"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Frontliner",
+      "artists": [
+        "Frontliner"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Gezellige Uptempo",
+      "artists": [
+        "Gezellige Uptempo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "GPF",
+      "artists": [
+        "GPF"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Hardsuel",
+      "artists": [
+        "Hardsuel"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Infliction",
+      "artists": [
+        "Infliction"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Jason Cluff",
+      "artists": [
+        "Jason Cluff"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Juandy Power",
+      "artists": [
+        "Juandy Power"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Kili",
+      "artists": [
+        "Kili"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Korsakoff vs Re-Style",
+      "artists": [
+        "Korsakoff",
+        "Re-Style"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Kruelty",
+      "artists": [
+        "Kruelty"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Kursez",
+      "artists": [
+        "Kursez"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Lil Texas",
+      "artists": [
+        "Lil Texas"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Los Ruinas",
+      "artists": [
+        "Los Ruinas"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mandy",
+      "artists": [
+        "Mandy"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mortis & Repeller",
+      "artists": [
+        "Mortis",
+        "Repeller"
+      ],
+      "performance_type": "collaboration",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mr. Pain",
+      "artists": [
+        "Mr. Pain"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "N-Vitral Bombsquad",
+      "artists": [
+        "N-Vitral Bombsquad"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": true
+    },
+    {
+      "display_name": "Noisecontrollers",
+      "artists": [
+        "Noisecontrollers"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ophidian",
+      "artists": [
+        "Ophidian"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Pablo Rup",
+      "artists": [
+        "Pablo Rup"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Papero",
+      "artists": [
+        "Papero"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Peacock",
+      "artists": [
+        "Peacock"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Phuture Noize",
+      "artists": [
+        "Phuture Noize"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Project One",
+      "artists": [
+        "Project One"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Radical Redemption",
+      "artists": [
+        "Radical Redemption"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Raul B",
+      "artists": [
+        "Raul B"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rejecta",
+      "artists": [
+        "Rejecta"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Revealer vs Juliex",
+      "artists": [
+        "Revealer",
+        "Juliex"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rooster",
+      "artists": [
+        "Rooster"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ruthless",
+      "artists": [
+        "Ruthless"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ruffneck",
+      "artists": [
+        "Ruffneck"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Santi Aranya",
+      "artists": [
+        "Santi Aranya"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sergi Blue",
+      "artists": [
+        "Sergi Blue"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Showtek",
+      "artists": [
+        "Showtek"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sitos Brothers",
+      "artists": [
+        "Sitos Brothers"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Slaughterhouse",
+      "artists": [
+        "Slaughterhouse"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": true
+    },
+    {
+      "display_name": "Spitnoise",
+      "artists": [
+        "Spitnoise"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Spoontech Legacy by Faceless",
+      "artists": [
+        "Spoontech Legacy"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": true
+    },
+    {
+      "display_name": "Sub Zero Project",
+      "artists": [
+        "Sub Zero Project"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Teyo",
+      "artists": [
+        "Teyo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Titti",
+      "artists": [
+        "Titti"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Dark Horror",
+      "artists": [
+        "The Dark Horror"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Purge",
+      "artists": [
+        "The Purge"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Saints",
+      "artists": [
+        "The Saints"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Smiler",
+      "artists": [
+        "The Smiler"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Tharken",
+      "artists": [
+        "Tharken"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Toza",
+      "artists": [
+        "Toza"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Vasto",
+      "artists": [
+        "Vasto"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Wakan",
+      "artists": [
+        "Wakan"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Wildstylez",
+      "artists": [
+        "Wildstylez"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "Yeyo",
+      "artists": [
+        "Yeyo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    },
+    {
+      "display_name": "MC Activate",
+      "artists": [
+        "MC Activate"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "user_2026_poster",
+      "manual_review": false
+    }
+  ],
+  "sources": [
+    {
+      "key": "fever_2026",
+      "name": "Fever - NEXUS FESTIVAL 2026 at FABRIK",
+      "url": "https://feverup.com/m/520276/en",
+      "confidence": "high"
+    },
+    {
+      "key": "rebel_2026",
+      "name": "Rebel Tickets - Nexus Festival 2026",
+      "url": "https://www.rebeltickets.es/madrid/event/entradas-nexus-festival-2026",
+      "confidence": "medium"
+    },
+    {
+      "key": "user_2026_poster",
+      "name": "User-provided 2026 lineup poster",
+      "url": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "fabrik_official_main_room",
+      "name": "Fabrik Madrid official area page - Main Room",
+      "url": "https://www.fabrikmadrid.com/areas/main-room",
+      "confidence": "high"
+    }
+  ],
+  "notes": "Lineup extracted from the user-provided poster. Shows marked with 'pres', 'by', 'in concert' or similar should be reviewed before API enrichment."
 }

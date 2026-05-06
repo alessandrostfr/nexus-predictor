@@ -1,17 +1,446 @@
 {
   "year": 2022,
-  "name": "Nexus Festival 2022",
-  "status": "placeholder_pending_research",
+  "name": "NEXUS Festival 2022",
+  "edition_number": 1,
+  "status": "researched_seed",
   "venue": "Fabrik Madrid",
-  "date_start": null,
-  "date_end": null,
-  "attendance": {
-    "estimated": null,
-    "source_url": null,
-    "confidence": "pending"
+  "city": "Humanes de Madrid, Madrid",
+  "date_start": "2022-06-11",
+  "date_end": "2022-06-12",
+  "time_start": "18:00",
+  "time_end": "06:00",
+  "duration_hours": 12,
+  "stage_count": {
+    "confirmed": 6,
+    "confidence": "medium"
   },
-  "stages": [],
-  "lineup": [],
-  "sources": [],
-  "notes": "This file will be completed during Block 1 with verified public sources."
+  "artist_count": 32,
+  "attendance": {
+    "confirmed_total": null,
+    "estimated_low": 4000,
+    "estimated_mid": 5200,
+    "estimated_high": 6500,
+    "confidence": "low",
+    "method": "Seed range inferred from public six-area/full-house demand signal and published Fabrik capacity ranges. Not a confirmed attendance figure.",
+    "signals": [
+      {
+        "type": "early_ticket_demand",
+        "value": "first 1000 promotional tickets reportedly sold in one hour",
+        "source_key": "allmusic_2022"
+      },
+      {
+        "type": "capacity_signal",
+        "value": "Fabrik general public capacity sources vary around 4000+ to 7000+ depending on configuration",
+        "source_key": "fabrik_official_main_room"
+      }
+    ]
+  },
+  "lineup": [
+    {
+      "display_name": "Adaro",
+      "artists": [
+        "Adaro"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Adrenalize",
+      "artists": [
+        "Adrenalize"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Angerfist",
+      "artists": [
+        "Angerfist"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Asfixia",
+      "artists": [
+        "Asfixia"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Atmozfears",
+      "artists": [
+        "Atmozfears"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Coone",
+      "artists": [
+        "Coone"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Deetox",
+      "artists": [
+        "Deetox"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Digital Punk",
+      "artists": [
+        "Digital Punk"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Drokz",
+      "artists": [
+        "Drokz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Estasia",
+      "artists": [
+        "Estasia"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Fraw",
+      "artists": [
+        "Fraw"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "GPF",
+      "artists": [
+        "GPF"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Headhunterz",
+      "artists": [
+        "Headhunterz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Jay Reeve",
+      "artists": [
+        "Jay Reeve"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "KillShot",
+      "artists": [
+        "KillShot"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Kronos",
+      "artists": [
+        "Kronos"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mad Dog",
+      "artists": [
+        "Mad Dog"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Malice",
+      "artists": [
+        "Malice"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Neophyte",
+      "artists": [
+        "Neophyte"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Phuture Noize",
+      "artists": [
+        "Phuture Noize"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Primeshock",
+      "artists": [
+        "Primeshock"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Reborn",
+      "artists": [
+        "Reborn"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rooler",
+      "artists": [
+        "Rooler"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sefa",
+      "artists": [
+        "Sefa"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Technoboy & Tuneboy",
+      "artists": [
+        "Technoboy",
+        "Tuneboy"
+      ],
+      "performance_type": "collaboration",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Satan",
+      "artists": [
+        "The Satan"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "TNT",
+      "artists": [
+        "TNT"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Vandalism!",
+      "artists": [
+        "Vandalism"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Unicorn on Keta",
+      "artists": [
+        "Unicorn on Keta"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Vicente One More Time",
+      "artists": [
+        "Vicente One More Time"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Wildstylez",
+      "artists": [
+        "Wildstylez"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    },
+    {
+      "display_name": "Yeyo",
+      "artists": [
+        "Yeyo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2022",
+      "manual_review": false
+    }
+  ],
+  "sources": [
+    {
+      "key": "ra_2022",
+      "name": "Resident Advisor - NEXUS Festival 2022",
+      "url": "https://ra.co/events/1528693",
+      "confidence": "high"
+    },
+    {
+      "key": "allmusic_2022",
+      "name": "All Music Spain - Fabrik presenta Nexus Hard Music Festival 2022",
+      "url": "https://allmusicspain.com/noticias/fabrik-presenta-nexus-hard-music-festival/",
+      "confidence": "medium"
+    },
+    {
+      "key": "fabrik_official_main_room",
+      "name": "Fabrik Madrid official area page - Main Room",
+      "url": "https://www.fabrikmadrid.com/areas/main-room",
+      "confidence": "high"
+    }
+  ],
+  "notes": "Attendance is not confirmed publicly in the sources found; keep as a model seed only."
 }

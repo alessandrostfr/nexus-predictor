@@ -1,17 +1,1456 @@
 {
   "year": 2025,
-  "name": "Nexus Festival 2025",
-  "status": "placeholder_pending_research",
+  "name": "NEXUS FESTIVAL 2025 en Fabrik",
+  "edition_number": 4,
+  "status": "researched_seed",
   "venue": "Fabrik Madrid",
-  "date_start": null,
-  "date_end": null,
-  "attendance": {
-    "estimated": null,
-    "source_url": null,
-    "confidence": "pending"
+  "city": "Humanes de Madrid, Madrid",
+  "date_start": "2025-06-13",
+  "date_end": "2025-06-15",
+  "time_start": "22:00",
+  "time_end": "06:00",
+  "duration_hours": 22,
+  "stage_count": {
+    "confirmed": 13,
+    "confidence": "high"
   },
-  "stages": [],
-  "lineup": [],
-  "sources": [],
-  "notes": "This file will be completed during Block 1 with verified public sources."
+  "artist_count": 99,
+  "attendance": {
+    "confirmed_total": null,
+    "estimated_low": 12000,
+    "estimated_mid": 15500,
+    "estimated_high": 19000,
+    "confidence": "low",
+    "method": "Weekend aggregate seed range inferred from 70+ DJs, 13 stages, 22 hours and public venue-capacity signals. Not a confirmed attendance figure.",
+    "signals": [
+      {
+        "type": "scale",
+        "value": "70+ DJs, 13 stages, 22 hours",
+        "source_key": "vicious_2025"
+      },
+      {
+        "type": "scale",
+        "value": "70 artists, 22 hours, 13 stages",
+        "source_key": "madridsecreto_2025"
+      },
+      {
+        "type": "stage_timetable",
+        "value": "Clashfinder stage/time data available for model calibration",
+        "source_key": "clashfinder_2025"
+      }
+    ]
+  },
+  "lineup": [
+    {
+      "display_name": "ACIS",
+      "artists": [
+        "ACIS"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Adjuzt vs Imperatorz",
+      "artists": [
+        "Adjuzt",
+        "Imperatorz"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Adrenalize",
+      "artists": [
+        "Adrenalize"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Anderex",
+      "artists": [
+        "Anderex"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Angerfist",
+      "artists": [
+        "Angerfist"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "AniMe",
+      "artists": [
+        "AniMe"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Atmozfears b2b Sound Rush",
+      "artists": [
+        "Atmozfears",
+        "Sound Rush"
+      ],
+      "performance_type": "b2b",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Barber vs Unproven",
+      "artists": [
+        "Barber",
+        "Unproven"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Bigotek",
+      "artists": [
+        "Bigotek"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Blutonium Boys",
+      "artists": [
+        "Blutonium Boys"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Brennan Heart",
+      "artists": [
+        "Brennan Heart"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Chaos Poison",
+      "artists": [
+        "Chaos Poison"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Coone",
+      "artists": [
+        "Coone"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Cybergore: Nightmare Engine",
+      "artists": [
+        "Cybergore: Nightmare Engine"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "D-Block & S-Te-Fan",
+      "artists": [
+        "D-Block",
+        "S-Te-Fan"
+      ],
+      "performance_type": "collaboration",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Da Tweekaz",
+      "artists": [
+        "Da Tweekaz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Davy",
+      "artists": [
+        "Davy"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Davide Sonar",
+      "artists": [
+        "Davide Sonar"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Deepack",
+      "artists": [
+        "Deepack"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Deezl pres. Aeon",
+      "artists": [
+        "Deezl pres. Aeon"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": true
+    },
+    {
+      "display_name": "Divisium",
+      "artists": [
+        "Divisium"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "DJ Marta vs Raul Ortiz",
+      "artists": [
+        "DJ Marta",
+        "Raul Ortiz"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "DJ Marti b2b DKR",
+      "artists": [
+        "DJ Marti",
+        "DKR"
+      ],
+      "performance_type": "b2b",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Donkey Rollers",
+      "artists": [
+        "Donkey Rollers"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dr Evil",
+      "artists": [
+        "Dr Evil"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "DRS",
+      "artists": [
+        "DRS"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dual Damage",
+      "artists": [
+        "Dual Damage"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ender",
+      "artists": [
+        "Ender"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Evil Activities",
+      "artists": [
+        "Evil Activities"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Exproz pres. The Jailbreaker",
+      "artists": [
+        "Exproz pres. The Jailbreaker"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": true
+    },
+    {
+      "display_name": "Fraw pres. Supernova",
+      "artists": [
+        "Fraw pres. Supernova"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": true
+    },
+    {
+      "display_name": "Gezellige Uptempo",
+      "artists": [
+        "Gezellige Uptempo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "GPF b2b Dr Donk",
+      "artists": [
+        "GPF",
+        "Dr Donk"
+      ],
+      "performance_type": "b2b",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Guizcore",
+      "artists": [
+        "Guizcore"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Gunz for Hire",
+      "artists": [
+        "Gunz for Hire"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Hard Driver vs The Purge",
+      "artists": [
+        "Hard Driver",
+        "The Purge"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Hermanos Kapiya",
+      "artists": [
+        "Hermanos Kapiya"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Iissabo",
+      "artists": [
+        "Iissabo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Imperatorz",
+      "artists": [
+        "Imperatorz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ivo Madkiller",
+      "artists": [
+        "Ivo Madkiller"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Jair Time",
+      "artists": [
+        "Jair Time"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Jimmy The Sound",
+      "artists": [
+        "Jimmy The Sound"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Juandy Power",
+      "artists": [
+        "Juandy Power"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Kaöss",
+      "artists": [
+        "Kaöss"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Krowdexx: We The Loudest",
+      "artists": [
+        "Krowdexx: We The Loudest"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Kruelty",
+      "artists": [
+        "Kruelty"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Lekkerfaces",
+      "artists": [
+        "Lekkerfaces"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Levenkhan",
+      "artists": [
+        "Levenkhan"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Lil Texas",
+      "artists": [
+        "Lil Texas"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Los Ruinas",
+      "artists": [
+        "Los Ruinas"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mad Dog",
+      "artists": [
+        "Mad Dog"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Malice",
+      "artists": [
+        "Malice"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mandy",
+      "artists": [
+        "Mandy"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Massive Disorder",
+      "artists": [
+        "Massive Disorder"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Max Enforcer",
+      "artists": [
+        "Max Enforcer"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "MDMA",
+      "artists": [
+        "MDMA"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Miss K8 feat Katerina",
+      "artists": [
+        "Miss K8"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mish",
+      "artists": [
+        "Mish"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mr Pain",
+      "artists": [
+        "Mr Pain"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Noize Suppressor",
+      "artists": [
+        "Noize Suppressor"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": true
+    },
+    {
+      "display_name": "Oso DJ",
+      "artists": [
+        "Oso DJ"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Pablo Rup",
+      "artists": [
+        "Pablo Rup"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Papero vs DJ Balas",
+      "artists": [
+        "Papero",
+        "DJ Balas"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Partyraiser",
+      "artists": [
+        "Partyraiser"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Perver",
+      "artists": [
+        "Perver"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Phuture Noize and Devin Wild",
+      "artists": [
+        "Phuture Noize",
+        "Devin Wild"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Piñastyle",
+      "artists": [
+        "Piñastyle"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Pinotello",
+      "artists": [
+        "Pinotello"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Po-Txi",
+      "artists": [
+        "Po-Txi"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Primeshock",
+      "artists": [
+        "Primeshock"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ran-D",
+      "artists": [
+        "Ran-D"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Raul B",
+      "artists": [
+        "Raul B"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rebelion: Beyond The Horizon",
+      "artists": [
+        "Rebelion: Beyond The Horizon"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Reborn",
+      "artists": [
+        "Reborn"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rejecta vs Unresolved",
+      "artists": [
+        "Rejecta",
+        "Unresolved"
+      ],
+      "performance_type": "versus",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Riot Shift",
+      "artists": [
+        "Riot Shift"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rooler",
+      "artists": [
+        "Rooler"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Russian Village Boys",
+      "artists": [
+        "Russian Village Boys"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sandwicho",
+      "artists": [
+        "Sandwicho"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Santa Salut DJ Set",
+      "artists": [
+        "Santa Salut DJ Set"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sefa",
+      "artists": [
+        "Sefa"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sergi Blue",
+      "artists": [
+        "Sergi Blue"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sickmode",
+      "artists": [
+        "Sickmode"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sickmode b2b Dimitri K",
+      "artists": [
+        "Sickmode",
+        "Dimitri K"
+      ],
+      "performance_type": "b2b",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Slaughterhouse by Deadly Guns and N-Vitral",
+      "artists": [
+        "Slaughterhouse"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": true
+    },
+    {
+      "display_name": "So Juice",
+      "artists": [
+        "So Juice"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Stormerz",
+      "artists": [
+        "Stormerz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sub Zero Project pres. Robot Ravolution",
+      "artists": [
+        "Sub Zero Project pres. Robot Ravolution"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": true
+    },
+    {
+      "display_name": "Tatanka",
+      "artists": [
+        "Tatanka"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Dark Horror",
+      "artists": [
+        "The Dark Horror"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Gang",
+      "artists": [
+        "The Gang"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": true
+    },
+    {
+      "display_name": "The Straikerz b2b Mutilator",
+      "artists": [
+        "The Straikerz",
+        "Mutilator"
+      ],
+      "performance_type": "b2b",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "TNT aka Technoboy and Tuneboy",
+      "artists": [
+        "TNT"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Vicente One More Time",
+      "artists": [
+        "Vicente One More Time"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Wakan",
+      "artists": [
+        "Wakan"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Warface",
+      "artists": [
+        "Warface"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Yeyo",
+      "artists": [
+        "Yeyo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Yoshiko",
+      "artists": [
+        "Yoshiko"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    },
+    {
+      "display_name": "Zany",
+      "artists": [
+        "Zany"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2025",
+      "manual_review": false
+    }
+  ],
+  "timetable_seed": [
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "22:00",
+      "end_time": "23:15",
+      "display_name": "Reborn"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "23:15",
+      "end_time": "00:00",
+      "display_name": "Malice"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "00:00",
+      "end_time": "00:45",
+      "display_name": "Riot Shift"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "00:45",
+      "end_time": "01:30",
+      "display_name": "Mish"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "01:30",
+      "end_time": "02:30",
+      "display_name": "Warface"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "02:30",
+      "end_time": "03:00",
+      "display_name": "Sickmode"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "03:00",
+      "end_time": "04:00",
+      "display_name": "The Strikerz vs Mutilator"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "04:00",
+      "end_time": "04:30",
+      "display_name": "Rooler"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Main Room",
+      "start_time": "04:30",
+      "end_time": "05:15",
+      "display_name": "Dual Damage"
+    },
+    {
+      "date": "2025-06-13",
+      "stage": "Club 360º",
+      "start_time": "01:00",
+      "end_time": "06:00",
+      "display_name": "Miss K8 All Night Long"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Area 19",
+      "start_time": "20:00",
+      "end_time": "21:30",
+      "display_name": "D-Block & S-Te-Fan: Journey Set"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Area 19",
+      "start_time": "21:30",
+      "end_time": "22:30",
+      "display_name": "Atmozfears b2b Sound Rush"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Area 19",
+      "start_time": "23:30",
+      "end_time": "00:30",
+      "display_name": "Da Tweekaz"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Area 19",
+      "start_time": "05:00",
+      "end_time": "06:00",
+      "display_name": "Angerfist"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Main Room",
+      "start_time": "00:00",
+      "end_time": "01:00",
+      "display_name": "Phuture Noize b2b Devin Wild"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Main Room",
+      "start_time": "01:00",
+      "end_time": "02:00",
+      "display_name": "Brennan Heart"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Main Room",
+      "start_time": "02:00",
+      "end_time": "03:00",
+      "display_name": "Ran-D"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Main Room",
+      "start_time": "03:00",
+      "end_time": "03:45",
+      "display_name": "Sub Zero Project pres. Robot Ravolution"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Main Room",
+      "start_time": "03:45",
+      "end_time": "04:30",
+      "display_name": "Rebelion pres. Beyond The Horizon"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Main Room",
+      "start_time": "05:15",
+      "end_time": "06:15",
+      "display_name": "Sefa"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Hangar",
+      "start_time": "00:30",
+      "end_time": "01:30",
+      "display_name": "Mad Dog"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Hangar",
+      "start_time": "03:30",
+      "end_time": "04:30",
+      "display_name": "Partyraiser"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Hangar",
+      "start_time": "05:30",
+      "end_time": "06:45",
+      "display_name": "DRS"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Satélite",
+      "start_time": "03:30",
+      "end_time": "04:30",
+      "display_name": "So Juice"
+    },
+    {
+      "date": "2025-06-14",
+      "stage": "Satélite",
+      "start_time": "05:00",
+      "end_time": "06:00",
+      "display_name": "Kruelty"
+    }
+  ],
+  "sources": [
+    {
+      "key": "ra_2025",
+      "name": "Resident Advisor - NEXUS FESTIVAL 2025 en Fabrik",
+      "url": "https://ra.co/events/2144195",
+      "confidence": "high"
+    },
+    {
+      "key": "clashfinder_2025",
+      "name": "Clashfinder - Nexus Festival 2025 timetable",
+      "url": "https://clashfinder.com/m/nexusfabrik2025/",
+      "confidence": "medium"
+    },
+    {
+      "key": "vicious_2025",
+      "name": "Vicious Magazine - Nexus Festival 2025 vuelve a FABRIK",
+      "url": "https://viciousmagazine.com/news/nexus-festival-2025/",
+      "confidence": "medium"
+    },
+    {
+      "key": "madridsecreto_2025",
+      "name": "Madrid Secreto - Nexus Festival 2025",
+      "url": "https://madridsecreto.co/entradas-nexus-festival-fabrik-musica-hard/",
+      "confidence": "medium"
+    },
+    {
+      "key": "elgeneracional_2025",
+      "name": "El Generacional - Nexus Festival 2025",
+      "url": "https://elgeneracionalpost.com/cultura/musica/2025/0606/226237/vuelve-nexus-festival-2025-dos-dias-70-djs-y-13-escenarios-para-rendir-culto-a-la-musica-hard-en-fabrik.html",
+      "confidence": "medium"
+    }
+  ],
+  "notes": "The seed estimate is aggregate across the weekend, not unique individuals."
 }

@@ -1,4 +1,127 @@
 {
   "description": "Manual corrections for aliases, subgenres, show names and special performances.",
-  "artists": []
+  "aliases": [
+    {
+      "raw_name": "Dr. Peacock",
+      "canonical_name": "Dr. Peacock"
+    },
+    {
+      "raw_name": "Peacock",
+      "canonical_name": "Dr. Peacock",
+      "reason": "2026 poster shortens the name."
+    },
+    {
+      "raw_name": "tnt",
+      "canonical_name": "TNT"
+    },
+    {
+      "raw_name": "Technoboy & Tuneboy",
+      "canonical_name": "TNT"
+    },
+    {
+      "raw_name": "TNT aka Technoboy and Tuneboy",
+      "canonical_name": "TNT"
+    },
+    {
+      "raw_name": "Unicorn on Keta",
+      "canonical_name": "Unicorn On Ketamine"
+    },
+    {
+      "raw_name": "D-BLOCK AND S-TE-FAN",
+      "canonical_name": "D-Block & S-Te-Fan"
+    },
+    {
+      "raw_name": "D-Block & S-te-Fan",
+      "canonical_name": "D-Block & S-Te-Fan"
+    },
+    {
+      "raw_name": "F.Noize",
+      "canonical_name": "F. Noize"
+    },
+    {
+      "raw_name": "F.Noize Classics Uptempo",
+      "canonical_name": "F. Noize"
+    },
+    {
+      "raw_name": "Vicente OMT",
+      "canonical_name": "Vicente One More Time"
+    }
+  ],
+  "special_performances": [
+    {
+      "display_name": "Project One",
+      "canonical_artists": [
+        "Headhunterz",
+        "Wildstylez"
+      ],
+      "type": "duo_project",
+      "manual_review": true
+    },
+    {
+      "display_name": "Slaughterhouse",
+      "canonical_artists": [
+        "Deadly Guns",
+        "N-Vitral"
+      ],
+      "type": "duo_project",
+      "manual_review": true
+    },
+    {
+      "display_name": "N-Vitral Bombsquad",
+      "canonical_artists": [
+        "N-Vitral"
+      ],
+      "type": "live_or_collective",
+      "manual_review": true
+    },
+    {
+      "display_name": "Spoontech Legacy by Faceless",
+      "canonical_artists": [
+        "Faceless"
+      ],
+      "type": "label_show",
+      "manual_review": true
+    },
+    {
+      "display_name": "Peacock In Concert",
+      "canonical_artists": [
+        "Dr. Peacock"
+      ],
+      "type": "special_show",
+      "manual_review": true
+    },
+    {
+      "display_name": "The Gang",
+      "canonical_artists": [
+        "Rooler",
+        "Sickmode"
+      ],
+      "type": "duo_project",
+      "manual_review": true
+    },
+    {
+      "display_name": "Tweekacore by Da Tweekaz",
+      "canonical_artists": [
+        "Da Tweekaz"
+      ],
+      "type": "special_show",
+      "manual_review": true
+    }
+  ],
+  "genre_taxonomy_seed": [
+    "Hardstyle",
+    "Euphoric Hardstyle",
+    "Rawstyle",
+    "Xtra Raw",
+    "Hardcore",
+    "Uptempo Hardcore",
+    "Frenchcore",
+    "Industrial Hardcore",
+    "Terror / Speedcore",
+    "Freestyle / Hard Dance",
+    "Classic / Legacy Hardstyle",
+    "Happy Hardcore",
+    "MC / Host",
+    "Unknown"
+  ]
 }

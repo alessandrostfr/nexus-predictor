@@ -1,0 +1,195 @@
+{
+  "sources": {
+    "ra_2022": {
+      "name": "Resident Advisor - NEXUS Festival 2022",
+      "url": "https://ra.co/events/1528693",
+      "confidence": "high",
+      "supports": [
+        "date",
+        "venue",
+        "lineup",
+        "ticket_cost",
+        "age_requirement"
+      ]
+    },
+    "allmusic_2022": {
+      "name": "All Music Spain - Fabrik presenta Nexus Hard Music Festival 2022",
+      "url": "https://allmusicspain.com/noticias/fabrik-presenta-nexus-hard-music-festival/",
+      "confidence": "medium",
+      "supports": [
+        "six_areas",
+        "early_ticket_demand",
+        "expected_full_house"
+      ]
+    },
+    "ra_2023": {
+      "name": "Resident Advisor - Nexus Festival 2023",
+      "url": "https://ra.co/events/1675047",
+      "confidence": "high",
+      "supports": [
+        "date",
+        "venue",
+        "lineup",
+        "ticket_cost"
+      ]
+    },
+    "ra_2024": {
+      "name": "Resident Advisor - Nexus Festival 2024",
+      "url": "https://ra.co/events/1849010",
+      "confidence": "high",
+      "supports": [
+        "date",
+        "venue",
+        "lineup",
+        "ticket_cost"
+      ]
+    },
+    "wololo_2024_chronicle": {
+      "name": "Wololo Sound - Crónica Nexus Festival 2024",
+      "url": "https://wololosound.com/cronicas/nexus-festival-2024-cronica/",
+      "confidence": "medium",
+      "supports": [
+        "two_day_format",
+        "areas_used",
+        "qualitative_success",
+        "event_context"
+      ]
+    },
+    "ra_2025": {
+      "name": "Resident Advisor - NEXUS FESTIVAL 2025 en Fabrik",
+      "url": "https://ra.co/events/2144195",
+      "confidence": "high",
+      "supports": [
+        "date",
+        "venue",
+        "lineup",
+        "22_hours",
+        "13_stages",
+        "stage_context"
+      ]
+    },
+    "clashfinder_2025": {
+      "name": "Clashfinder - Nexus Festival 2025 timetable",
+      "url": "https://clashfinder.com/m/nexusfabrik2025/",
+      "confidence": "medium",
+      "supports": [
+        "timetable",
+        "stages",
+        "set_times"
+      ]
+    },
+    "vicious_2025": {
+      "name": "Vicious Magazine - Nexus Festival 2025 vuelve a FABRIK",
+      "url": "https://viciousmagazine.com/news/nexus-festival-2025/",
+      "confidence": "medium",
+      "supports": [
+        "fourth_edition",
+        "70_plus_artists",
+        "13_stages",
+        "22_hours",
+        "stage_context"
+      ]
+    },
+    "madridsecreto_2025": {
+      "name": "Madrid Secreto - Nexus Festival 2025",
+      "url": "https://madridsecreto.co/entradas-nexus-festival-fabrik-musica-hard/",
+      "confidence": "medium",
+      "supports": [
+        "70_artists",
+        "22_hours",
+        "13_stages",
+        "day_stage_breakdown"
+      ]
+    },
+    "elgeneracional_2025": {
+      "name": "El Generacional - Nexus Festival 2025",
+      "url": "https://elgeneracionalpost.com/cultura/musica/2025/0606/226237/vuelve-nexus-festival-2025-dos-dias-70-djs-y-13-escenarios-para-rendir-culto-a-la-musica-hard-en-fabrik.html",
+      "confidence": "medium",
+      "supports": [
+        "70_djs",
+        "13_stages",
+        "22_hours",
+        "thousands_of_attendees_signal"
+      ]
+    },
+    "fever_2026": {
+      "name": "Fever - NEXUS FESTIVAL 2026 at FABRIK",
+      "url": "https://feverup.com/m/520276/en",
+      "confidence": "high",
+      "supports": [
+        "date",
+        "time",
+        "venue",
+        "fifth_edition",
+        "genres",
+        "ticket_tiers"
+      ]
+    },
+    "rebel_2026": {
+      "name": "Rebel Tickets - Nexus Festival 2026",
+      "url": "https://www.rebeltickets.es/madrid/event/entradas-nexus-festival-2026",
+      "confidence": "medium",
+      "supports": [
+        "more_than_60_djs",
+        "confirmed_artists_signal",
+        "fifth_edition_context"
+      ]
+    },
+    "user_2026_poster": {
+      "name": "User-provided 2026 lineup poster",
+      "url": null,
+      "confidence": "medium",
+      "supports": [
+        "full_2026_lineup_extraction"
+      ]
+    },
+    "fabrik_official_main_room": {
+      "name": "Fabrik Madrid official area page - Main Room",
+      "url": "https://www.fabrikmadrid.com/areas/main-room",
+      "confidence": "high",
+      "supports": [
+        "venue_address",
+        "general_capacity_over_4000",
+        "main_room_area19_rooms"
+      ]
+    },
+    "tuplandefiesta_fabrik": {
+      "name": "Tu Plan de Fiesta - Fabrik Madrid",
+      "url": "https://tuplandefiesta.com/discotecas-madrid/fabrik-madrid/",
+      "confidence": "medium",
+      "supports": [
+        "main_room_over_4000",
+        "seven_spaces",
+        "room_names",
+        "bresh_10000_signal"
+      ]
+    },
+    "madridsecreto_fabrik": {
+      "name": "Madrid Secreto - Fabrik en números",
+      "url": "https://madridsecreto.co/fabrik-listado-mejor-club-discoteca-mundo/",
+      "confidence": "medium",
+      "supports": [
+        "hangar_2000_capacity",
+        "seven_areas",
+        "main_room_surface"
+      ]
+    },
+    "ra_fabrik": {
+      "name": "Resident Advisor - Fabrik venue",
+      "url": "https://ra.co/clubs/1963",
+      "confidence": "medium",
+      "supports": [
+        "venue_capacity_4000"
+      ]
+    },
+    "wikiedm_2023_pending_manual_source": {
+      "name": "WikiEDM - Fabrik se reivindica con Nexus Festival",
+      "url": "https://wikiedm.com/fabrik-se-reivindica-con-nexus-festival/",
+      "confidence": "low",
+      "supports": [
+        "qualitative_attendance_thousands",
+        "second_edition_context"
+      ]
+    }
+  }
+}

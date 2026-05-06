@@ -1,17 +1,1087 @@
 {
   "year": 2024,
   "name": "Nexus Festival 2024",
-  "status": "placeholder_pending_research",
+  "edition_number": 3,
+  "status": "researched_seed",
   "venue": "Fabrik Madrid",
-  "date_start": null,
-  "date_end": null,
-  "attendance": {
-    "estimated": null,
-    "source_url": null,
-    "confidence": "pending"
+  "city": "Humanes de Madrid, Madrid",
+  "date_start": "2024-06-14",
+  "date_end": "2024-06-16",
+  "time_start": "22:00",
+  "time_end": "06:00",
+  "duration_hours": 32,
+  "stage_count": {
+    "confirmed": 7,
+    "confidence": "medium"
   },
-  "stages": [],
-  "lineup": [],
-  "sources": [],
-  "notes": "This file will be completed during Block 1 with verified public sources."
+  "artist_count": 85,
+  "attendance": {
+    "confirmed_total": null,
+    "estimated_low": 9000,
+    "estimated_mid": 12000,
+    "estimated_high": 15000,
+    "confidence": "low",
+    "method": "Weekend aggregate seed range inferred from two-day format, seven-area signal and expanded lineup. Not a confirmed attendance figure.",
+    "signals": [
+      {
+        "type": "format_growth",
+        "value": "jump to two-day weekend format",
+        "source_key": "wololo_2024_chronicle"
+      },
+      {
+        "type": "lineup_depth",
+        "value": 85,
+        "source_key": "ra_2024"
+      }
+    ]
+  },
+  "lineup": [
+    {
+      "display_name": "Adrenalize",
+      "artists": [
+        "Adrenalize"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Chaos Poison",
+      "artists": [
+        "Chaos Poison"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "DJ Balas",
+      "artists": [
+        "DJ Balas"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dr. Peacock b2b Sefa",
+      "artists": [
+        "Dr. Peacock",
+        "Sefa"
+      ],
+      "performance_type": "b2b",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ender",
+      "artists": [
+        "Ender"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Gunz for Hire",
+      "artists": [
+        "Gunz for Hire"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Hermanos Kapiya",
+      "artists": [
+        "Hermanos Kapiya"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Juandy Power",
+      "artists": [
+        "Juandy Power"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Korsakoff b2b Re-Style (Millennium Set)",
+      "artists": [
+        "Korsakoff",
+        "Re-Style"
+      ],
+      "performance_type": "b2b",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Lunakorpz",
+      "artists": [
+        "Lunakorpz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mad Dog",
+      "artists": [
+        "Mad Dog"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mandy",
+      "artists": [
+        "Mandy"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Manifest Destiny",
+      "artists": [
+        "Manifest Destiny"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Miss Tempo",
+      "artists": [
+        "Miss Tempo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mr Pain",
+      "artists": [
+        "Mr Pain"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ogalla",
+      "artists": [
+        "Ogalla"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Papero b2b Tony Massama",
+      "artists": [
+        "Papero",
+        "Tony Massama"
+      ],
+      "performance_type": "b2b",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Paul Elstak",
+      "artists": [
+        "Paul Elstak"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ran-D",
+      "artists": [
+        "Ran-D"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ravelove by Sickmode & Mish",
+      "artists": [
+        "Ravelove"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": true
+    },
+    {
+      "display_name": "Sound Rush",
+      "artists": [
+        "Sound Rush"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Purge",
+      "artists": [
+        "The Purge"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Timmy Trumpet",
+      "artists": [
+        "Timmy Trumpet"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Tweekacore by Da Tweekaz",
+      "artists": [
+        "Tweekacore"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": true
+    },
+    {
+      "display_name": "Wakan",
+      "artists": [
+        "Wakan"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Adaro",
+      "artists": [
+        "Adaro"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Alpha Twins",
+      "artists": [
+        "Alpha Twins"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Andy The Core",
+      "artists": [
+        "Andy The Core"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Angerfist",
+      "artists": [
+        "Angerfist"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Asfixia",
+      "artists": [
+        "Asfixia"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Brennan Heart presents Blademasterz",
+      "artists": [
+        "Brennan Heart"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": true
+    },
+    {
+      "display_name": "Broken Minds",
+      "artists": [
+        "Broken Minds"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Code Black",
+      "artists": [
+        "Code Black"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Coone",
+      "artists": [
+        "Coone"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Cryogenic",
+      "artists": [
+        "Cryogenic"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "D-Block & S-Te-Fan",
+      "artists": [
+        "D-Block",
+        "S-Te-Fan"
+      ],
+      "performance_type": "collaboration",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "D-Fence",
+      "artists": [
+        "D-Fence"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Da Tweekaz",
+      "artists": [
+        "Da Tweekaz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Davide Sonar",
+      "artists": [
+        "Davide Sonar"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Devin Wild",
+      "artists": [
+        "Devin Wild"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dimitri K",
+      "artists": [
+        "Dimitri K"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Drokz",
+      "artists": [
+        "Drokz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dual Damage",
+      "artists": [
+        "Dual Damage"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Endymion",
+      "artists": [
+        "Endymion"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "F.Noize Classics Uptempo",
+      "artists": [
+        "F.Noize Classics Uptempo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Jimmy The Sound",
+      "artists": [
+        "Jimmy The Sound"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Kaöss",
+      "artists": [
+        "Kaöss"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Keltek",
+      "artists": [
+        "Keltek"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Krowdexx",
+      "artists": [
+        "Krowdexx"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Lil Texas",
+      "artists": [
+        "Lil Texas"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "LNY TNZ",
+      "artists": [
+        "LNY TNZ"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Major Conspiracy",
+      "artists": [
+        "Major Conspiracy"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mark With A K & MC Chuky",
+      "artists": [
+        "Mark With A K",
+        "MC Chuky"
+      ],
+      "performance_type": "collaboration",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "MBK",
+      "artists": [
+        "MBK"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mish",
+      "artists": [
+        "Mish"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Miss K8",
+      "artists": [
+        "Miss K8"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Noisecontrollers",
+      "artists": [
+        "Noisecontrollers"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "NRG Showcase",
+      "artists": [
+        "NRG Showcase"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Omnya",
+      "artists": [
+        "Omnya"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Pavo",
+      "artists": [
+        "Pavo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Peacock In Concert",
+      "artists": [
+        "Peacock In Concert"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": true
+    },
+    {
+      "display_name": "Phuture Noize",
+      "artists": [
+        "Phuture Noize"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Pinotello",
+      "artists": [
+        "Pinotello"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Re-Style",
+      "artists": [
+        "Re-Style"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rebelion presents Overdose: The Final Dose",
+      "artists": [
+        "Rebelion"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": true
+    },
+    {
+      "display_name": "Reborn",
+      "artists": [
+        "Reborn"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Remzcore",
+      "artists": [
+        "Remzcore"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rooler",
+      "artists": [
+        "Rooler"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ruly & Traka (Hardcore Classics)",
+      "artists": [
+        "Ruly",
+        "Traka"
+      ],
+      "performance_type": "collaboration",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Russian Village Boys",
+      "artists": [
+        "Russian Village Boys"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sanctuary",
+      "artists": [
+        "Sanctuary"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sefa",
+      "artists": [
+        "Sefa"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sickmode",
+      "artists": [
+        "Sickmode"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Taika",
+      "artists": [
+        "Taika"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Dark Horror",
+      "artists": [
+        "The Dark Horror"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Enlightenment by B-Front & Phuture Noize",
+      "artists": [
+        "The Enlightenment"
+      ],
+      "performance_type": "special_show",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": true
+    },
+    {
+      "display_name": "The Gang Live",
+      "artists": [
+        "The Gang Live"
+      ],
+      "performance_type": "live",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": true
+    },
+    {
+      "display_name": "Toza",
+      "artists": [
+        "Toza"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Unicorn On Keta",
+      "artists": [
+        "Unicorn On Keta"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Unproven",
+      "artists": [
+        "Unproven"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Vandal",
+      "artists": [
+        "Vandal"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Vertile",
+      "artists": [
+        "Vertile"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Vicente One More Time",
+      "artists": [
+        "Vicente One More Time"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Wildstylez",
+      "artists": [
+        "Wildstylez"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    },
+    {
+      "display_name": "Yeyo",
+      "artists": [
+        "Yeyo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2024",
+      "manual_review": false
+    }
+  ],
+  "sources": [
+    {
+      "key": "ra_2024",
+      "name": "Resident Advisor - Nexus Festival 2024",
+      "url": "https://ra.co/events/1849010",
+      "confidence": "high"
+    },
+    {
+      "key": "wololo_2024_chronicle",
+      "name": "Wololo Sound - Crónica Nexus Festival 2024",
+      "url": "https://wololosound.com/cronicas/nexus-festival-2024-cronica/",
+      "confidence": "medium"
+    },
+    {
+      "key": "fabrik_official_main_room",
+      "name": "Fabrik Madrid official area page - Main Room",
+      "url": "https://www.fabrikmadrid.com/areas/main-room",
+      "confidence": "high"
+    }
+  ],
+  "notes": "The seed estimate is aggregate across the weekend, not unique individuals."
 }

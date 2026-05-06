@@ -1,17 +1,495 @@
 {
   "year": 2023,
   "name": "Nexus Festival 2023",
-  "status": "placeholder_pending_research",
+  "edition_number": 2,
+  "status": "researched_seed",
   "venue": "Fabrik Madrid",
-  "date_start": null,
-  "date_end": null,
-  "attendance": {
-    "estimated": null,
-    "source_url": null,
-    "confidence": "pending"
+  "city": "Humanes de Madrid, Madrid",
+  "date_start": "2023-06-10",
+  "date_end": "2023-06-11",
+  "time_start": "18:00",
+  "time_end": "06:00",
+  "duration_hours": 12,
+  "stage_count": {
+    "confirmed": null,
+    "estimated": 6,
+    "confidence": "low"
   },
-  "stages": [],
-  "lineup": [],
-  "sources": [],
-  "notes": "This file will be completed during Block 1 with verified public sources."
+  "artist_count": 36,
+  "attendance": {
+    "confirmed_total": null,
+    "estimated_low": 4500,
+    "estimated_mid": 5800,
+    "estimated_high": 7500,
+    "confidence": "low",
+    "method": "Seed range inferred from second-edition growth, RA lineup size, and public Fabrik capacity ranges. Not a confirmed attendance figure.",
+    "signals": [
+      {
+        "type": "qualitative_attendance",
+        "value": "coverage describes thousands of people attending",
+        "source_key": "wikiedm_2023_pending_manual_source"
+      },
+      {
+        "type": "lineup_depth",
+        "value": 36,
+        "source_key": "ra_2023"
+      }
+    ]
+  },
+  "lineup": [
+    {
+      "display_name": "Act of Rage",
+      "artists": [
+        "Act of Rage"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Angerfist",
+      "artists": [
+        "Angerfist"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ben Nicky",
+      "artists": [
+        "Ben Nicky"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Billx",
+      "artists": [
+        "Billx"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Chaotic Hostility",
+      "artists": [
+        "Chaotic Hostility"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "D-Block & S-Te-Fan",
+      "artists": [
+        "D-Block",
+        "S-Te-Fan"
+      ],
+      "performance_type": "collaboration",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "D-Fence",
+      "artists": [
+        "D-Fence"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "D-Strub",
+      "artists": [
+        "D-Strub"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Da Tweekaz",
+      "artists": [
+        "Da Tweekaz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Deadly Guns",
+      "artists": [
+        "Deadly Guns"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "DJ The Prophet",
+      "artists": [
+        "DJ The Prophet"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Dr. Peacock",
+      "artists": [
+        "Dr. Peacock"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "DRS",
+      "artists": [
+        "DRS"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Floxytek",
+      "artists": [
+        "Floxytek"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Furyan",
+      "artists": [
+        "Furyan"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "GPF",
+      "artists": [
+        "GPF"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "JKLL",
+      "artists": [
+        "JKLL"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Killshot",
+      "artists": [
+        "Killshot"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Mad Dog",
+      "artists": [
+        "Mad Dog"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Malice",
+      "artists": [
+        "Malice"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Ncrypta",
+      "artists": [
+        "Ncrypta"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Radical Redemption",
+      "artists": [
+        "Radical Redemption"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Re-Style",
+      "artists": [
+        "Re-Style"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Rebelion",
+      "artists": [
+        "Rebelion"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Reborn",
+      "artists": [
+        "Reborn"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sefa",
+      "artists": [
+        "Sefa"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sound Rush",
+      "artists": [
+        "Sound Rush"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Sub Zero Project Live",
+      "artists": [
+        "Sub Zero Project Live"
+      ],
+      "performance_type": "live",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Tatanka",
+      "artists": [
+        "Tatanka"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Tha Playah",
+      "artists": [
+        "Tha Playah"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "The Gang (Rooler & Sickmode)",
+      "artists": [
+        "The Gang"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": true
+    },
+    {
+      "display_name": "The Straikerz",
+      "artists": [
+        "The Straikerz"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Vicente One More Time",
+      "artists": [
+        "Vicente One More Time"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Wild Motherfuckers",
+      "artists": [
+        "Wild Motherfuckers"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Yeyo",
+      "artists": [
+        "Yeyo"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    },
+    {
+      "display_name": "Zatox",
+      "artists": [
+        "Zatox"
+      ],
+      "performance_type": "solo",
+      "stage": null,
+      "start_time": null,
+      "end_time": null,
+      "source_key": "ra_2023",
+      "manual_review": false
+    }
+  ],
+  "sources": [
+    {
+      "key": "ra_2023",
+      "name": "Resident Advisor - Nexus Festival 2023",
+      "url": "https://ra.co/events/1675047",
+      "confidence": "high"
+    },
+    {
+      "key": "fabrik_official_main_room",
+      "name": "Fabrik Madrid official area page - Main Room",
+      "url": "https://www.fabrikmadrid.com/areas/main-room",
+      "confidence": "high"
+    },
+    {
+      "key": "wikiedm_2023_pending_manual_source",
+      "name": "WikiEDM - Fabrik se reivindica con Nexus Festival",
+      "url": "https://wikiedm.com/fabrik-se-reivindica-con-nexus-festival/",
+      "confidence": "low"
+    }
+  ],
+  "notes": "A qualitative source mentions thousands of people but no exact attendance was found during this pass."
 }

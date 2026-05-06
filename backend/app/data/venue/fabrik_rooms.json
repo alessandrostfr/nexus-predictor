@@ -1,31 +1,153 @@
 {
   "venue": "Fabrik Madrid",
-  "status": "placeholder_pending_research",
+  "status": "researched_seed",
+  "address": "Av. de la Industria, 82, 28970 Humanes de Madrid, Madrid, Spain",
+  "capacity_summary": {
+    "confirmed_exact_total": null,
+    "public_capacity_range_low": 4000,
+    "public_capacity_range_mid": 7000,
+    "public_capacity_range_high": 10000,
+    "confidence": "medium",
+    "notes": "Public sources conflict: official/RA-style references support 4000+ capacity, other venue listings describe 6000-7000+, and press mentions a 10000-person Bresh event. Treat total capacity as configuration-dependent."
+  },
   "rooms": [
     {
       "name": "Main Room",
-      "min_capacity": null,
-      "estimated_capacity": null,
-      "max_capacity": null,
-      "confidence": "pending",
-      "source_url": null
-    },
-    {
-      "name": "Satellite",
-      "min_capacity": null,
-      "estimated_capacity": null,
-      "max_capacity": null,
-      "confidence": "pending",
-      "source_url": null
+      "aliases": [
+        "Main",
+        "Sala Principal"
+      ],
+      "min_capacity": 4000,
+      "estimated_capacity": 5000,
+      "max_capacity": 7000,
+      "confidence": "medium",
+      "source_keys": [
+        "fabrik_official_main_room",
+        "tuplandefiesta_fabrik",
+        "ra_fabrik"
+      ],
+      "notes": "Several public references describe the main room or venue around 4000+ to 7000+ capacity; verify exact licensed configuration before final prediction."
     },
     {
       "name": "Hangar",
-      "min_capacity": null,
-      "estimated_capacity": null,
-      "max_capacity": null,
-      "confidence": "pending",
-      "source_url": null
+      "aliases": [
+        "The Hangar"
+      ],
+      "min_capacity": 1500,
+      "estimated_capacity": 2000,
+      "max_capacity": 2500,
+      "confidence": "medium",
+      "source_keys": [
+        "madridsecreto_fabrik"
+      ],
+      "notes": "Madrid Secreto references Hangar capacity around 2000 people."
+    },
+    {
+      "name": "Area 19",
+      "aliases": [
+        "Área 19"
+      ],
+      "min_capacity": 1200,
+      "estimated_capacity": 2200,
+      "max_capacity": 3200,
+      "confidence": "low",
+      "source_keys": [
+        "fabrik_official_main_room",
+        "tuplandefiesta_fabrik"
+      ],
+      "notes": "Known area name appears in public sources, but exact capacity was not verified in this pass."
+    },
+    {
+      "name": "Satélite",
+      "aliases": [
+        "Satellite",
+        "Satelite",
+        "Satélite Area"
+      ],
+      "min_capacity": 900,
+      "estimated_capacity": 1500,
+      "max_capacity": 3000,
+      "confidence": "low",
+      "source_keys": [
+        "tuplandefiesta_fabrik"
+      ],
+      "notes": "Public sources confirm the area exists; exact capacity remains pending."
+    },
+    {
+      "name": "Club 360º",
+      "aliases": [
+        "Club",
+        "Club Area"
+      ],
+      "min_capacity": 700,
+      "estimated_capacity": 1300,
+      "max_capacity": 2000,
+      "confidence": "low",
+      "source_keys": [
+        "tuplandefiesta_fabrik",
+        "clashfinder_2025"
+      ],
+      "notes": "Used for MISS K8 all-night-long in 2025 timetable. Capacity is an editable seed."
+    },
+    {
+      "name": "New Crystal",
+      "aliases": [
+        "Crystal",
+        "Cristal",
+        "Crystal Dome"
+      ],
+      "min_capacity": 300,
+      "estimated_capacity": 700,
+      "max_capacity": 1000,
+      "confidence": "low",
+      "source_keys": [
+        "tuplandefiesta_fabrik",
+        "clashfinder_2025"
+      ],
+      "notes": "Confirmed as one of the named areas; exact capacity pending."
+    },
+    {
+      "name": "Open Air",
+      "aliases": [
+        "Terraza",
+        "Open Air / Terraza"
+      ],
+      "min_capacity": 1200,
+      "estimated_capacity": 2500,
+      "max_capacity": 4000,
+      "confidence": "low",
+      "source_keys": [
+        "tuplandefiesta_fabrik",
+        "madridsecreto_fabrik",
+        "clashfinder_2025"
+      ],
+      "notes": "Outdoor/terrace configuration is especially event-dependent."
     }
   ],
-  "notes": "Room names and capacities will be verified during the research block."
+  "sources": [
+    {
+      "key": "fabrik_official_main_room",
+      "name": "Fabrik Madrid official area page - Main Room",
+      "url": "https://www.fabrikmadrid.com/areas/main-room",
+      "confidence": "high"
+    },
+    {
+      "key": "tuplandefiesta_fabrik",
+      "name": "Tu Plan de Fiesta - Fabrik Madrid",
+      "url": "https://tuplandefiesta.com/discotecas-madrid/fabrik-madrid/",
+      "confidence": "medium"
+    },
+    {
+      "key": "madridsecreto_fabrik",
+      "name": "Madrid Secreto - Fabrik en números",
+      "url": "https://madridsecreto.co/fabrik-listado-mejor-club-discoteca-mundo/",
+      "confidence": "medium"
+    },
+    {
+      "key": "ra_fabrik",
+      "name": "Resident Advisor - Fabrik venue",
+      "url": "https://ra.co/clubs/1963",
+      "confidence": "medium"
+    }
+  ]
 }
