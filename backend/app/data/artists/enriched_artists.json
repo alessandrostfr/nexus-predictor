@@ -1,0 +1,43 @@
+{
+  "last_updated_at": null,
+  "notes": "Block 3 cache. External API refreshes append/replace artist profile data here. The initial entries are safe internal seed profiles, not a complete external metadata dump.",
+  "profiles": {
+    "angerfist": {
+      "bio": "Internal seed profile: Angerfist appears across the researched Nexus dataset and is marked as a Hardcore artist seed. External bio, image, top tracks and latest releases remain pending until API enrichment is enabled.",
+      "bio_source_url": null,
+      "data_status": "seed_profile_pending_external_metadata",
+      "enrichment_notes": [
+        "Seed profile generated from the internal Nexus lineup dataset.",
+        "Run the refresh endpoint or script with external API keys to populate image, public bio, top tracks and releases."
+      ],
+      "sources": [
+        {
+          "captured_at": null,
+          "confidence": "high",
+          "notes": "Based on the internal artist index generated in Block 1.",
+          "source": "internal_nexus_dataset",
+          "source_url": null
+        }
+      ]
+    },
+    "project-one": {
+      "bio": "Internal seed profile: Project One is a special 2026 artist entry associated with the hardstyle project in the Nexus dataset. External metadata remains pending until API enrichment is enabled.",
+      "bio_source_url": null,
+      "data_status": "seed_profile_pending_external_metadata",
+      "enrichment_notes": [
+        "Seed profile generated from the internal Nexus lineup dataset.",
+        "Project/show relationships are handled separately from external artist search to avoid bad API matches."
+      ],
+      "sources": [
+        {
+          "captured_at": null,
+          "confidence": "high",
+          "notes": "Based on the internal artist index and manual overrides generated in Block 1.",
+          "source": "internal_nexus_dataset",
+          "source_url": null
+        }
+      ]
+    }
+  },
+  "status": "artist_enrichment_cache"
+}

@@ -2,7 +2,7 @@
 
 ## Active block
 
-Block 0 - Environment, structure, Git and GitHub.
+Block 3 - Artist enrichment.
 
 ## Methodology
 
@@ -12,6 +12,16 @@ Block 0 - Environment, structure, Git and GitHub.
 - Close every block with a Git commit.
 - Report the accumulated estimated project percentage after every block.
 
+## Current block scope
+
+Block 3 adds the artist enrichment foundation:
+
+- Spotify client for image, links, top tracks and latest releases when credentials are configured.
+- Last.fm client for public bio, top tracks, listeners and playcount when an API key is configured.
+- MusicBrainz client for aliases, country and release metadata.
+- Local JSON cache at `backend/app/data/artists/enriched_artists.json`.
+- Artist profile API ready for the frontend.
+
 ## Next block
 
-Block 1 - Historical research and dataset foundation.
+Block 4 - Subgenre classification.
