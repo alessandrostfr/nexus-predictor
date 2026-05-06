@@ -1,14 +1,12 @@
-import { Inbox } from 'lucide-react';
+import { CircleDashed } from 'lucide-react';
 
-// Reusable empty state for shell screens that will be completed in later blocks.
-export function EmptyPanel({ title, description }) {
+// Friendly empty state for missing API, missing enrichment or empty filters.
+export function EmptyPanel({ title = 'Sin datos disponibles', message }) {
   return (
-    <article className="empty-panel">
-      <span className="empty-panel-icon">
-        <Inbox size={20} />
-      </span>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </article>
+    <div className="empty-panel">
+      <CircleDashed size={20} />
+      <strong>{title}</strong>
+      {message ? <p>{message}</p> : null}
+    </div>
   );
 }

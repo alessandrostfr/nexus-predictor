@@ -1,4 +1,4 @@
-// Generic glass card used across the dashboard shell.
+// Generic glass card used across the app.
 export function ShellCard({ eyebrow, title, description, children, className = '' }) {
   return (
     <section className={`shell-card ${className}`.trim()}>

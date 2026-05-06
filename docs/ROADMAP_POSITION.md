@@ -1,34 +1,38 @@
-# Current roadmap position
+# Nexus Predictor - Roadmap position
 
-## Closed blocks
+## Current closed blocks
 
 - Block 0 - Environment, structure, Git and GitHub.
-- Block 1 - Historical Nexus and Fabrik dataset foundation.
+- Block 1 - Historical Nexus and Fabrik dataset.
 - Block 2 - FastAPI backend foundation.
 - Block 3 - Artist enrichment foundation.
 - Block 4 - Hard dance subgenre classification.
-- Block 5 - Demand and attendance prediction engine.
+- Block 5 - Predictive scoring and attendance engine.
+- Block 6 - Minimalist responsive React shell.
 
 ## Current block scope
 
-Block 6 builds the minimalist responsive React shell:
+Block 7 turns the frontend shell into a useful dashboard:
 
-- Mobile-first dark visual system.
-- App layout and navigation.
-- Reusable frontend cards and empty/loading/error states.
-- Centralized API client for shell-level backend data.
-- Prepared screens for dashboard, data and prediction views.
+- Edition selector for 2022-2026.
+- Edition dashboard with lineup, attendance, genre distribution and highlighted artists.
+- Demand ranking with genre and search filters.
+- Individual artist profile page.
+- Historical appearance comparison.
+- Safe empty states for missing bio, top tracks and latest releases.
 
-## Not included yet
+## Explicitly not included in this block
 
-The following items remain intentionally outside Block 6 and belong to later roadmap blocks:
+- Room pressure model.
+- Timetable import.
+- Stage/sala risk heatmap.
 
-- Full artist ranking UX.
-- Artist profile/detail pages.
-- Advanced filters and charts.
-- Room/timetable pressure model.
-- Deployment and final QA polish.
+Those belong to Block 8.
 
-## Next block
+## Commit
 
-Block 7 - Dashboard, rankings and artist profiles.
+`add artist profiles and historical comparisons`
+
+## Estimated progress after closing
+
+88%

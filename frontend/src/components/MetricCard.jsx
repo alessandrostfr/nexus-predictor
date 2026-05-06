@@ -1,4 +1,4 @@
-// Compact metric card. Values can be real API data or clear placeholders.
+// Compact metric card used across dashboard and profile pages.
 export function MetricCard({ icon: Icon, label, value, description, tone = 'default' }) {
   return (
     <article className={`metric-card metric-card-${tone}`}>

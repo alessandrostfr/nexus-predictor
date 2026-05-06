@@ -1,9 +1,9 @@
 // Central API client helpers for the React app.
-// The frontend talks only to this file, so endpoints stay easy to maintain.
+// Block 7 consumes the backend through this single file so endpoint changes stay localized.
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://127.0.0.1:8000/api';
 
-// Build a URL with optional query params while keeping empty values out.
+// Build a safe URL with optional query params while skipping empty filters.
 function buildUrl(path, params = {}) {
   const url = new URL(`${API_BASE_URL}${path}`);
 
@@ -16,7 +16,7 @@ function buildUrl(path, params = {}) {
   return url.toString();
 }
 
-// Shared fetch wrapper with consistent error messages for the UI.
+// Shared fetch wrapper with a consistent response shape for the UI.
 async function request(path, params) {
   const response = await fetch(buildUrl(path, params));
 
@@ -24,35 +24,63 @@ async function request(path, params) {
     throw new Error(`API request failed: ${response.status} ${response.statusText}`);
   }
 
-  return response.json();
+  const payload = await response.json();
+
+  if (payload?.success === false) {
+    throw new Error(payload.message ?? 'The API returned an unsuccessful response.');
+  }
+
+  return payload;
 }
 
-// Lightweight health check used by the shell connection banner.
 export async function getHealthStatus() {
   return request('/health');
 }
 
-// Edition list powers the shell year chips and validates historical data loading.
 export async function getEditions() {
   return request('/editions');
 }
 
-// Venue metadata is used only as a shell preview in Block 6.
+export async function getEdition(year) {
+  return request(`/editions/${year}`);
+}
+
+export async function getEditionLineup(year) {
+  return request(`/editions/${year}/lineup`);
+}
+
 export async function getFabrikVenue() {
   return request('/venue/fabrik');
 }
 
-// Genre list validates that the Block 4 classifier is reachable from React.
 export async function getGenres() {
   return request('/genres');
 }
 
-// Prediction endpoint validates that Block 5 can feed frontend cards.
-export async function getEditionPrediction(year, artistLimit = 6) {
+export async function getGenreTaxonomy() {
+  return request('/genres/taxonomy');
+}
+
+export async function getEditionGenreDistribution(year) {
+  return request(`/genres/editions/${year}`);
+}
+
+export async function getEditionPrediction(year, artistLimit = 12) {
   return request(`/predictions/${year}`, { artist_limit: artistLimit });
 }
 
-// Artist demand list is prepared for Block 7, but kept centralized now.
 export async function getArtistPredictions(year, params = {}) {
   return request(`/predictions/${year}/artists`, params);
+}
+
+export async function getArtistPrediction(year, slug) {
+  return request(`/predictions/${year}/artists/${slug}`);
+}
+
+export async function getArtistProfiles(params = {}) {
+  return request('/artist-profiles', params);
+}
+
+export async function getArtistProfile(slug) {
+  return request(`/artist-profiles/${slug}`);
 }
