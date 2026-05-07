@@ -1,8 +1,8 @@
 """Central API router.
 
 All endpoint modules are included here so `main.py` only has to register one
-router. V2.4 adds social/platform ingestion without changing existing V1/V2
-routes.
+router. V2.8 adds probable timetable prediction while keeping V1/V2 routes
+stable and clearly separated from future official timetable imports.
 """
 
 from fastapi import APIRouter
@@ -18,6 +18,7 @@ from app.api import (
     health,
     historical_timetables,
     predictions,
+    probable_timetables,
     room_risk,
     social_platforms,
     spotify,
@@ -38,4 +39,5 @@ api_router.include_router(evidence.router, prefix="/evidence", tags=["evidence-v
 api_router.include_router(spotify.router, prefix="/spotify", tags=["spotify-v2"])
 api_router.include_router(ingestion.router, prefix="/ingestion", tags=["ingestion-v2"])
 api_router.include_router(historical_timetables.router, prefix="/historical-timetables", tags=["historical-timetables-v2"])
+api_router.include_router(probable_timetables.router, prefix="/probable-timetables", tags=["probable-timetables-v2"])
 api_router.include_router(social_platforms.router, prefix="/social-platforms", tags=["social-platforms-v2"])

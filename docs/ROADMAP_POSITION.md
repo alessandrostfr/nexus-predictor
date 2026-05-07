@@ -1,58 +1,45 @@
-# Nexus Predictor V2 — Roadmap position
+# Nexus Predictor V2 - Roadmap position
 
-## Current status
+## Closed V2 blocks
 
-Closed through:
+- V2.0 - Foundations V2: PostgreSQL, Docker Compose, Alembic, settings and pipeline structure.
+- V2.1 - Evidence layer: sources, evidence, metrics, profiles, events and venue prestige.
+- V2.2 - Spotify real: artist cache, profile fields, popularity, releases and safe optional top-track handling.
+- V2.3 - External ingestion base: Prefect flow and external career/venue signals.
+- V2.4 - Social networks and music platforms: mixed JSON/CSV metrics and Last.fm top tracks.
+- V2.5 - Multi-genre classification: main genre, secondary genres, confidence and traceability.
+- V2.6 - Historical timetables 2022-2025: normalized slots and verified 2025 seven-room correction.
+- V2.7 - Demand and popularity model: evidence-backed score components and explanations.
 
-- V2.0 — Foundations V2
-- V2.1 — Evidence layer
-- V2.2 — Spotify real
-- V2.3 — External ingestion base
-- V2.4 — Social/music platforms
-- V2.5 — Multi-genre classification
-- V2.6 — Historical timetables 2022-2025
-- V2.7 — Demand and popularity model V2
+## Current block
 
-## Active result after this block
+**V2.8 — Predicción de horario probable 2026**
 
-V2.7 adds an evidence-backed demand model with:
+Delivered scope:
 
-- `popularity_score`
-- `career_score`
-- `momentum_score`
-- `nexus_affinity_score`
-- final `demand_score`
-- explainable features and factors per artist
-- fallback mode when external data is incomplete
-- persisted prediction snapshots
-- V1/V2 score comparison endpoints
+- Probable room/day/time assignment for the 2026 lineup.
+- Historical pattern learning from V2.6.
+- Demand-aware slot assignment from V2.7.
+- Confidence, probability and reasons per slot.
+- Explicit API contract that the timetable is predicted, not official.
+- Integrity checks for impossible overlaps, duplicate artists and invalid rooms.
 
 ## Next block
 
-**V2.8 — Probable 2026 timetable**
+**V2.9 — Generador de horario óptimo con 3 variantes**
 
 Planned scope:
 
-- use V2.7 demand scores and V2.6 historical slots
-- learn room/time patterns by year, room, genre, headliner slot and demand
-- generate a probable 2026 timetable
-- mark confidence and reasons per slot
-- distinguish prediction clearly from official timetable
+- Generate three optimized timetables: anti-crowding, balanced and fan experience.
+- Define constraints for rooms, capacities, genres, top artists and overlaps.
+- Use OR-Tools if it fits the final constraint model.
+- Expose comparable `crowding_score`, `conflict_score` and `experience_score`.
+- Keep V2.8 probable timetable separate from V2.9 optimized alternatives.
 
-## Methodology
+## Commit
 
-- Follow the V2 roadmap strictly.
-- Work one complete block per macropaso whenever reasonable.
-- Deliver a ZIP with a `nexus-predictor/` root folder.
-- Keep commits in English.
-- Keep evidence/source/confidence traceability.
-- Do not start frontend migration until V2.10.
-- Do not start schedule optimization until V2.9.
-
-## Commit for this block
-
-`build v2 demand prediction model`
+`predict probable 2026 timetable`
 
 ## Estimated progress after closing
 
-62%
+70% of Nexus Predictor V2.
