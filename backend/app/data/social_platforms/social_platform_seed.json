@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "block": "V2.4",
+    "description": "Editable seed for social networks and music-platform signals. Rows are intentionally traceable and most manual values start as low/medium confidence until reviewed.",
+    "last_updated": "2026-05-07"
+  },
+  "sources": [
+    {
+      "key": "v2_social_manual_profiles",
+      "name": "Manual social profile registry V2.4",
+      "source_type": "social_manual",
+      "base_url": null,
+      "confidence": "medium",
+      "extraction_method": "manual_seed",
+      "notes": "Editable JSON registry for official/candidate artist social profiles. Use confidence and notes to separate confirmed profiles from candidates."
+    },
+    {
+      "key": "v2_music_platform_manual_profiles",
+      "name": "Manual music-platform profile registry V2.4",
+      "source_type": "music_platform_manual",
+      "base_url": null,
+      "confidence": "medium",
+      "extraction_method": "manual_seed",
+      "notes": "Editable registry for SoundCloud, Apple Music, Beatport, 1001Tracklists, YouTube Music and other music-platform profiles."
+    },
+    {
+      "key": "lastfm_api",
+      "name": "Last.fm API",
+      "source_type": "music_platform",
+      "base_url": "https://www.last.fm/",
+      "confidence": "high",
+      "extraction_method": "api",
+      "notes": "Optional API source used in V2.4 to retrieve top tracks when Spotify top-tracks is unavailable."
+    }
+  ],
+  "artists": [
+    {
+      "artist_slug": "angerfist",
+      "social_profiles": [
+        {
+          "platform": "instagram",
+          "handle": "angerfistofficial",
+          "profile_url": "https://www.instagram.com/angerfistofficial/",
+          "follower_count": 870000,
+          "engagement_rate": 1.8,
+          "average_views": 140000,
+          "last_post_at": "2026-04-15T00:00:00",
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Manual V2.4 seed for validation. Review before treating as final."
+        },
+        {
+          "platform": "youtube",
+          "handle": "angerfistmusic",
+          "profile_url": "https://www.youtube.com/user/angerfistmusic",
+          "follower_count": 320000,
+          "engagement_rate": 1.2,
+          "average_views": 85000,
+          "last_post_at": "2026-03-20T00:00:00",
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Manual V2.4 seed for validation."
+        }
+      ],
+      "platform_profiles": [
+        {
+          "platform": "lastfm",
+          "profile_name": "Angerfist",
+          "profile_url": "https://www.last.fm/music/Angerfist",
+          "external_id": null,
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Last.fm profile seed; top tracks can be refreshed via API when LASTFM_API_KEY is set."
+        },
+        {
+          "platform": "soundcloud",
+          "profile_name": "Angerfist",
+          "profile_url": "https://soundcloud.com/angerfist",
+          "external_id": null,
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Manual music-platform seed."
+        },
+        {
+          "platform": "beatport",
+          "profile_name": "Angerfist",
+          "profile_url": "https://www.beatport.com/artist/angerfist/",
+          "external_id": null,
+          "is_official": false,
+          "confidence": "low",
+          "notes": "Candidate Beatport profile URL pattern; review manually."
+        }
+      ]
+    },
+    {
+      "artist_slug": "da-tweekaz",
+      "social_profiles": [
+        {
+          "platform": "instagram",
+          "handle": "datweekaz",
+          "profile_url": "https://www.instagram.com/datweekaz/",
+          "follower_count": 520000,
+          "engagement_rate": 2.1,
+          "average_views": 110000,
+          "last_post_at": "2026-04-10T00:00:00",
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Manual V2.4 seed for validation."
+        },
+        {
+          "platform": "tiktok",
+          "handle": "datweekaz",
+          "profile_url": "https://www.tiktok.com/@datweekaz",
+          "follower_count": 260000,
+          "engagement_rate": 3.4,
+          "average_views": 180000,
+          "last_post_at": "2026-04-18T00:00:00",
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Manual V2.4 seed for validation."
+        }
+      ],
+      "platform_profiles": [
+        {
+          "platform": "lastfm",
+          "profile_name": "Da Tweekaz",
+          "profile_url": "https://www.last.fm/music/Da+Tweekaz",
+          "external_id": null,
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Last.fm profile seed."
+        },
+        {
+          "platform": "apple_music",
+          "profile_name": "Da Tweekaz",
+          "profile_url": "https://music.apple.com/search?term=Da%20Tweekaz",
+          "external_id": null,
+          "is_official": false,
+          "confidence": "low",
+          "notes": "Search URL seed for manual review."
+        }
+      ]
+    },
+    {
+      "artist_slug": "sefa",
+      "social_profiles": [
+        {
+          "platform": "instagram",
+          "handle": "sefa_official",
+          "profile_url": "https://www.instagram.com/sefa_official/",
+          "follower_count": 410000,
+          "engagement_rate": 2.4,
+          "average_views": 90000,
+          "last_post_at": "2026-04-01T00:00:00",
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Manual V2.4 seed for validation."
+        },
+        {
+          "platform": "youtube",
+          "handle": "Sefa",
+          "profile_url": "https://www.youtube.com/results?search_query=Sefa+Frenchcore",
+          "follower_count": null,
+          "engagement_rate": null,
+          "average_views": 75000,
+          "last_post_at": null,
+          "is_official": false,
+          "confidence": "low",
+          "notes": "Search URL seed; official channel requires manual review."
+        }
+      ],
+      "platform_profiles": [
+        {
+          "platform": "lastfm",
+          "profile_name": "Sefa",
+          "profile_url": "https://www.last.fm/music/Sefa",
+          "external_id": null,
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Last.fm profile seed."
+        },
+        {
+          "platform": "1001tracklists",
+          "profile_name": "Sefa",
+          "profile_url": "https://www.1001tracklists.com/search/result.php?search=Sefa",
+          "external_id": null,
+          "is_official": false,
+          "confidence": "low",
+          "notes": "Search URL seed for later set-presence research."
+        }
+      ]
+    },
+    {
+      "artist_slug": "rooler",
+      "social_profiles": [
+        {
+          "platform": "instagram",
+          "handle": "roolerofficial",
+          "profile_url": "https://www.instagram.com/roolerofficial/",
+          "follower_count": 470000,
+          "engagement_rate": 2.9,
+          "average_views": 150000,
+          "last_post_at": "2026-04-21T00:00:00",
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Manual V2.4 seed for validation."
+        },
+        {
+          "platform": "x_twitter",
+          "handle": "RoolerOfficial",
+          "profile_url": "https://x.com/RoolerOfficial",
+          "follower_count": 45000,
+          "engagement_rate": 1.1,
+          "average_views": 30000,
+          "last_post_at": "2026-03-30T00:00:00",
+          "is_official": false,
+          "confidence": "low",
+          "notes": "Candidate X/Twitter profile; review manually."
+        }
+      ],
+      "platform_profiles": [
+        {
+          "platform": "lastfm",
+          "profile_name": "Rooler",
+          "profile_url": "https://www.last.fm/music/Rooler",
+          "external_id": null,
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Last.fm profile seed."
+        },
+        {
+          "platform": "soundcloud",
+          "profile_name": "Rooler",
+          "profile_url": "https://soundcloud.com/roolerofficial",
+          "external_id": null,
+          "is_official": false,
+          "confidence": "low",
+          "notes": "Candidate SoundCloud profile; review manually."
+        }
+      ]
+    },
+    {
+      "artist_slug": "project-one",
+      "social_profiles": [
+        {
+          "platform": "instagram",
+          "handle": null,
+          "profile_url": "https://www.instagram.com/explore/search/keyword/?q=Project%20One%20Hardstyle",
+          "follower_count": null,
+          "engagement_rate": null,
+          "average_views": null,
+          "last_post_at": null,
+          "is_official": false,
+          "confidence": "low",
+          "notes": "Project One is a special act. Keep as candidate search evidence until manually reviewed."
+        }
+      ],
+      "platform_profiles": [
+        {
+          "platform": "lastfm",
+          "profile_name": "Project One",
+          "profile_url": "https://www.last.fm/music/Project+One",
+          "external_id": null,
+          "is_official": true,
+          "confidence": "medium",
+          "notes": "Last.fm profile seed."
+        },
+        {
+          "platform": "youtube",
+          "profile_name": "Project One",
+          "profile_url": "https://www.youtube.com/results?search_query=Project+One+Hardstyle",
+          "external_id": null,
+          "is_official": false,
+          "confidence": "low",
+          "notes": "Search URL seed because Project One is a project rather than a conventional solo profile."
+        }
+      ]
+    }
+  ]
+}

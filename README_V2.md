@@ -1,32 +1,39 @@
-# Nexus Predictor V2 - setup inicial
+# Nexus Predictor V2
 
-La V2 arranca como una evolución ambiciosa del MVP V1: PostgreSQL, Alembic, FastAPI, Prefect, capa de evidencias y pipelines de ingesta.
+V2 is the professional roadmap for Nexus Predictor: PostgreSQL, Alembic, evidence-first data, external ingestion, social/music-platform metrics and later timetable prediction/optimization.
 
-## Bloques cerrados
+## Current status
 
-- V2.0 — Foundations V2.
-- V2.1 — Capa de evidencias.
-- V2.2 — Spotify real.
-- V2.3 — Ingesta externa base, pendiente de validación local tras aplicar este bloque.
+- V2.0 Foundations: closed.
+- V2.1 Evidence layer: closed.
+- V2.2 Spotify real: closed.
+- V2.3 External ingestion base: closed.
+- V2.4 Social networks and music platforms: current delivered block.
 
-## Validación V2.3
+## V2.4 validation
 
-Desde `backend/`:
+From `backend/`:
 
 ```powershell
-python scripts/run_external_ingestion.py --reset
-python scripts/check_v2_external_ingestion.py
+python scripts/run_social_platform_ingestion.py --reset
+python scripts/check_v2_social_platforms.py
 pytest
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Endpoints:
+Useful endpoints:
 
 ```text
-POST /api/ingestion/external/run?reset=true&limit_artists=10
-GET  /api/ingestion/external/coverage
-GET  /api/evidence/artists/angerfist
+GET  /api/social-platforms/status
+POST /api/social-platforms/run?reset=true
+GET  /api/social-platforms/coverage
+GET  /api/social-platforms/artists/angerfist
+POST /api/social-platforms/lastfm/angerfist/refresh?force=true
 ```
 
-## Nota sobre confianza
+Optional Last.fm key in `backend/.env`:
 
-Los datos externos candidatos se registran con fuente, URL, fecha, confianza y notas. Si una fuente es dudosa, se marca como `low` o `pending_review`, no como verdad absoluta.
+```env
+LASTFM_API_KEY=
+LASTFM_TOP_TRACK_LIMIT=10
+```

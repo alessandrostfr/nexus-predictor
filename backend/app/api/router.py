@@ -1,13 +1,27 @@
 """Central API router.
 
 All endpoint modules are included here so `main.py` only has to register one
-router. V2.1 adds the evidence router without changing existing V1-compatible
+router. V2.4 adds social/platform ingestion without changing existing V1/V2
 routes.
 """
 
 from fastapi import APIRouter
 
-from app.api import ingestion, artist_profiles, artists, database, editions, evidence, genres, health, predictions, room_risk, spotify, venue
+from app.api import (
+    ingestion,
+    artist_profiles,
+    artists,
+    database,
+    editions,
+    evidence,
+    genres,
+    health,
+    predictions,
+    room_risk,
+    social_platforms,
+    spotify,
+    venue,
+)
 
 api_router = APIRouter()
 api_router.include_router(health.router, prefix="/health", tags=["health"])
@@ -22,3 +36,4 @@ api_router.include_router(room_risk.router, prefix="/room-risk", tags=["room-ris
 api_router.include_router(evidence.router, prefix="/evidence", tags=["evidence-v2"])
 api_router.include_router(spotify.router, prefix="/spotify", tags=["spotify-v2"])
 api_router.include_router(ingestion.router, prefix="/ingestion", tags=["ingestion-v2"])
+api_router.include_router(social_platforms.router, prefix="/social-platforms", tags=["social-platforms-v2"])

@@ -1,0 +1,6 @@
+artist_slug,platform,profile_url,handle,follower_count,engagement_rate,average_views,last_post_at,is_official,confidence,notes
+angerfist,facebook,https://www.facebook.com/angerfist,angerfist,1200000,0.7,45000,2026-03-28T00:00:00,true,medium,Manual CSV seed for V2.4 validation; review before using as final truth.
+da-tweekaz,facebook,https://www.facebook.com/datweekaz,datweekaz,800000,0.8,30000,2026-04-11T00:00:00,true,medium,Manual CSV seed for V2.4 validation.
+sefa,tiktok,https://www.tiktok.com/@sefa_official,sefa_official,190000,3.1,125000,2026-04-05T00:00:00,false,low,Candidate TikTok row; review manually.
+rooler,youtube,https://www.youtube.com/results?search_query=Rooler+Official,Rooler,0,0.0,95000,,false,low,Search URL seed for later official-channel verification.
+project-one,youtube,https://www.youtube.com/results?search_query=Project+One+Hardstyle,Project One,0,0.0,60000,,false,low,Special act candidate signal.
