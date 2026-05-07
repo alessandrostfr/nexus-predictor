@@ -26,6 +26,7 @@ python-slugify
 numpy
 pandas
 scikit-learn
+ortools
 
 # Testing and code quality
 pytest

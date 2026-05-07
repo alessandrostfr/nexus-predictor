@@ -1,45 +1,51 @@
-# Nexus Predictor V2 - Roadmap position
+# Nexus Predictor V2 — Roadmap position
 
-## Closed V2 blocks
+Current completed block after applying this ZIP:
 
-- V2.0 - Foundations V2: PostgreSQL, Docker Compose, Alembic, settings and pipeline structure.
-- V2.1 - Evidence layer: sources, evidence, metrics, profiles, events and venue prestige.
-- V2.2 - Spotify real: artist cache, profile fields, popularity, releases and safe optional top-track handling.
-- V2.3 - External ingestion base: Prefect flow and external career/venue signals.
-- V2.4 - Social networks and music platforms: mixed JSON/CSV metrics and Last.fm top tracks.
-- V2.5 - Multi-genre classification: main genre, secondary genres, confidence and traceability.
-- V2.6 - Historical timetables 2022-2025: normalized slots and verified 2025 seven-room correction.
-- V2.7 - Demand and popularity model: evidence-backed score components and explanations.
+```text
+V2.9 — Generador de horario óptimo con 3 variantes
+```
 
-## Current block
+## Closed blocks
 
-**V2.8 — Predicción de horario probable 2026**
+- V2.0 — Foundations V2.
+- V2.1 — Evidence layer and source registry.
+- V2.2 — Spotify real integration.
+- V2.3 — External ingestion base.
+- V2.4 — Social and platform metrics.
+- V2.5 — Multi-genre classification.
+- V2.6 — Historical timetable dataset 2022-2025.
+- V2.7 — V2 demand prediction model.
+- V2.8 — Probable 2026 timetable.
+- V2.9 — Optimized timetable variants.
 
-Delivered scope:
+## V2.9 scope
 
-- Probable room/day/time assignment for the 2026 lineup.
-- Historical pattern learning from V2.6.
-- Demand-aware slot assignment from V2.7.
-- Confidence, probability and reasons per slot.
-- Explicit API contract that the timetable is predicted, not official.
-- Integrity checks for impossible overlaps, duplicate artists and invalid rooms.
+The current block adds three optimized non-official timetable variants:
+
+- `anti_crowding_extreme`
+- `balanced`
+- `fan_experience`
+
+It adds backend storage, generation, metrics, comparison endpoints and integrity checks. It intentionally does not migrate the frontend yet.
 
 ## Next block
 
-**V2.9 — Generador de horario óptimo con 3 variantes**
+```text
+V2.10 — Frontend premium: migración directa a Next.js + TypeScript
+```
 
-Planned scope:
+Do not start V2.10 until V2.9 is validated and committed.
 
-- Generate three optimized timetables: anti-crowding, balanced and fan experience.
-- Define constraints for rooms, capacities, genres, top artists and overlaps.
-- Use OR-Tools if it fits the final constraint model.
-- Expose comparable `crowding_score`, `conflict_score` and `experience_score`.
-- Keep V2.8 probable timetable separate from V2.9 optimized alternatives.
+## Expected commit
 
-## Commit
+```text
+generate optimized timetable variants
+```
 
-`predict probable 2026 timetable`
+## Progress
 
-## Estimated progress after closing
-
-70% of Nexus Predictor V2.
+```text
+V2.9: 100%
+V2 total: 78%
+```

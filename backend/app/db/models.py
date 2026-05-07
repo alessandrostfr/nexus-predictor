@@ -602,3 +602,96 @@ class V2ProbableTimetableSlotModel(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
+
+class V2OptimizedTimetableSlotModel(Base):
+    """Persisted V2.9 optimized timetable slot for one variant.
+
+    V2.9 keeps one row per artist/variant assignment. The probable timetable
+    remains available as the "what would the organization probably do" baseline,
+    while this table stores three optimization strategies built from the same
+    inputs with comparable crowding, conflict and fan-experience metrics.
+    """
+
+    __tablename__ = "v2_optimized_timetable_slots"
+    __table_args__ = (
+        UniqueConstraint("year", "variant_key", "artist_slug", name="uq_v2_optimized_year_variant_artist"),
+        UniqueConstraint(
+            "year",
+            "variant_key",
+            "event_day",
+            "room_slug",
+            "start_minutes",
+            name="uq_v2_optimized_variant_room_slot",
+        ),
+        Index("ix_v2_optimized_year_variant", "year", "variant_key"),
+        Index("ix_v2_optimized_room_time", "year", "variant_key", "event_day", "room_slug", "start_minutes"),
+        Index("ix_v2_optimized_artist", "artist_slug"),
+        Index("ix_v2_optimized_scores", "year", "variant_key", "optimization_score"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    year: Mapped[int] = mapped_column(Integer, nullable=False)
+    variant_key: Mapped[str] = mapped_column(String(80), nullable=False)
+    variant_name: Mapped[str] = mapped_column(String(160), nullable=False)
+    variant_description: Mapped[str | None] = mapped_column(Text, nullable=True)
+
+    event_day: Mapped[str] = mapped_column(String(40), nullable=False)
+    festival_day: Mapped[int] = mapped_column(Integer, nullable=False)
+    date_label: Mapped[str | None] = mapped_column(String(120), nullable=True)
+    room_name: Mapped[str] = mapped_column(String(160), nullable=False)
+    room_slug: Mapped[str] = mapped_column(String(160), nullable=False)
+    room_capacity: Mapped[int | None] = mapped_column(Integer, nullable=True)
+
+    artist_id: Mapped[int | None] = mapped_column(ForeignKey("artists.id", ondelete="SET NULL"), nullable=True)
+    artist_slug: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
+    artist_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    artist_rank: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    show_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    performance_type: Mapped[str] = mapped_column(String(80), nullable=False, default="solo")
+    main_genre: Mapped[str] = mapped_column(String(160), nullable=False, default="Unknown")
+    secondary_genres_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+
+    start_time: Mapped[str] = mapped_column(String(5), nullable=False)
+    end_time: Mapped[str] = mapped_column(String(5), nullable=False)
+    start_minutes: Mapped[int] = mapped_column(Integer, nullable=False)
+    end_minutes: Mapped[int] = mapped_column(Integer, nullable=False)
+    duration_minutes: Mapped[int] = mapped_column(Integer, nullable=False, default=60)
+    slot_order: Mapped[int] = mapped_column(Integer, nullable=False)
+    slot_type: Mapped[str] = mapped_column(String(80), nullable=False, default="standard")
+    is_headliner_slot: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    is_closing_slot: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    is_warmup_slot: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    is_special_show: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+
+    popularity_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    career_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    momentum_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    nexus_affinity_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    demand_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    expected_pressure_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    crowding_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    conflict_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    experience_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    optimization_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    crowd_risk: Mapped[str] = mapped_column(String(40), nullable=False, default="low")
+
+    original_room_slug: Mapped[str | None] = mapped_column(String(160), nullable=True)
+    original_start_minutes: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    probable_slot_id: Mapped[int | None] = mapped_column(ForeignKey("v2_probable_timetable_slots.id", ondelete="SET NULL"), nullable=True)
+
+    model_version: Mapped[str] = mapped_column(String(120), nullable=False)
+    method: Mapped[str] = mapped_column(String(160), nullable=False)
+    solver_status: Mapped[str] = mapped_column(String(120), nullable=False, default="heuristic")
+    official_status: Mapped[str] = mapped_column(String(80), nullable=False, default="optimized_not_official")
+    source_status: Mapped[str] = mapped_column(String(80), nullable=False, default="no_official_timetable_yet")
+    is_official: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+
+    reason_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    constraint_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    warning_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
+
+    generated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
