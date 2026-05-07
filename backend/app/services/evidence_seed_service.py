@@ -17,6 +17,7 @@ from sqlalchemy import delete, func, select
 from sqlalchemy.orm import Session
 
 from app.db.models import (
+    ArtistGenreModel,
     ArtistMetricModel,
     ArtistModel,
     CareerEventModel,
@@ -305,6 +306,7 @@ def upsert_artist_metric(
 def reset_evidence_layer(db: Session) -> None:
     """Delete only V2 evidence-layer data, preserving V1 seed tables."""
     for model in (
+        ArtistGenreModel,
         VenuePrestigeModel,
         CareerEventModel,
         SocialProfileModel,

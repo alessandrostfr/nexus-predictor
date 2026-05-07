@@ -368,3 +368,37 @@ class SpotifyArtistCacheModel(Base):
     last_refreshed_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+class ArtistGenreModel(Base):
+    """V2.5 persisted genre row for one artist.
+
+    A single artist can have one primary row plus several secondary rows. Every
+    row stores source summaries and evidence ids as JSON so the frontend and
+    later model blocks can explain why a genre chip exists.
+    """
+
+    __tablename__ = "artist_genres"
+    __table_args__ = (
+        UniqueConstraint("artist_slug", "genre", name="uq_artist_genres_artist_genre"),
+        Index("ix_artist_genres_artist_primary", "artist_slug", "is_primary"),
+        Index("ix_artist_genres_genre_primary", "genre", "is_primary"),
+        Index("ix_artist_genres_confidence", "confidence", "confidence_score"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    artist_id: Mapped[int | None] = mapped_column(ForeignKey("artists.id", ondelete="CASCADE"), nullable=True, index=True)
+    artist_slug: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
+    genre: Mapped[str] = mapped_column(String(160), nullable=False, index=True)
+    is_primary: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    rank: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    confidence_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    source_summary_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    evidence_ids_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    source_keys_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    reason: Mapped[str | None] = mapped_column(Text, nullable=True)
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="inferred")
+    needs_manual_review: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
