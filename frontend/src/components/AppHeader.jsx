@@ -36,7 +36,7 @@ export function AppHeader({ activeView, navItems, selectedYear, onViewChange }) 
 
       <div className="header-status" aria-label="Current roadmap block">
         <Activity size={15} />
-        Block 7 · {selectedYear}
+        Block 8 · {selectedYear}
       </div>
     </header>
   );

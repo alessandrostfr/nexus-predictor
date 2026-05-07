@@ -84,3 +84,19 @@ export async function getArtistProfiles(params = {}) {
 export async function getArtistProfile(slug) {
   return request(`/artist-profiles/${slug}`);
 }
+
+export async function getRoomRiskOverview(year) {
+  return request(`/room-risk/${year}`);
+}
+
+export async function getRoomRiskRooms(year) {
+  return request(`/room-risk/${year}/rooms`);
+}
+
+export async function getRoomRiskRoom(year, roomSlug) {
+  return request(`/room-risk/${year}/rooms/${roomSlug}`);
+}
+
+export async function getRoomRiskTimetable(year) {
+  return request(`/room-risk/${year}/timetable`);
+}

@@ -2,10 +2,11 @@
 
 This module centralizes environment-based configuration so the FastAPI app,
 database layer and external integrations can share the same settings object.
-Keeping every setting declared here prevents runtime AttributeError issues when
-services read configuration values during tests or local development.
 """
 
+from __future__ import annotations
+
+import json
 from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -14,28 +15,27 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     """Backend configuration loaded from environment variables or `.env`.
 
-    Defaults are safe for local development. Private API keys are optional and
-    external enrichment remains disabled unless explicitly enabled.
+    Important: BACKEND_CORS_ORIGINS is intentionally stored as a plain string.
+    This keeps local `.env` files simple and avoids pydantic-settings trying to
+    parse comma-separated URLs as a JSON array during test collection.
     """
 
-    # Application metadata used by FastAPI and health endpoints.
+    # Basic application metadata.
     APP_NAME: str = "Nexus Predictor API"
-    APP_VERSION: str = "0.4.0"
+    APP_VERSION: str = "0.8.0"
     ENVIRONMENT: str = "development"
 
-    # Local database configuration. SQLite is enough for the MVP and can later
-    # be replaced by PostgreSQL by changing only this URL.
+    # Local SQLite database used by the MVP.
     DATABASE_URL: str = "sqlite:///./nexus_predictor.db"
 
-    # When true, the API creates tables and seeds SQLite from the editable JSON
-    # dataset automatically if the database is empty.
-    AUTO_SEED_DATABASE: bool = True
-
-    # Comma-separated origins allowed to call the API during local development.
+    # Keep this as a comma-separated string in `.env`, for example:
+    # BACKEND_CORS_ORIGINS=http://127.0.0.1:5173,http://localhost:5173
     BACKEND_CORS_ORIGINS: str = "http://127.0.0.1:5173,http://localhost:5173"
 
-    # Artist enrichment settings. External calls are disabled by default so
-    # tests and local validation do not depend on internet access or secrets.
+    # Local development convenience: seed the SQLite DB from JSON when needed.
+    AUTO_SEED_DATABASE: bool = True
+
+    # External enrichment remains opt-in so tests and local development are stable.
     ENABLE_EXTERNAL_ARTIST_ENRICHMENT: bool = False
     SPOTIFY_CLIENT_ID: str = ""
     SPOTIFY_CLIENT_SECRET: str = ""
@@ -50,12 +50,30 @@ class Settings(BaseSettings):
 
     @property
     def cors_origins(self) -> list[str]:
-        """Return CORS origins as a clean list for FastAPI middleware."""
-        return [
-            origin.strip()
-            for origin in self.BACKEND_CORS_ORIGINS.split(",")
-            if origin.strip()
-        ]
+        """Return CORS origins as a clean list for FastAPI middleware.
+
+        The project historically used comma-separated values. This parser also
+        accepts a JSON array to be tolerant if a developer writes the setting in
+        pydantic's complex-value style.
+        """
+        raw_origins = self.BACKEND_CORS_ORIGINS.strip()
+
+        if not raw_origins:
+            return []
+
+        # Optional support for JSON array syntax:
+        # BACKEND_CORS_ORIGINS=["http://127.0.0.1:5173", "http://localhost:5173"]
+        if raw_origins.startswith("["):
+            try:
+                parsed_origins = json.loads(raw_origins)
+                if isinstance(parsed_origins, list):
+                    return [str(origin).strip() for origin in parsed_origins if str(origin).strip()]
+            except json.JSONDecodeError:
+                # Fall back to comma-separated parsing below.
+                pass
+
+        # Default and recommended local syntax: comma-separated URLs.
+        return [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
 
 
 @lru_cache

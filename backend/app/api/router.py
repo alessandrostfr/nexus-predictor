@@ -6,7 +6,7 @@ router. This keeps the backend structure tidy as the project grows.
 
 from fastapi import APIRouter
 
-from app.api import artist_profiles, artists, database, editions, genres, health, predictions, venue
+from app.api import artist_profiles, artists, database, editions, genres, health, predictions, room_risk, venue
 
 api_router = APIRouter()
 api_router.include_router(health.router, prefix="/health", tags=["health"])
@@ -17,3 +17,4 @@ api_router.include_router(artist_profiles.router, prefix="/artist-profiles", tag
 api_router.include_router(venue.router, prefix="/venue", tags=["venue"])
 api_router.include_router(genres.router, prefix="/genres", tags=["genres"])
 api_router.include_router(predictions.router, prefix="/predictions", tags=["predictions"])
+api_router.include_router(room_risk.router, prefix="/room-risk", tags=["room-risk"])

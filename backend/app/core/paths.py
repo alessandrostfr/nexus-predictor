@@ -15,8 +15,9 @@ EDITIONS_DIR = DATA_DIR / "editions"
 ARTISTS_DIR = DATA_DIR / "artists"
 VENUE_DIR = DATA_DIR / "venue"
 SOURCES_DIR = DATA_DIR / "sources"
+TIMETABLES_DIR = DATA_DIR / "timetables"
+PREDICTIONS_DIR = DATA_DIR / "predictions"
+
 ARTIST_PROFILE_CACHE_PATH = ARTISTS_DIR / "enriched_artists.json"
 GENRE_OVERRIDES_PATH = ARTISTS_DIR / "genre_overrides.json"
 MANUAL_OVERRIDES_PATH = ARTISTS_DIR / "manual_overrides.json"
-
-PREDICTIONS_DIR = DATA_DIR / "predictions"

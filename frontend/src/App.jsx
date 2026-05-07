@@ -1,4 +1,4 @@
-import { BarChart3, LayoutDashboard, UserRound } from 'lucide-react';
+import { BarChart3, LayoutDashboard, Map, UserRound } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 
 import {
@@ -11,17 +11,20 @@ import {
   getEditions,
   getGenreTaxonomy,
   getHealthStatus,
+  getRoomRiskOverview,
 } from './api/client.js';
 import { AppHeader } from './components/AppHeader.jsx';
 import { BottomNavigation } from './components/BottomNavigation.jsx';
 import { ArtistProfile } from './pages/ArtistProfile.jsx';
 import { Dashboard } from './pages/Dashboard.jsx';
+import { RoomRisk } from './pages/RoomRisk.jsx';
 
 const DEFAULT_YEAR = 2026;
 
 const NAV_ITEMS = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'ranking', label: 'Ranking', icon: BarChart3 },
+  { id: 'rooms', label: 'Salas', icon: Map },
   { id: 'artist', label: 'Ficha', icon: UserRound },
 ];
 
@@ -33,6 +36,7 @@ const EMPTY_APP_DATA = {
   prediction: null,
   ranking: null,
   genreDistribution: null,
+  roomRisk: null,
   isLoading: true,
   error: null,
   partialErrors: [],
@@ -76,21 +80,30 @@ function App() {
     async function loadDashboardData() {
       setAppData((current) => ({ ...current, isLoading: true, error: null, partialErrors: [] }));
 
-      // The Block 7 dashboard pulls real backend data for the selected year and filters.
-      const [healthResult, editionsResult, taxonomyResult, editionResult, predictionResult, rankingResult, genreResult] =
-        await Promise.allSettled([
-          getHealthStatus(),
-          getEditions(),
-          getGenreTaxonomy(),
-          getEdition(selectedYear),
-          getEditionPrediction(selectedYear, 12),
-          getArtistPredictions(selectedYear, {
-            genre: filters.genre,
-            q: filters.query,
-            limit: 80,
-          }),
-          getEditionGenreDistribution(selectedYear),
-        ]);
+      // Block 8 keeps Block 7 data and adds the room-risk simulation in the same load pass.
+      const [
+        healthResult,
+        editionsResult,
+        taxonomyResult,
+        editionResult,
+        predictionResult,
+        rankingResult,
+        genreResult,
+        roomRiskResult,
+      ] = await Promise.allSettled([
+        getHealthStatus(),
+        getEditions(),
+        getGenreTaxonomy(),
+        getEdition(selectedYear),
+        getEditionPrediction(selectedYear, 12),
+        getArtistPredictions(selectedYear, {
+          genre: filters.genre,
+          q: filters.query,
+          limit: 80,
+        }),
+        getEditionGenreDistribution(selectedYear),
+        getRoomRiskOverview(selectedYear),
+      ]);
 
       if (!isMounted) {
         return;
@@ -104,6 +117,7 @@ function App() {
         readSettledError(predictionResult, 'Prediction'),
         readSettledError(rankingResult, 'Ranking'),
         readSettledError(genreResult, 'Genre distribution'),
+        readSettledError(roomRiskResult, 'Room risk'),
       ].filter(Boolean);
 
       const ranking = readSettledData(rankingResult, null);
@@ -117,6 +131,7 @@ function App() {
         prediction: readSettledData(predictionResult, null),
         ranking,
         genreDistribution: readSettledData(genreResult, null),
+        roomRisk: readSettledData(roomRiskResult, null),
         isLoading: false,
         error: healthError,
         partialErrors,
@@ -206,6 +221,19 @@ function App() {
           onYearChange={setSelectedYear}
           onBackToRanking={() => setActiveView('ranking')}
           onArtistSelect={handleArtistSelect}
+        />
+      );
+    }
+
+    if (activeView === 'rooms') {
+      return (
+        <RoomRisk
+          roomRisk={appData.roomRisk}
+          isLoading={appData.isLoading}
+          error={appData.partialErrors.find((item) => item.startsWith('Room risk'))}
+          selectedYear={selectedYear}
+          availableYears={availableYears}
+          onYearChange={setSelectedYear}
         />
       );
     }

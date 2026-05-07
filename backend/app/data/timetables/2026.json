@@ -1,0 +1,48 @@
+{
+  "year": 2026,
+  "status": "official_timetable_pending",
+  "source_status": "no_official_timetable_yet",
+  "official_available": false,
+  "generated_for_block": 8,
+  "notes": [
+    "The official Nexus 2026 timetable and room allocation have not been published yet.",
+    "Block 8 exposes a theoretical simulation based on the Block 5 demand model, room fit, capacity and hourly flow curves.",
+    "When the official timetable is available, replace slots with real room_slug/start_time/end_time/artist_slugs entries."
+  ],
+  "time_bands": [
+    {
+      "key": "18-21",
+      "label": "18:00-21:00 · Entrada / warm-up",
+      "simulation_multiplier": 0.4
+    },
+    {
+      "key": "21-00",
+      "label": "21:00-00:00 · Subida",
+      "simulation_multiplier": 0.72
+    },
+    {
+      "key": "00-03",
+      "label": "00:00-03:00 · Pico",
+      "simulation_multiplier": 1.16
+    },
+    {
+      "key": "03-06",
+      "label": "03:00-06:00 · Cierre",
+      "simulation_multiplier": 0.86
+    }
+  ],
+  "slots": [],
+  "import_contract": {
+    "room_slug": "main-room",
+    "room_name": "Main Room",
+    "start_time": "00:00",
+    "end_time": "01:00",
+    "artist_slugs": [
+      "artist-slug"
+    ],
+    "artist_names": [
+      "Artist Name"
+    ],
+    "source_status": "official|estimated|manual_draft"
+  }
+}
