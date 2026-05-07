@@ -1,37 +1,28 @@
-# Nexus Predictor V2 - Roadmap position
+# Nexus Predictor roadmap position
 
-## Closed V2 blocks
+## Current roadmap
 
-- V2.0 - Foundations V2: PostgreSQL, Docker Compose, Alembic, settings and pipeline structure.
-- V2.1 - Evidence layer: source registry, evidence items, metrics, career events and venue prestige.
+- V1 MVP: closed.
+- V2.0 Foundations: closed.
+- V2.1 Evidence layer: closed.
+- V2.2 Spotify real: closed.
+- V2.3 External ingestion base: delivered in this block, pending local validation.
 
 ## Current block
 
-V2.2 - Spotify real.
+**V2.3 — Ingesta externa base: web, noticias, eventos, clubs y festivales**
 
-## Current block scope
+Scope:
 
-- Configure `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET`.
-- Use Spotify Client Credentials for public catalog data.
-- Match Nexus artists to Spotify artist IDs.
-- Store avatar, popularity, followers, genres, top tracks, releases and embed URLs.
-- Cache Spotify payloads in PostgreSQL.
-- Store Spotify values as V2 evidence and derived metrics.
-- Fail safely when credentials are missing.
+- Prefect flow for external ingestion.
+- Source registry rows for external research.
+- Candidate career events.
+- Venue/festival prestige catalog.
+- Evidence and artist metrics derived from external signals.
+- Coverage summary.
 
-## Explicitly not included
+## Next block
 
-- Instagram, TikTok, YouTube, SoundCloud, Apple Music, Beatport or 1001Tracklists.
-- Multi-genre replacement.
-- Historical timetable extraction.
-- Next.js frontend migration.
+**V2.4 — Redes sociales y plataformas musicales ampliadas**
 
-Those belong to later V2 blocks.
-
-## Commit
-
-`integrate spotify artist enrichment pipeline`
-
-## Estimated progress after closing
-
-20%
+Planned scope includes Last.fm top tracks as the alternative source for Spotify top tracks when Spotify returns 403.

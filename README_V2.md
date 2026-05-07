@@ -1,99 +1,32 @@
 # Nexus Predictor V2 - setup inicial
 
-Este documento acompaña el Bloque V2.0. La V1 queda estable y la V2 arranca en una rama nueva con PostgreSQL, Docker Compose, Alembic y una estructura preparada para pipelines Prefect.
+La V2 arranca como una evolución ambiciosa del MVP V1: PostgreSQL, Alembic, FastAPI, Prefect, capa de evidencias y pipelines de ingesta.
 
-## 1. Crear la rama V2
+## Bloques cerrados
 
-Ejecuta esto desde la raíz del repositorio actualizado de V1:
+- V2.0 — Foundations V2.
+- V2.1 — Capa de evidencias.
+- V2.2 — Spotify real.
+- V2.3 — Ingesta externa base, pendiente de validación local tras aplicar este bloque.
 
-```bash
-git status
-git checkout main
-git pull
-git checkout -b refactor/v2-foundations
-```
+## Validación V2.3
 
-## 2. Aplicar los archivos del ZIP
-
-Copia el contenido del ZIP `nexus-v2-block-00-foundations.zip` encima del proyecto, respetando las rutas.
-
-## 3. Preparar variables de entorno
-
-```bash
-cp .env.example .env
-cd backend
-cp .env.example .env
-```
-
-En Windows PowerShell:
+Desde `backend/`:
 
 ```powershell
-Copy-Item .env.example .env
-Set-Location backend
-Copy-Item .env.example .env
-```
-
-## 4. Levantar PostgreSQL
-
-Desde la raíz del proyecto:
-
-```bash
-docker compose up -d postgres
-docker compose ps
-```
-
-## 5. Instalar dependencias backend
-
-Desde `backend/`:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-En Windows PowerShell:
-
-```powershell
-py -3.11 -m venv .venv
-. .\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-## 6. Ejecutar migraciones Alembic
-
-Desde `backend/`:
-
-```bash
-alembic -c alembic.ini upgrade head
-```
-
-## 7. Validar foundations
-
-Desde `backend/`:
-
-```bash
-python scripts/check_environment.py
-python scripts/check_v2_foundations.py
+python scripts/run_external_ingestion.py --reset
+python scripts/check_v2_external_ingestion.py
 pytest
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Endpoints a revisar:
+Endpoints:
 
-- `GET http://127.0.0.1:8000/api/health`
-- `GET http://127.0.0.1:8000/api/database/status`
-- `GET http://127.0.0.1:8000/api/editions`
-- `GET http://127.0.0.1:8000/api/artists/project-one`
-
-## 8. Commit y push
-
-Cuando las validaciones pasen:
-
-```bash
-git add .
-git commit -m "start v2 foundations and postgres architecture"
-git push -u origin refactor/v2-foundations
+```text
+POST /api/ingestion/external/run?reset=true&limit_artists=10
+GET  /api/ingestion/external/coverage
+GET  /api/evidence/artists/angerfist
 ```
+
+## Nota sobre confianza
+
+Los datos externos candidatos se registran con fuente, URL, fecha, confianza y notas. Si una fuente es dudosa, se marca como `low` o `pending_review`, no como verdad absoluta.

@@ -7,7 +7,7 @@ routes.
 
 from fastapi import APIRouter
 
-from app.api import artist_profiles, artists, database, editions, evidence, genres, health, predictions, room_risk, spotify, venue
+from app.api import ingestion, artist_profiles, artists, database, editions, evidence, genres, health, predictions, room_risk, spotify, venue
 
 api_router = APIRouter()
 api_router.include_router(health.router, prefix="/health", tags=["health"])
@@ -21,3 +21,4 @@ api_router.include_router(predictions.router, prefix="/predictions", tags=["pred
 api_router.include_router(room_risk.router, prefix="/room-risk", tags=["room-risk"])
 api_router.include_router(evidence.router, prefix="/evidence", tags=["evidence-v2"])
 api_router.include_router(spotify.router, prefix="/spotify", tags=["spotify-v2"])
+api_router.include_router(ingestion.router, prefix="/ingestion", tags=["ingestion-v2"])
