@@ -11,30 +11,33 @@ Closed through:
 - V2.4 — Social/music platforms
 - V2.5 — Multi-genre classification
 - V2.6 — Historical timetables 2022-2025
+- V2.7 — Demand and popularity model V2
 
 ## Active result after this block
 
-V2.6 adds a persisted historical timetable layer with:
+V2.7 adds an evidence-backed demand model with:
 
-- normalized 2022, 2023, 2024 and 2025 timetable slots
-- Friday/Saturday split for 2024 and 2025
-- canonical Fabrik rooms and historical aliases
-- verified 2025 correction to seven real rooms
-- start/end times and duration fields
-- headliner, warm-up, closing and special-show flags
-- source, confidence, extraction method and review status
-- integrity checks for overlaps and incomplete slots
+- `popularity_score`
+- `career_score`
+- `momentum_score`
+- `nexus_affinity_score`
+- final `demand_score`
+- explainable features and factors per artist
+- fallback mode when external data is incomplete
+- persisted prediction snapshots
+- V1/V2 score comparison endpoints
 
 ## Next block
 
-**V2.7 — Demand and popularity model V2**
+**V2.8 — Probable 2026 timetable**
 
 Planned scope:
 
-- advanced features from evidence, Spotify, social/platform metrics, career events, genres and historical timetable slots
-- separate popularity, career, momentum, Nexus affinity and demand scores
-- explainable factors per artist
-- fallback mode when data is incomplete
+- use V2.7 demand scores and V2.6 historical slots
+- learn room/time patterns by year, room, genre, headliner slot and demand
+- generate a probable 2026 timetable
+- mark confidence and reasons per slot
+- distinguish prediction clearly from official timetable
 
 ## Methodology
 
@@ -44,13 +47,12 @@ Planned scope:
 - Keep commits in English.
 - Keep evidence/source/confidence traceability.
 - Do not start frontend migration until V2.10.
-- Do not start timetable prediction until V2.8.
 - Do not start schedule optimization until V2.9.
 
 ## Commit for this block
 
-`structure historical timetable dataset`
+`build v2 demand prediction model`
 
 ## Estimated progress after closing
 
-52%
+62%

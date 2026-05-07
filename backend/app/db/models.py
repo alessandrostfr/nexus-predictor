@@ -470,3 +470,52 @@ class HistoricalTimetableSlotModel(Base):
     raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class V2ArtistDemandPredictionModel(Base):
+    """Persisted V2.7 demand-model output for one artist and edition year.
+
+    The feature and factor JSON columns deliberately duplicate the model input
+    snapshot used at generation time. Raw data remains traceable through the
+    evidence layer, but storing this compact snapshot makes comparisons between
+    model versions reproducible.
+    """
+
+    __tablename__ = "v2_artist_demand_predictions"
+    __table_args__ = (
+        UniqueConstraint("year", "artist_slug", name="uq_v2_artist_demand_year_artist"),
+        Index("ix_v2_artist_demand_year_rank", "year", "rank"),
+        Index("ix_v2_artist_demand_year_score", "year", "demand_score"),
+        Index("ix_v2_artist_demand_genre", "year", "main_genre"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    year: Mapped[int] = mapped_column(Integer, nullable=False)
+    artist_id: Mapped[int | None] = mapped_column(ForeignKey("artists.id", ondelete="SET NULL"), nullable=True)
+    artist_slug: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
+    artist_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    rank: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    main_genre: Mapped[str] = mapped_column(String(160), nullable=False, default="Unknown")
+    secondary_genres_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+
+    popularity_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    career_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    momentum_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    nexus_affinity_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    demand_score: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+
+    crowd_risk: Mapped[str] = mapped_column(String(40), nullable=False, default="low")
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    model_version: Mapped[str] = mapped_column(String(120), nullable=False)
+    method: Mapped[str] = mapped_column(String(120), nullable=False)
+    fallback_used: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    evidence_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+
+    feature_payload_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
+    factor_payload_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    explanation_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+
+    generated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
