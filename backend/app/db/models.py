@@ -329,3 +329,42 @@ class VenuePrestigeModel(Base):
     raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class SpotifyArtistCacheModel(Base):
+    """Cached Spotify enrichment payload for one Nexus artist.
+
+    The table stores the public Spotify artist match, display fields and compact
+    JSON snapshots for top tracks/releases. Atomic values that influence the
+    model are still duplicated into `evidence_items` and `artist_metrics` so the
+    feature layer remains explainable.
+    """
+
+    __tablename__ = "spotify_artist_cache"
+    __table_args__ = (
+        UniqueConstraint("artist_slug", name="uq_spotify_artist_cache_artist_slug"),
+        UniqueConstraint("spotify_artist_id", name="uq_spotify_artist_cache_spotify_artist_id"),
+        Index("ix_spotify_artist_cache_popularity", "popularity"),
+        Index("ix_spotify_artist_cache_match_confidence", "match_confidence"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    artist_id: Mapped[int | None] = mapped_column(ForeignKey("artists.id", ondelete="CASCADE"), nullable=True)
+    artist_slug: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
+    spotify_artist_id: Mapped[str] = mapped_column(String(255), nullable=False)
+    spotify_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    spotify_uri: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    embed_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    name: Mapped[str] = mapped_column(String(255), nullable=False)
+    avatar_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    popularity: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    followers: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    genres_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    top_tracks_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    releases_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
+    match_confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    match_method: Mapped[str] = mapped_column(String(80), nullable=False, default="spotify_search")
+    last_refreshed_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)

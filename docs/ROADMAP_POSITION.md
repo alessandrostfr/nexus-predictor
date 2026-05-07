@@ -1,45 +1,37 @@
-# Nexus Predictor - Roadmap position
+# Nexus Predictor V2 - Roadmap position
 
-## Closed blocks
+## Closed V2 blocks
 
-- Block 0 - Environment, structure, Git and GitHub.
-- Block 1 - Historical Nexus and Fabrik dataset.
-- Block 2 - FastAPI backend foundation.
-- Block 3 - Artist enrichment foundation.
-- Block 4 - Hard dance subgenre classification.
-- Block 5 - Predictive scoring and attendance engine.
-- Block 6 - Minimalist responsive React shell.
-- Block 7 - Dashboard, rankings and artist profiles.
-- Block 8 - Room capacity, timetable readiness and saturation risk.
-- Block 9 - Final polish, QA, documentation and deployment setup.
+- V2.0 - Foundations V2: PostgreSQL, Docker Compose, Alembic, settings and pipeline structure.
+- V2.1 - Evidence layer: source registry, evidence items, metrics, career events and venue prestige.
 
-## MVP status
+## Current block
 
-The roadmap MVP is complete. The application is ready for local presentation and future improvements as a new phase.
+V2.2 - Spotify real.
 
-## Block 9 scope delivered
+## Current block scope
 
-- Mobile-first release polish.
-- Skeleton loading states.
-- Safer API error states.
-- Complete README.
-- Environment variable guides.
-- Data source and model notes.
-- Basic deployment guide.
-- Local helper scripts.
-- Final MVP checklist.
+- Configure `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET`.
+- Use Spotify Client Credentials for public catalog data.
+- Match Nexus artists to Spotify artist IDs.
+- Store avatar, popularity, followers, genres, top tracks, releases and embed URLs.
+- Cache Spotify payloads in PostgreSQL.
+- Store Spotify values as V2 evidence and derived metrics.
+- Fail safely when credentials are missing.
 
 ## Explicitly not included
 
-- Login, roles or admin panel.
-- Framework migration.
-- Black-box ML replacement.
-- Claims that simulated room pressure is official.
+- Instagram, TikTok, YouTube, SoundCloud, Apple Music, Beatport or 1001Tracklists.
+- Multi-genre replacement.
+- Historical timetable extraction.
+- Next.js frontend migration.
+
+Those belong to later V2 blocks.
 
 ## Commit
 
-`polish responsive UI and deployment setup`
+`integrate spotify artist enrichment pipeline`
 
 ## Estimated progress after closing
 
-100%
+20%

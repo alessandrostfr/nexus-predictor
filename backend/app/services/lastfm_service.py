@@ -1,72 +1,84 @@
-"""Last.fm metadata client for artist profile enrichment."""
+"""Optional Last.fm client kept for legacy V1 artist-profile compatibility.
+
+Last.fm is not part of V2.2. The class remains intentionally small and safe so
+old enrichment code can import it without forcing API credentials.
+"""
+
+from __future__ import annotations
 
 from typing import Any
 
 from app.core.config import settings
-from app.services.external_http_service import ExternalServiceError, request_json
+from app.services.external_http_service import request_json
 
 
 class LastFMService:
-    """Small Last.fm API client for artist bio and top tracks."""
+    """Minimal Last.fm API client.
 
-    api_url = "https://ws.audioscrobbler.com/2.0/"
+    It only performs calls when LASTFM_API_KEY is present. Otherwise callers see
+    `configured=False` and skip the integration safely.
+    """
+
+    api_base_url = "https://ws.audioscrobbler.com/2.0/"
 
     @property
     def configured(self) -> bool:
-        """Return whether a Last.fm API key is available."""
-        return bool(settings.LASTFM_API_KEY)
-
-    def _params(self, method: str, artist_name: str, **extra: Any) -> dict[str, Any]:
-        """Build common Last.fm query parameters."""
-        if not self.configured:
-            raise ExternalServiceError("Last.fm API key is not configured.")
-        return {
-            "method": method,
-            "artist": artist_name,
-            "api_key": settings.LASTFM_API_KEY,
-            "format": "json",
-            **extra,
-        }
+        """Return whether the optional Last.fm key exists."""
+        return bool(settings.lastfm_api_key)
 
     def get_artist_info(self, artist_name: str) -> dict[str, Any] | None:
-        """Return Last.fm artist info or `None` when not found."""
-        payload = request_json("GET", self.api_url, params=self._params("artist.getinfo", artist_name))
+        """Return public artist info from Last.fm when configured."""
+        if not self.configured:
+            return None
+        payload = request_json(
+            "GET",
+            self.api_base_url,
+            params={
+                "method": "artist.getinfo",
+                "artist": artist_name,
+                "api_key": settings.lastfm_api_key,
+                "format": "json",
+            },
+        )
         artist = payload.get("artist")
         return artist if isinstance(artist, dict) else None
 
-    def get_top_tracks(self, artist_name: str, *, limit: int = 10) -> list[dict[str, Any]]:
-        """Return Last.fm top tracks for an artist."""
+    def get_top_tracks(self, artist_name: str, *, limit: int = 5) -> list[dict[str, Any]]:
+        """Return top tracks from Last.fm when configured."""
+        if not self.configured:
+            return []
         payload = request_json(
             "GET",
-            self.api_url,
-            params=self._params("artist.gettoptracks", artist_name, limit=limit),
+            self.api_base_url,
+            params={
+                "method": "artist.gettoptracks",
+                "artist": artist_name,
+                "api_key": settings.lastfm_api_key,
+                "format": "json",
+                "limit": limit,
+            },
         )
-        tracks = payload.get("toptracks", {}).get("track", [])
-        return list(tracks)[:limit]
+        tracks = (((payload.get("toptracks") or {}).get("track")) or [])
+        return tracks if isinstance(tracks, list) else []
 
     @staticmethod
     def bio_from_lastfm(artist: dict[str, Any]) -> dict[str, Any]:
-        """Map Last.fm artist info into internal bio fields."""
+        """Map a Last.fm artist payload into the internal profile fields."""
         bio = artist.get("bio") or {}
-        summary = str(bio.get("summary") or "").strip()
-        # Last.fm summaries sometimes include HTML links. Keep a clean first part;
-        # rich attribution is stored separately in source metadata.
-        summary = summary.split("<a ")[0].strip()
         return {
-            "bio": summary or None,
+            "bio": bio.get("summary"),
             "bio_source_url": artist.get("url"),
-            "listeners": int(artist.get("stats", {}).get("listeners", 0) or 0),
-            "playcount": int(artist.get("stats", {}).get("playcount", 0) or 0),
+            "listeners": artist.get("stats", {}).get("listeners"),
+            "playcount": artist.get("stats", {}).get("playcount"),
         }
 
     @staticmethod
     def track_from_lastfm(track: dict[str, Any]) -> dict[str, Any]:
-        """Map a Last.fm track into the internal track shape."""
+        """Map a Last.fm track payload into the existing profile contract."""
         return {
-            "title": track.get("name", "Unknown track"),
-            "artist_name": (track.get("artist") or {}).get("name") if isinstance(track.get("artist"), dict) else None,
+            "title": track.get("name"),
+            "artist": (track.get("artist") or {}).get("name") if isinstance(track.get("artist"), dict) else None,
             "source": "lastfm",
-            "listeners": int(track.get("listeners", 0) or 0),
-            "playcount": int(track.get("playcount", 0) or 0),
-            "external_url": track.get("url"),
+            "source_url": track.get("url"),
+            "playcount": track.get("playcount"),
         }
