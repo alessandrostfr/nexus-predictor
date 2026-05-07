@@ -1,8 +1,6 @@
 # Roadmap position — Nexus Predictor V2
 
-Current block: **V2.10 — Frontend premium: Next.js + TypeScript**.
-
-This hotfix stays inside V2.10. It does not start V2.11.
+Current block: **V2.11 — Professional map and final timetable experience**.
 
 ## Completed before this point
 
@@ -16,17 +14,30 @@ This hotfix stays inside V2.10. It does not start V2.11.
 - V2.7 Demand and popularity model.
 - V2.8 Probable 2026 timetable.
 - V2.9 Optimized timetable variants.
+- V2.10 Premium Next.js + TypeScript frontend.
 
-## Current V2.10 correction
+## V2.11 scope
 
-The frontend keeps the premium cyberpunk/Fabrik-night identity while recovering the MVP-like product structure:
+This block polishes the visual and interaction layer for the venue map and timetable experience:
+
+- Professional calibrated Fabrik seven-room map.
+- Saturation by room and hour using V2.8/V2.9 model fields.
+- Probable timetable versus optimized variants comparison.
+- Room profiles with pressure, demand, crowding, conflict and experience metrics.
+- Responsive festival/mobile experience.
+
+The block does not change backend model logic. It consumes the already closed V2.8 and V2.9 API contracts.
+
+## Roadmap update approved by the user
+
+After V2.11, the next block is inserted as:
 
 ```text
-Dashboard | Ranking | Salas | Horarios
+V2.12 — Frontend polish/refinement
 ```
 
-Artist detail is not in the main menu; it is opened from ranking items.
+The original release/QA block moves to:
 
-## Next block after V2.10 is committed
-
-V2.11 — Professional map and final timetable experience.
+```text
+V2.13 — QA, documentation, deploy and V2 release
+```

@@ -1,5 +1,5 @@
 // Frontend API client for Nexus Predictor V2.
-// Every route lives here so the UI remains aligned with the FastAPI contracts.
+// Keeping all contracts in this file prevents the UI from drifting away from FastAPI routes.
 
 export type ApiResponse<T> = {
   success: boolean;
@@ -101,9 +101,28 @@ export type ProbableCoverage = {
   rooms?: string[];
   slots_by_day: Record<string, number>;
   slots_by_room: Record<string, number>;
+  headliner_slots?: number;
+  warmup_slots?: number;
+  closing_slots?: number;
   average_probability_score: number;
   average_confidence_score: number;
   confidence_breakdown?: Record<string, number>;
+  model_version?: string;
+  method?: string;
+  generated_at?: string;
+};
+
+export type OptimizedCoverage = {
+  year: number;
+  expected_variants: number;
+  generated_variants: number;
+  variant_keys: string[];
+  total_slots: number;
+  slots_per_variant: Record<string, number>;
+  assigned_artists_per_variant: Record<string, number>;
+  official_available: boolean;
+  source_status: string;
+  uses_ortools?: boolean;
   model_version?: string;
   method?: string;
   generated_at?: string;
@@ -142,6 +161,14 @@ export type OptimizedComparison = {
   metric_notes: string[];
 };
 
+export type TimetableReason = {
+  key?: string;
+  label?: string;
+  value?: string | number;
+  weight?: number;
+  description?: string;
+};
+
 export type TimetableSlot = {
   id?: number;
   year: number;
@@ -167,6 +194,10 @@ export type TimetableSlot = {
   duration_minutes?: number;
   slot_order?: number;
   slot_type?: string;
+  is_headliner_slot?: boolean;
+  is_closing_slot?: boolean;
+  is_warmup_slot?: boolean;
+  is_special_show?: boolean;
   demand_score?: number;
   popularity_score?: number;
   career_score?: number;
@@ -184,8 +215,8 @@ export type TimetableSlot = {
   official_status?: string;
   is_official?: boolean;
   source_status?: string;
-  reasons?: Array<{ label?: string; value?: string | number; weight?: number; description?: string }>;
-  reason_json?: unknown[];
+  reasons?: TimetableReason[];
+  reason_json?: TimetableReason[];
 };
 
 export type SlotList = {
@@ -247,10 +278,11 @@ export const api = {
     request<DemandArtistList>(`/predictions/v2/${year}/artists`, { limit, q, genre }),
   demandArtist: (year: number, slug: string) => request<DemandArtist>(`/predictions/v2/${year}/artists/${slug}`),
   probableCoverage: (year = 2026) => request<ProbableCoverage>(`/probable-timetables/${year}/coverage`),
-  probableSlots: (year = 2026, limit = 220, room?: string, event_day?: string) =>
+  probableSlots: (year = 2026, limit = 240, room?: string, event_day?: string) =>
     request<SlotList>(`/probable-timetables/${year}/slots`, { limit, room, event_day }),
+  optimizedCoverage: (year = 2026) => request<OptimizedCoverage>(`/optimized-timetables/${year}/coverage`),
   optimizedCompare: (year = 2026) => request<OptimizedComparison>(`/optimized-timetables/${year}/compare`),
-  optimizedVariantSlots: (year: number, variantKey: string, limit = 220, room?: string, event_day?: string) =>
+  optimizedVariantSlots: (year: number, variantKey: string, limit = 240, room?: string, event_day?: string) =>
     request<SlotList>(`/optimized-timetables/${year}/variants/${variantKey}/slots`, { limit, room, event_day }),
   socialStatus: () => request<SocialStatus>('/social-platforms/status'),
 };

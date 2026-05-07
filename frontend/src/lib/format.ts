@@ -1,34 +1,41 @@
-// Small formatting helpers used by the dashboard components.
+// Small display helpers shared by the V2 frontend.
+// They deliberately tolerate undefined values because several API sections can be empty during local seeding.
 
-export function number(value: unknown, fallback = '—') {
-  if (typeof value !== 'number' || Number.isNaN(value)) return fallback;
-  return new Intl.NumberFormat('es-ES').format(value);
+export function number(value: number | string | null | undefined, fallback = '—') {
+  if (value === null || value === undefined || value === '') return fallback;
+  const numeric = typeof value === 'number' ? value : Number(value);
+  if (Number.isNaN(numeric)) return String(value);
+  return new Intl.NumberFormat('es-ES').format(numeric);
 }
 
-export function score(value: unknown, fallback = '—') {
-  if (typeof value !== 'number' || Number.isNaN(value)) return fallback;
-  return value.toFixed(value >= 10 ? 1 : 2);
+export function score(value: number | string | null | undefined, digits = 1, fallback = '—') {
+  if (value === null || value === undefined || value === '') return fallback;
+  const numeric = typeof value === 'number' ? value : Number(value);
+  if (Number.isNaN(numeric)) return String(value);
+  return numeric.toFixed(digits).replace(/\.0$/, '');
 }
 
-export function compact(value: unknown, fallback = '—') {
-  if (typeof value !== 'number' || Number.isNaN(value)) return fallback;
-  return new Intl.NumberFormat('es-ES', { notation: 'compact', maximumFractionDigits: 1 }).format(value);
+export function percent(value: number | string | null | undefined, digits = 0, fallback = '—') {
+  if (value === null || value === undefined || value === '') return fallback;
+  const numeric = typeof value === 'number' ? value : Number(value);
+  if (Number.isNaN(numeric)) return String(value);
+  return `${(numeric * 100).toFixed(digits).replace(/\.0$/, '')}%`;
 }
 
-export function percent(value: unknown, fallback = '—') {
-  if (typeof value !== 'number' || Number.isNaN(value)) return fallback;
-  return `${(value * 100).toFixed(1)}%`;
+export function normalizedPercent(value: number | string | null | undefined, digits = 0, fallback = '—') {
+  if (value === null || value === undefined || value === '') return fallback;
+  const numeric = typeof value === 'number' ? value : Number(value);
+  if (Number.isNaN(numeric)) return String(value);
+  return `${Math.max(0, Math.min(100, numeric)).toFixed(digits).replace(/\.0$/, '')}%`;
 }
 
-export function normalizedPercent(value: unknown, fallback = '—') {
-  if (typeof value !== 'number' || Number.isNaN(value)) return fallback;
-  return `${Math.round(value)}%`;
-}
-
-export function title(value: string | undefined | null) {
-  if (!value) return 'Unknown';
+export function title(value: string | null | undefined, fallback = '—') {
+  if (!value) return fallback;
   return value
     .replaceAll('_', ' ')
     .replaceAll('-', ' ')
-    .replace(/\b\w/g, (match) => match.toUpperCase());
+    .split(' ')
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }

@@ -14,15 +14,25 @@ V2 is the professional roadmap for Nexus Predictor: PostgreSQL, Alembic, evidenc
 - V2.7 Demand and popularity model: closed.
 - V2.8 Probable 2026 timetable: closed.
 - V2.9 Optimized timetable variants: closed.
-- V2.10 Premium frontend with Next.js + TypeScript: delivered in this block.
+- V2.10 Premium Next.js + TypeScript frontend: closed.
+- V2.11 Professional map and timetable UX: delivered in this block.
 
-## V2.10 frontend setup
+## V2.11 validation
 
-From `frontend/`:
+Backend terminal:
 
 ```powershell
+cd backend
+pytest
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+Frontend terminal:
+
+```powershell
+cd frontend
 npm install
-Copy-Item .env.example .env
+npm audit
 npm run typecheck
 npm run build
 npm run dev
@@ -34,66 +44,30 @@ Open:
 http://127.0.0.1:3000
 ```
 
-The frontend expects the backend at:
+## V2.11 focus
+
+- Professional interactive Fabrik map.
+- Saturation by room and hour.
+- Probable timetable versus optimized variants.
+- Room profiles and explanations.
+- Mobile-first festival experience.
+
+## Roadmap update
+
+After V2.11, the user approved adding a new frontend polishing block:
 
 ```text
-http://127.0.0.1:8000/api
+V2.12 — Frontend polish/refinement
 ```
 
-You can change it in `frontend/.env`:
-
-```env
-NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000/api
-```
-
-## Backend validation still required
-
-From `backend/`:
-
-```powershell
-pytest
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-## V2.10 UI scope
-
-This block directly replaces the Vite frontend with Next.js + TypeScript and adds:
-
-- custom CSS/design tokens, no Tailwind dependency
-- premium dark Nexus/Fabrik visual identity
-- mobile-first layout with bottom navigation
-- demand dashboard using V2.7 endpoints
-- evidence and genre dashboard using V2.1/V2.5 endpoints
-- probable timetable summary using V2.8 endpoints
-- optimized variants comparison using V2.9 endpoints
-- clear non-official labels for predicted/optimized timetables
-- loading and error states that do not require backend during `next build`
-
-## V2.10 endpoints consumed by the frontend
+The original release block becomes:
 
 ```text
-GET /api/health
-GET /api/evidence/coverage
-GET /api/genres/v2/coverage
-GET /api/predictions/v2/2026/coverage
-GET /api/predictions/v2/2026/artists?limit=16
-GET /api/probable-timetables/2026/coverage
-GET /api/probable-timetables/2026/slots?limit=14
-GET /api/optimized-timetables/2026/compare
-GET /api/optimized-timetables/2026/variants/fan_experience/slots?limit=16
-GET /api/social-platforms/status
+V2.13 — QA, documentation, deploy and V2 release
 ```
 
-## Official timetable status
-
-The UI must keep this distinction visible:
+## Commit
 
 ```text
-V2.8 probable timetable = predicted_not_official
-V2.9 optimized variants = optimized_not_official
-source_status = no_official_timetable_yet
+polish interactive venue map and timetable ux
 ```
-
-## Next block
-
-V2.11 — Mapa profesional y experiencia final de horarios.
