@@ -18,12 +18,18 @@ REQUIRED_MODULES = [
     "pydantic",
     "pydantic_settings",
     "sqlalchemy",
+    "alembic",
+    "psycopg",
+    "prefect",
     "httpx",
     "pandas",
     "sklearn",
 ]
 
 REQUIRED_PATHS = [
+    Path("alembic.ini"),
+    Path("alembic/versions"),
+    Path("app/pipelines"),
     Path("app/data/editions"),
     Path("app/data/artists"),
     Path("app/data/venue/fabrik_rooms.json"),
@@ -58,7 +64,7 @@ def check_paths() -> list[str]:
 
 def main() -> None:
     """Print a release-friendly environment report."""
-    print("Nexus Predictor backend environment check")
+    print("Nexus Predictor V2 backend environment check")
     print("Python executable:", sys.executable)
     print("Python version:", sys.version.split()[0])
 

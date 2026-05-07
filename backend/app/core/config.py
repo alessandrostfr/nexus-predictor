@@ -1,46 +1,49 @@
 """Application settings for the Nexus Predictor backend.
 
-This module centralizes environment-based configuration so the FastAPI app,
-database layer and external integrations can share the same settings object.
+V2 moves the project from a SQLite-first MVP into a PostgreSQL/Alembic setup.
+All settings stay environment-driven so local development, tests and future
+pipeline workers can share the same configuration contract.
 """
 
-from __future__ import annotations
-
-import json
 from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from sqlalchemy.engine import make_url
 
 
 class Settings(BaseSettings):
     """Backend configuration loaded from environment variables or `.env`.
 
-    Important: BACKEND_CORS_ORIGINS is intentionally stored as a plain string.
-    This keeps local `.env` files simple and avoids pydantic-settings trying to
-    parse comma-separated URLs as a JSON array during test collection.
+    Defaults are development-friendly and intentionally keep external enrichment
+    disabled until the matching V2 roadmap blocks implement each source.
     """
 
-    # Basic application metadata.
-    APP_NAME: str = "Nexus Predictor API"
-    APP_VERSION: str = "0.8.0"
+    APP_NAME: str = "Nexus Predictor"
+    APP_VERSION: str = "2.0.0-foundations"
     ENVIRONMENT: str = "development"
 
-    # Local SQLite database used by the MVP.
-    DATABASE_URL: str = "sqlite:///./nexus_predictor.db"
+    # PostgreSQL is the default database for V2. SQLite remains supported for
+    # isolated experiments by overriding DATABASE_URL in `.env`.
+    DATABASE_URL: str = "postgresql+psycopg://nexus:nexus@localhost:5432/nexus_predictor"
 
-    # Keep this as a comma-separated string in `.env`, for example:
-    # BACKEND_CORS_ORIGINS=http://127.0.0.1:5173,http://localhost:5173
-    BACKEND_CORS_ORIGINS: str = "http://127.0.0.1:5173,http://localhost:5173"
-
-    # Local development convenience: seed the SQLite DB from JSON when needed.
+    # V2 should rely on Alembic migrations by default. Keeping this switch makes
+    # temporary SQLite smoke checks possible without changing application code.
+    AUTO_CREATE_DATABASE_SCHEMA: bool = False
     AUTO_SEED_DATABASE: bool = True
 
-    # External enrichment remains opt-in so tests and local development are stable.
+    BACKEND_CORS_ORIGINS: str = (
+        "http://127.0.0.1:5173,http://localhost:5173,"
+        "http://127.0.0.1:3000,http://localhost:3000"
+    )
+
     ENABLE_EXTERNAL_ARTIST_ENRICHMENT: bool = False
-    SPOTIFY_CLIENT_ID: str = ""
-    SPOTIFY_CLIENT_SECRET: str = ""
-    LASTFM_API_KEY: str = ""
-    MUSICBRAINZ_CONTACT_EMAIL: str = ""
+    EXTERNAL_REQUEST_TIMEOUT_SECONDS: float = 20.0
+    MUSICBRAINZ_CONTACT_EMAIL: str | None = None
+
+    # Reserved for V2.2. They are defined here now so the settings contract is
+    # stable before the real Spotify enrichment block starts.
+    SPOTIFY_CLIENT_ID: str | None = None
+    SPOTIFY_CLIENT_SECRET: str | None = None
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -50,39 +53,42 @@ class Settings(BaseSettings):
 
     @property
     def cors_origins(self) -> list[str]:
-        """Return CORS origins as a clean list for FastAPI middleware.
+        """Return CORS origins as a clean list for FastAPI middleware."""
+        return [origin.strip() for origin in self.BACKEND_CORS_ORIGINS.split(",") if origin.strip()]
 
-        The project historically used comma-separated values. This parser also
-        accepts a JSON array to be tolerant if a developer writes the setting in
-        pydantic's complex-value style.
-        """
-        raw_origins = self.BACKEND_CORS_ORIGINS.strip()
+    @property
+    def database_backend(self) -> str:
+        """Return a simple database backend label used by diagnostics."""
+        if self.DATABASE_URL.startswith("sqlite"):
+            return "sqlite"
+        if self.DATABASE_URL.startswith("postgresql"):
+            return "postgresql"
+        return "unknown"
 
-        if not raw_origins:
-            return []
+    @property
+    def external_timeout(self) -> float:
+        """HTTP timeout used by enrichment services."""
+        return self.EXTERNAL_REQUEST_TIMEOUT_SECONDS
 
-        # Optional support for JSON array syntax:
-        # BACKEND_CORS_ORIGINS=["http://127.0.0.1:5173", "http://localhost:5173"]
-        if raw_origins.startswith("["):
-            try:
-                parsed_origins = json.loads(raw_origins)
-                if isinstance(parsed_origins, list):
-                    return [str(origin).strip() for origin in parsed_origins if str(origin).strip()]
-            except json.JSONDecodeError:
-                # Fall back to comma-separated parsing below.
-                pass
+    @property
+    def musicbrainz_user_agent(self) -> str:
+        """Return a respectful MusicBrainz User-Agent string."""
+        contact = self.MUSICBRAINZ_CONTACT_EMAIL or "local-development@example.com"
+        return f"{self.APP_NAME}/{self.APP_VERSION} ({contact})"
 
-        # Default and recommended local syntax: comma-separated URLs.
-        return [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
+    @property
+    def safe_database_url(self) -> str:
+        """Return DATABASE_URL with the password hidden for logs and API status."""
+        try:
+            return make_url(self.DATABASE_URL).render_as_string(hide_password=True)
+        except Exception:
+            # Keep diagnostics resilient even if a developer is editing the URL.
+            return self.DATABASE_URL
 
 
 @lru_cache
 def get_settings() -> Settings:
-    """Return a cached settings instance.
-
-    Caching avoids reparsing `.env` on every import and keeps configuration
-    predictable during local development and tests.
-    """
+    """Return a cached settings instance."""
     return Settings()
 
 

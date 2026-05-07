@@ -1,4 +1,4 @@
-"""Seed SQLite from the researched JSON dataset."""
+"""Seed the Nexus Predictor database from the researched JSON dataset."""
 
 import json
 from datetime import datetime, timezone
@@ -8,7 +8,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.core.config import settings
-from app.db.database import Base, engine
+from app.db.database import Base, engine, safe_database_url
 from app.db.models import ArtistModel, DatasetMetaModel, EditionModel, RoomModel
 from app.repositories.json_repository import JsonSeedRepository
 
@@ -43,8 +43,14 @@ def loads_json(value: str | None, fallback: Any) -> Any:
 
 
 def create_database_schema() -> None:
-    """Create all database tables if they do not exist."""
-    Base.metadata.create_all(bind=engine)
+    """Create tables only when the compatibility switch is enabled.
+
+    The official V2 path is Alembic migrations. This fallback exists for short
+    lived SQLite experiments and keeps the old seed workflow available without
+    making `create_all()` the default production behavior.
+    """
+    if settings.AUTO_CREATE_DATABASE_SCHEMA:
+        Base.metadata.create_all(bind=engine)
 
 
 def get_table_count(db: Session, model: type) -> int:
@@ -73,7 +79,7 @@ def get_meta_value(db: Session, key: str) -> str | None:
 
 
 def seed_database_from_json(db: Session, *, reset: bool = False) -> dict[str, int]:
-    """Load JSON seed files into SQLite.
+    """Load JSON seed files into the configured database.
 
     Args:
         db: Active SQLAlchemy session.
@@ -177,7 +183,12 @@ def seed_database_from_json(db: Session, *, reset: bool = False) -> dict[str, in
 
 
 def ensure_database_ready(db: Session) -> None:
-    """Create and optionally seed the database before API reads."""
+    """Optionally prepare and seed the database before API reads.
+
+    In the normal V2 PostgreSQL workflow, run `alembic upgrade head` before the
+    API starts. If `AUTO_CREATE_DATABASE_SCHEMA=true`, the app can still create
+    tables directly for lightweight SQLite checks.
+    """
     create_database_schema()
     if settings.AUTO_SEED_DATABASE and not is_database_seeded(db):
         seed_database_from_json(db, reset=False)
@@ -193,7 +204,7 @@ def get_database_status(db: Session) -> dict[str, Any]:
     rooms = get_table_count(db, RoomModel)
 
     return {
-        "database_url": settings.DATABASE_URL,
+        "database_url": safe_database_url(),
         "editions": editions,
         "artists": artists,
         "rooms": rooms,

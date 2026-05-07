@@ -9,6 +9,11 @@ python-dotenv
 
 # Database layer
 SQLAlchemy
+alembic
+psycopg[binary]
+
+# Pipelines and orchestration foundation
+prefect
 
 # HTTP clients and data collection helpers
 httpx

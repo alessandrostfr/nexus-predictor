@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 
 class DatabaseStatus(BaseModel):
-    """Current local SQLite dataset status."""
+    """Current PostgreSQL seed status."""
 
     database_url: str
     editions: int

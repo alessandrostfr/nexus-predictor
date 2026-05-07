@@ -26,6 +26,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Docker / local services
+.pgdata/
+postgres-data/
+
+# Prefect local state
+.prefect/
+
 # OS / IDE
 .DS_Store
 Thumbs.db

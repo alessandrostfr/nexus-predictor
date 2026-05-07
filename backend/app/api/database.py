@@ -13,7 +13,7 @@ router = APIRouter()
 
 @router.get("/status", response_model=ApiResponse[DatabaseStatus])
 def database_status(db: Session = Depends(get_db)) -> ApiResponse[DatabaseStatus]:
-    """Return current SQLite seed status."""
+    """Return current PostgreSQL/Alembic seed status."""
     return ApiResponse(
         success=True,
         message="Database status loaded.",
@@ -23,7 +23,7 @@ def database_status(db: Session = Depends(get_db)) -> ApiResponse[DatabaseStatus
 
 @router.post("/seed", response_model=ApiResponse[dict[str, int]])
 def seed_database(db: Session = Depends(get_db)) -> ApiResponse[dict[str, int]]:
-    """Rebuild SQLite seed tables from the editable JSON files."""
+    """Rebuild seed tables from the editable V1 JSON files."""
     result = seed_database_from_json(db, reset=True)
     return ApiResponse(
         success=True,

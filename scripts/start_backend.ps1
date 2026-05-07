@@ -1,6 +1,15 @@
 # Starts the Nexus Predictor backend in local development mode.
 # Run from the project root with PowerShell.
 
+Set-Location "$PSScriptRoot\.."
+
+if (-not (Test-Path ".env")) {
+  Copy-Item ".env.example" ".env"
+}
+
+Write-Host "Starting PostgreSQL with Docker Compose..."
+docker compose up -d postgres
+
 Set-Location "$PSScriptRoot\..\backend"
 
 if (-not (Test-Path ".venv\Scripts\Activate.ps1")) {
@@ -17,4 +26,6 @@ if (-not (Test-Path ".env")) {
 }
 
 python scripts/check_environment.py
+alembic -c alembic.ini upgrade head
+python scripts/check_v2_foundations.py
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
