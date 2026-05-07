@@ -1,12 +1,13 @@
 """Central API router.
 
 All endpoint modules are included here so `main.py` only has to register one
-router. This keeps the backend structure tidy as the project grows.
+router. V2.1 adds the evidence router without changing existing V1-compatible
+routes.
 """
 
 from fastapi import APIRouter
 
-from app.api import artist_profiles, artists, database, editions, genres, health, predictions, room_risk, venue
+from app.api import artist_profiles, artists, database, editions, evidence, genres, health, predictions, room_risk, venue
 
 api_router = APIRouter()
 api_router.include_router(health.router, prefix="/health", tags=["health"])
@@ -18,3 +19,4 @@ api_router.include_router(venue.router, prefix="/venue", tags=["venue"])
 api_router.include_router(genres.router, prefix="/genres", tags=["genres"])
 api_router.include_router(predictions.router, prefix="/predictions", tags=["predictions"])
 api_router.include_router(room_risk.router, prefix="/room-risk", tags=["room-risk"])
+api_router.include_router(evidence.router, prefix="/evidence", tags=["evidence-v2"])
