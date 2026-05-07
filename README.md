@@ -1,117 +1,98 @@
 # Nexus Predictor
 
-Nexus Predictor is a Python/FastAPI + React MVP for analysing Nexus Festival at Fabrik Madrid. It combines researched historical editions, artist metadata, hard-dance subgenre classification, interpretable demand scoring, attendance prediction and a room pressure simulation for the 2026 edition.
+Nexus Predictor V2 is a Python/FastAPI + Next.js application for analysing Nexus Festival at Fabrik Madrid. It combines PostgreSQL-backed evidence, artist enrichment, multi-genre classification, demand scoring, historical timetables, probable 2026 timetable prediction and optimized non-official timetable variants.
 
-The project is intentionally small and local-first: editable JSON seeds remain the source of truth, FastAPI exposes the data, and React renders a minimal mobile-first dashboard.
+## Current V2 status
 
-## Current MVP status
+Closed through V2.10:
 
-The roadmap MVP is complete through Block 9:
-
-- Block 0: environment, structure, Git and GitHub.
-- Block 1: historical Nexus and Fabrik dataset.
-- Block 2: FastAPI backend and SQLite seed layer.
-- Block 3: artist enrichment foundation.
-- Block 4: hard dance subgenre classification.
-- Block 5: attendance and demand scoring.
-- Block 6: responsive React shell.
-- Block 7: dashboard, rankings and artist profiles.
-- Block 8: rooms, timetable readiness and saturation risk.
-- Block 9: release polish, QA documentation and deployment setup.
+- V2.0 Foundations, PostgreSQL, Docker Compose and Alembic.
+- V2.1 Evidence layer and source registry.
+- V2.2 Spotify integration.
+- V2.3 External ingestion base.
+- V2.4 Social/music-platform metrics and Last.fm top tracks.
+- V2.5 Multi-genre classification.
+- V2.6 Historical timetables 2022-2025.
+- V2.7 Demand and popularity model.
+- V2.8 Probable 2026 timetable.
+- V2.9 Optimized timetable variants.
+- V2.10 Premium Next.js + TypeScript frontend.
 
 ## Tech stack
 
-Backend: Python 3.11+, FastAPI, SQLAlchemy, SQLite, Pydantic, pytest, pandas and scikit-learn.
+Backend: Python 3.11, FastAPI, PostgreSQL, SQLAlchemy 2, Alembic, Pydantic, Prefect, pytest, scikit-learn and OR-Tools.
 
-Frontend: React 18, Vite, Recharts, Three.js and lucide-react.
+Frontend: Next.js, TypeScript, React, Recharts, Framer Motion, lucide-react and custom CSS/design tokens.
 
-## Quick start on Windows PowerShell
+## Backend setup
 
-Backend terminal:
+From `backend/` with the virtual environment active:
 
 ```powershell
-cd "C:\Users\Alessandro\Desktop\Proyectos python\nexus-predictor\backend"
-py -3.11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
 pip install -r requirements.txt
-copy .env.example .env
-python scripts/check_environment.py
-python scripts/validate_dataset.py
-python scripts/generate_predictions.py --year 2026
+alembic -c alembic.ini upgrade head
 pytest
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Frontend terminal:
+Backend URLs:
+
+```text
+API health: http://127.0.0.1:8000/api/health
+API docs:   http://127.0.0.1:8000/docs
+```
+
+## Frontend setup
+
+From `frontend/`:
 
 ```powershell
-cd "C:\Users\Alessandro\Desktop\Proyectos python\nexus-predictor\frontend"
 npm install
-copy .env.example .env
+Copy-Item .env.example .env
+npm run typecheck
 npm run build
 npm run dev
 ```
 
-Open:
+Frontend URL:
 
-```txt
-Frontend: http://127.0.0.1:5173
-Backend health: http://127.0.0.1:8000/api/health
-API docs: http://127.0.0.1:8000/docs
-```
-
-You can also use the helper scripts from the project root:
-
-```powershell
-.\scripts\start_backend.ps1
-.\scripts\start_frontend.ps1
-.\scripts\run_release_checks.ps1
-```
-
-## Main API endpoints
-
-```txt
-GET /api/health
-GET /api/editions
-GET /api/editions/2026
-GET /api/artists
-GET /api/artist-profiles/project-one
-GET /api/genres/taxonomy
-GET /api/genres/editions/2026
-GET /api/predictions/2026
-GET /api/predictions/2026/artists?limit=20
-GET /api/room-risk/2026
-GET /api/room-risk/2026/timetable
+```text
+http://127.0.0.1:3000
 ```
 
 ## Environment variables
 
-Copy the example files before running the app:
-
-```powershell
-copy backend\.env.example backend\.env
-copy frontend\.env.example frontend\.env
-```
-
 Never commit real `.env` files. The project `.gitignore` excludes them.
 
-## Data and model notes
+Frontend example:
 
-- Historical edition data: `backend/app/data/editions/`.
-- Artist enrichment cache: `backend/app/data/artists/enriched_artists.json`.
-- Genre overrides: `backend/app/data/artists/genre_overrides.json`.
-- Prediction snapshots: `backend/app/data/predictions/`.
-- Timetable readiness: `backend/app/data/timetables/2026.json`.
-- Room capacities: `backend/app/data/venue/fabrik_rooms.json`.
+```env
+NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000/api
+```
 
-The current model is interpretable scoring, not a black-box ML model. This is intentional because the public dataset is small and the app needs explainable output.
+## Main V2 API endpoints used by the frontend
 
-## Documentation
+```text
+GET /api/health
+GET /api/evidence/coverage
+GET /api/genres/v2/coverage
+GET /api/predictions/v2/2026/coverage
+GET /api/predictions/v2/2026/artists?limit=16
+GET /api/probable-timetables/2026/coverage
+GET /api/probable-timetables/2026/slots?limit=14
+GET /api/optimized-timetables/2026/compare
+GET /api/optimized-timetables/2026/variants/fan_experience/slots?limit=16
+GET /api/social-platforms/status
+```
 
-- `docs/setup.md`: local setup and environment variables.
-- `docs/data-sources.md`: data sources and confidence notes.
-- `docs/model-notes.md`: scoring and room pressure explanations.
-- `docs/deployment.md`: basic deployment guidance.
-- `docs/mvp-checklist.md`: final release checklist.
-- `docs/ROADMAP_POSITION.md`: roadmap state.
+## Data honesty
+
+The application must keep this distinction visible:
+
+- confirmed evidence
+- inferred evidence
+- predicted timetable
+- optimized non-official scenarios
+- future official timetable when it becomes available
+
+V2.8 and V2.9 are not official Nexus/Fabrik schedules.

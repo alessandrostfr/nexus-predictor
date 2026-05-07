@@ -42,3 +42,8 @@ Thumbs.db
 # Project generated data
 backend/data_exports/
 backend/logs/
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/tsconfig.tsbuildinfo

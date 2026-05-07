@@ -1,21 +1,33 @@
 {
   "name": "nexus-predictor-frontend",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.2",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1 --port 5173",
-    "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1 --port 4173"
+    "predev": "node ./scripts/cleanup-legacy-vite.mjs",
+    "prebuild": "node ./scripts/cleanup-legacy-vite.mjs",
+    "prestart": "node ./scripts/cleanup-legacy-vite.mjs",
+    "dev": "next dev -H 127.0.0.1 -p 3000",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 3000",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "4.3.4",
-    "vite": "5.4.11",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "@types/node": "20.17.10",
+    "@types/react": "18.3.17",
+    "@types/react-dom": "18.3.5",
+    "framer-motion": "11.15.0",
     "lucide-react": "0.468.0",
+    "next": "16.2.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "recharts": "2.13.3",
-    "three": "0.171.0"
+    "typescript": "5.7.2"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "overrides": {
+    "next": {
+      "postcss": "8.5.10"
+    }
+  }
 }

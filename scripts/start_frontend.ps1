@@ -1,11 +1,3 @@
-# Starts the Nexus Predictor frontend in local development mode.
-# Run from the project root with PowerShell.
-
+# Starts the V2 Next.js frontend on 127.0.0.1:3000.
 Set-Location "$PSScriptRoot\..\frontend"
-
-if (-not (Test-Path ".env")) {
-  Copy-Item ".env.example" ".env"
-}
-
-npm install
 npm run dev
