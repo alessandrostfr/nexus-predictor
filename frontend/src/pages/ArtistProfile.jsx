@@ -5,6 +5,7 @@ import { EditionSelector } from '../components/EditionSelector.jsx';
 import { EmptyPanel } from '../components/EmptyPanel.jsx';
 import { MetricCard } from '../components/MetricCard.jsx';
 import { ShellCard } from '../components/ShellCard.jsx';
+import { SkeletonPanel } from '../components/SkeletonPanel.jsx';
 
 function formatNumber(value) {
   if (value === undefined || value === null) {
@@ -56,6 +57,15 @@ export function ArtistProfile({
   const appearances = profile?.appearances ?? [];
   const links = externalLinks(profile);
   const relatedRanking = ranking?.items?.slice(0, 6) ?? [];
+
+  if (isLoading && !profile && !prediction) {
+    return (
+      <div className="page-stack">
+        <EditionSelector years={availableYears} selectedYear={selectedYear} onYearChange={onYearChange} />
+        <SkeletonPanel variant="artist" rows={4} />
+      </div>
+    );
+  }
 
   if (!profile && !prediction && !isLoading) {
     return (

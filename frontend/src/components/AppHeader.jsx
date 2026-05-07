@@ -10,7 +10,7 @@ export function AppHeader({ activeView, navItems, selectedYear, onViewChange }) 
         </span>
         <span>
           <strong>Nexus Predictor</strong>
-          <small>Dashboard MVP</small>
+          <small>Release MVP</small>
         </span>
       </button>
 

@@ -1,162 +1,117 @@
 # Nexus Predictor
 
-Nexus Predictor is a small Python + React application to research Nexus Festival editions, enrich artists with public music data, and estimate demand, attendance, and crowd pressure for future editions.
+Nexus Predictor is a Python/FastAPI + React MVP for analysing Nexus Festival at Fabrik Madrid. It combines researched historical editions, artist metadata, hard-dance subgenre classification, interpretable demand scoring, attendance prediction and a room pressure simulation for the 2026 edition.
 
-## Current roadmap position
+The project is intentionally small and local-first: editable JSON seeds remain the source of truth, FastAPI exposes the data, and React renders a minimal mobile-first dashboard.
 
-Current block: `Block 2 - Backend FastAPI base`.
+## Current MVP status
 
-Closed blocks:
+The roadmap MVP is complete through Block 9:
 
-- `Block 0 - Environment, structure, Git and GitHub`.
-- `Block 1 - Historical research and dataset foundation`.
+- Block 0: environment, structure, Git and GitHub.
+- Block 1: historical Nexus and Fabrik dataset.
+- Block 2: FastAPI backend and SQLite seed layer.
+- Block 3: artist enrichment foundation.
+- Block 4: hard dance subgenre classification.
+- Block 5: attendance and demand scoring.
+- Block 6: responsive React shell.
+- Block 7: dashboard, rankings and artist profiles.
+- Block 8: rooms, timetable readiness and saturation risk.
+- Block 9: release polish, QA documentation and deployment setup.
 
-Next block: `Block 3 - Artist enrichment`.
+## Tech stack
 
----
+Backend: Python 3.11+, FastAPI, SQLAlchemy, SQLite, Pydantic, pytest, pandas and scikit-learn.
 
-## Backend setup
+Frontend: React 18, Vite, Recharts, Three.js and lucide-react.
 
-### Windows PowerShell
+## Quick start on Windows PowerShell
+
+Backend terminal:
 
 ```powershell
-cd backend
+cd "C:\Users\Alessandro\Desktop\Proyectos python\nexus-predictor\backend"
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 copy .env.example .env
+python scripts/check_environment.py
 python scripts/validate_dataset.py
-python scripts/seed_database.py
+python scripts/generate_predictions.py --year 2026
+pytest
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Backend health check:
-
-```txt
-http://127.0.0.1:8000/api/health
-```
-
-Interactive API docs:
-
-```txt
-http://127.0.0.1:8000/docs
-```
-
-Useful API routes after Block 2:
-
-```txt
-GET  /api/health
-GET  /api/database/status
-POST /api/database/seed
-GET  /api/editions
-GET  /api/editions/2026
-GET  /api/editions/2026/lineup
-GET  /api/artists
-GET  /api/artists?year=2026&q=anger
-GET  /api/artists/project-one
-GET  /api/venue/fabrik
-GET  /api/venue/fabrik/rooms
-GET  /api/genres
-GET  /api/genres/editions/2026
-```
-
----
-
-## Frontend setup
-
-Open another terminal from the project root:
+Frontend terminal:
 
 ```powershell
-cd frontend
+cd "C:\Users\Alessandro\Desktop\Proyectos python\nexus-predictor\frontend"
 npm install
 copy .env.example .env
+npm run build
 npm run dev
 ```
 
-Frontend URL:
+Open:
 
 ```txt
-http://127.0.0.1:5173
+Frontend: http://127.0.0.1:5173
+Backend health: http://127.0.0.1:8000/api/health
+API docs: http://127.0.0.1:8000/docs
 ```
 
----
-
-## Run backend tests
-
-From `backend/` with the virtual environment active:
+You can also use the helper scripts from the project root:
 
 ```powershell
-pytest
+.\scripts\start_backend.ps1
+.\scripts\start_frontend.ps1
+.\scripts\run_release_checks.ps1
 ```
 
----
-
-## Git workflow
-
-At the end of Block 2:
-
-```bash
-git add .
-git commit -m "build FastAPI backend foundation"
-git push
-```
-
-
----
-
-## Block 3 - Artist enrichment
-
-Block 3 adds the backend foundation for enriched artist profiles.
-
-### New endpoints
+## Main API endpoints
 
 ```txt
-GET  /api/artist-profiles
-GET  /api/artist-profiles/{slug}
-POST /api/artist-profiles/{slug}/refresh
+GET /api/health
+GET /api/editions
+GET /api/editions/2026
+GET /api/artists
+GET /api/artist-profiles/project-one
+GET /api/genres/taxonomy
+GET /api/genres/editions/2026
+GET /api/predictions/2026
+GET /api/predictions/2026/artists?limit=20
+GET /api/room-risk/2026
+GET /api/room-risk/2026/timetable
 ```
 
-### Local validation
+## Environment variables
 
-From `backend/` with the virtual environment active:
+Copy the example files before running the app:
 
-```bash
-python scripts/validate_dataset.py
-pytest
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```powershell
+copy backend\.env.example backend\.env
+copy frontend\.env.example frontend\.env
 ```
 
-Useful URLs:
+Never commit real `.env` files. The project `.gitignore` excludes them.
 
-```txt
-http://127.0.0.1:8000/api/artist-profiles/angerfist
-http://127.0.0.1:8000/api/artist-profiles/project-one
-http://127.0.0.1:8000/api/artist-profiles?year=2026&q=project
-http://127.0.0.1:8000/docs
-```
+## Data and model notes
 
-### Optional external API refresh
+- Historical edition data: `backend/app/data/editions/`.
+- Artist enrichment cache: `backend/app/data/artists/enriched_artists.json`.
+- Genre overrides: `backend/app/data/artists/genre_overrides.json`.
+- Prediction snapshots: `backend/app/data/predictions/`.
+- Timetable readiness: `backend/app/data/timetables/2026.json`.
+- Room capacities: `backend/app/data/venue/fabrik_rooms.json`.
 
-External calls are disabled by default so the app and tests work without API keys.
-To enable real refreshes, configure `.env`:
+The current model is interpretable scoring, not a black-box ML model. This is intentional because the public dataset is small and the app needs explainable output.
 
-```env
-ENABLE_EXTERNAL_ARTIST_ENRICHMENT=true
-SPOTIFY_CLIENT_ID="your_client_id"
-SPOTIFY_CLIENT_SECRET="your_client_secret"
-LASTFM_API_KEY="your_lastfm_key"
-MUSICBRAINZ_CONTACT_EMAIL="your_email@example.com"
-```
+## Documentation
 
-Then refresh one artist:
-
-```bash
-python scripts/enrich_artists.py --slug angerfist --external --force
-```
-
-The local cache lives at:
-
-```txt
-backend/app/data/artists/enriched_artists.json
-```
+- `docs/setup.md`: local setup and environment variables.
+- `docs/data-sources.md`: data sources and confidence notes.
+- `docs/model-notes.md`: scoring and room pressure explanations.
+- `docs/deployment.md`: basic deployment guidance.
+- `docs/mvp-checklist.md`: final release checklist.
+- `docs/ROADMAP_POSITION.md`: roadmap state.

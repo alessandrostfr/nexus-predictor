@@ -6,6 +6,7 @@ import { EditionSelector } from '../components/EditionSelector.jsx';
 import { MetricCard } from '../components/MetricCard.jsx';
 import { RoomCapacityCard } from '../components/RoomCapacityCard.jsx';
 import { ShellCard } from '../components/ShellCard.jsx';
+import { SkeletonPanel } from '../components/SkeletonPanel.jsx';
 import { FabrikThreeMap } from '../components/FabrikThreeMap.jsx';
 
 function formatNumber(value) {
@@ -241,7 +242,7 @@ export function RoomRisk({ roomRisk, isLoading, error, selectedYear, availableYe
           className="map-card"
         >
           {isLoading ? (
-            <EmptyPanel title="Cargando mapa" message="Leyendo capacidades y predicciones del backend." />
+            <SkeletonPanel variant="map" rows={3} />
           ) : rooms.length > 0 ? (
             <FabrikThreeMap
               rooms={rooms}
@@ -301,7 +302,11 @@ export function RoomRisk({ roomRisk, isLoading, error, selectedYear, availableYe
         title="Riesgo por sala y franja"
         description="Pulsa cualquier columna para cambiar la hora del mapa. Ahora es teórico; cuando haya timetable oficial se recalculará por solapes reales."
       >
-        <Heatmap heatmap={heatmap} rooms={rawRooms} selectedTimeBand={activeTimeBand} onTimeBandChange={handleTimeBandChange} />
+        {isLoading && heatmap.length === 0 ? (
+          <SkeletonPanel variant="heatmap" rows={4} />
+        ) : (
+          <Heatmap heatmap={heatmap} rooms={rawRooms} selectedTimeBand={activeTimeBand} onTimeBandChange={handleTimeBandChange} />
+        )}
       </ShellCard>
 
       <ShellCard

@@ -9,6 +9,7 @@ import { GenreFilter } from '../components/GenreFilter.jsx';
 import { MetricCard } from '../components/MetricCard.jsx';
 import { PredictionCard } from '../components/PredictionCard.jsx';
 import { ShellCard } from '../components/ShellCard.jsx';
+import { SkeletonPanel } from '../components/SkeletonPanel.jsx';
 
 function formatNumber(value) {
   if (value === undefined || value === null) {
@@ -83,6 +84,8 @@ export function Dashboard({
       </section>
 
       <EditionSelector years={availableYears} selectedYear={selectedYear} onYearChange={onYearChange} />
+
+      {isLoading && rankingItems.length === 0 ? <SkeletonPanel variant="dashboard" rows={4} /> : null}
 
       <section className="metric-grid">
         <MetricCard
@@ -176,7 +179,9 @@ export function Dashboard({
           onFiltersChange={onFiltersChange}
         />
 
-        {rankingItems.length > 0 ? (
+        {isLoading && rankingItems.length === 0 ? (
+          <SkeletonPanel variant="ranking" rows={5} />
+        ) : rankingItems.length > 0 ? (
           <div className="ranking-layout">
             <div className="artist-ranking-list">
               {rankingItems.slice(0, isRankingMode ? 80 : 12).map((artist) => (
