@@ -1,6 +1,6 @@
 # Nexus Predictor V2
 
-V2 is the professional roadmap for Nexus Predictor: PostgreSQL, Alembic, evidence-first data, external ingestion, social/music-platform metrics and later timetable prediction/optimization.
+V2 is the professional roadmap for Nexus Predictor: PostgreSQL, Alembic, evidence-first data, external ingestion, social/music-platform metrics, multi-genre classification and historical timetable modeling.
 
 ## Current status
 
@@ -8,32 +8,31 @@ V2 is the professional roadmap for Nexus Predictor: PostgreSQL, Alembic, evidenc
 - V2.1 Evidence layer: closed.
 - V2.2 Spotify real: closed.
 - V2.3 External ingestion base: closed.
-- V2.4 Social networks and music platforms: current delivered block.
+- V2.4 Social networks and music platforms: closed.
+- V2.5 Multi-genre classification: closed.
+- V2.6 Historical timetables 2022-2025: delivered in this block.
 
-## V2.4 validation
+## V2.6 validation
 
 From `backend/`:
 
 ```powershell
-python scripts/run_social_platform_ingestion.py --reset
-python scripts/check_v2_social_platforms.py
+alembic -c alembic.ini upgrade head
+python scripts/check_v2_historical_timetables.py
+pytest tests/test_api_v2_historical_timetables.py
 pytest
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Useful endpoints:
+With the backend running:
 
-```text
-GET  /api/social-platforms/status
-POST /api/social-platforms/run?reset=true
-GET  /api/social-platforms/coverage
-GET  /api/social-platforms/artists/angerfist
-POST /api/social-platforms/lastfm/angerfist/refresh?force=true
+```powershell
+Invoke-RestMethod "http://127.0.0.1:8000/api/historical-timetables/coverage" | ConvertTo-Json -Depth 20
+Invoke-RestMethod "http://127.0.0.1:8000/api/historical-timetables/2025" | ConvertTo-Json -Depth 20
+Invoke-RestMethod "http://127.0.0.1:8000/api/historical-timetables/integrity" | ConvertTo-Json -Depth 20
 ```
 
-Optional Last.fm key in `backend/.env`:
+## Next block
 
-```env
-LASTFM_API_KEY=
-LASTFM_TOP_TRACK_LIMIT=10
-```
+V2.7 — Demand and popularity model V2.
+
+Do not jump to V2.8/V2.9 timetable prediction/optimization or V2.10 frontend migration before closing V2.7.

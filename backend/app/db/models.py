@@ -402,3 +402,71 @@ class ArtistGenreModel(Base):
     raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+class HistoricalTimetableSlotModel(Base):
+    """Normalized historical timetable slot imported in V2.6.
+
+    The row keeps both the observed room alias from the historical timetable and
+    the normalized Fabrik room name. This is important because older images use
+    names such as New Crystal, Crystal Area, Rave Area Club or Club 360, while
+    the model needs one canonical room key per physical room.
+    """
+
+    __tablename__ = "historical_timetable_slots"
+    __table_args__ = (
+        UniqueConstraint(
+            "year",
+            "event_day",
+            "room_slug",
+            "start_minutes",
+            "artist_slug",
+            name="uq_historical_slot_identity",
+        ),
+        Index("ix_historical_slots_year_day", "year", "event_day"),
+        Index("ix_historical_slots_room_time", "year", "event_day", "room_slug", "start_minutes"),
+        Index("ix_historical_slots_artist", "artist_slug"),
+        Index("ix_historical_slots_headliner", "year", "is_headliner_slot"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    year: Mapped[int] = mapped_column(Integer, nullable=False, index=True)
+    event_day: Mapped[str] = mapped_column(String(40), nullable=False)
+    festival_day: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    date_label: Mapped[str | None] = mapped_column(String(80), nullable=True)
+
+    room_name: Mapped[str] = mapped_column(String(160), nullable=False)
+    room_slug: Mapped[str] = mapped_column(String(160), nullable=False, index=True)
+    observed_room_name: Mapped[str | None] = mapped_column(String(160), nullable=True)
+    room_aliases_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+
+    artist_id: Mapped[int | None] = mapped_column(ForeignKey("artists.id", ondelete="SET NULL"), nullable=True)
+    artist_slug: Mapped[str | None] = mapped_column(String(255), nullable=True, index=True)
+    artist_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    show_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    performance_type: Mapped[str] = mapped_column(String(80), nullable=False, default="solo")
+
+    start_time: Mapped[str] = mapped_column(String(5), nullable=False)
+    end_time: Mapped[str] = mapped_column(String(5), nullable=False)
+    start_minutes: Mapped[int] = mapped_column(Integer, nullable=False)
+    end_minutes: Mapped[int] = mapped_column(Integer, nullable=False)
+    duration_minutes: Mapped[int] = mapped_column(Integer, nullable=False)
+    slot_order: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+
+    slot_type: Mapped[str] = mapped_column(String(80), nullable=False, default="standard")
+    is_headliner_slot: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    is_closing_slot: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    is_warmup_slot: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    is_special_show: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+
+    source_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    source_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    source_id: Mapped[int | None] = mapped_column(ForeignKey("sources.id", ondelete="SET NULL"), nullable=True)
+    evidence_id: Mapped[int | None] = mapped_column(ForeignKey("evidence_items.id", ondelete="SET NULL"), nullable=True)
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    extraction_method: Mapped[str] = mapped_column(String(80), nullable=False, default="manual_image_transcription")
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="pending_review")
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+
+    raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)

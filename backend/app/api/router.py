@@ -16,6 +16,7 @@ from app.api import (
     evidence,
     genres,
     health,
+    historical_timetables,
     predictions,
     room_risk,
     social_platforms,
@@ -36,4 +37,5 @@ api_router.include_router(room_risk.router, prefix="/room-risk", tags=["room-ris
 api_router.include_router(evidence.router, prefix="/evidence", tags=["evidence-v2"])
 api_router.include_router(spotify.router, prefix="/spotify", tags=["spotify-v2"])
 api_router.include_router(ingestion.router, prefix="/ingestion", tags=["ingestion-v2"])
+api_router.include_router(historical_timetables.router, prefix="/historical-timetables", tags=["historical-timetables-v2"])
 api_router.include_router(social_platforms.router, prefix="/social-platforms", tags=["social-platforms-v2"])
