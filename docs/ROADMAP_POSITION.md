@@ -1,6 +1,6 @@
 # Roadmap position — Nexus Predictor V3
 
-Current block: **V3.2 — Arquitectura de datos ML-ready**.
+Current block: **V3.3 — Identidad de artistas y entity resolution**.
 
 ## Current status
 
@@ -16,10 +16,15 @@ V3.1 is closed and committed with:
 define continuous nexus 2026 event contract
 ```
 
-V3.2 starts from the updated V3 branch after the continuous Nexus 2026 contract.
-Its purpose is to create the reproducible storage foundation for future ML work:
-raw snapshots, normalized metrics, datasets, features, labels, model runs and
-persisted predictions.
+V3.2 is closed and committed with:
+
+```text
+build ml ready data foundation
+```
+
+V3.3 starts from the updated V3 branch after the ML-ready data foundation. Its
+purpose is to define canonical artist identity before V3.4+ ingestion attaches
+external platform metrics to artists.
 
 ## Active branch
 
@@ -46,89 +51,84 @@ refactor/v3-ml-first
 - V3 roadmap stack section added.
 - V3.0 Predictive audit and ML-first branch guardrails.
 - V3.1 Continuous Nexus 2026 event contract.
+- V3.2 ML-ready data foundation.
 
-## V3.2 scope
+## V3.3 scope
 
-V3.2 implements:
+V3.3 implements:
 
-- `raw_sources` table.
-- `raw_snapshots` table.
-- `normalized_metrics` table.
-- `ml_datasets` table.
-- `ml_feature_snapshots` table.
-- `ml_labels` table.
-- `ml_model_runs` table.
-- `ml_predictions` table.
-- V3.2 SQLAlchemy models.
-- Alembic migration.
-- Pydantic schemas for inspection/debug.
-- `/api/v3/ml-data/coverage` endpoint.
-- `/api/v3/ml-data/contracts` endpoint.
-- `/api/v3/ml-data/conventions` endpoint.
-- `backend/scripts/check_v3_ml_data_foundation.py`.
-- Documentation of source/confidence conventions.
+- `artist_master` table.
+- `artist_aliases` table.
+- `artist_identity_links` table.
+- `artist_identity_candidates` table.
+- Deterministic name normalization utilities.
+- Seed rebuild from current artists/profile data.
+- Admin review endpoint for verified/rejected decisions.
+- Feature eligibility gate: only verified/high external links can feed ML features.
+- Minimal frontend page at `/admin/data-review`.
+- `backend/scripts/check_v3_identity_resolution.py`.
+- Documentation of identity-resolution conventions.
 
-## V3.2 decisions
+## V3.3 decisions
 
 ```text
-raw_payload storage: PostgreSQL JSONB
-snapshot retention: no automatic deletion in V3.2
+minimum feature confidence = verified/high
+top/2026 artists = external profiles require manual review unless verified/high
 ```
 
-The project keeps snapshots conservatively during the ML research phase so later
-normalization, feature engineering and training can be reproduced.
-
-## V3.2 validation
+## V3.3 validation
 
 From backend:
 
 ```powershell
 alembic upgrade head
-pytest tests/test_api_v3_ml_data_foundation.py
+pytest tests/test_api_v3_identity_resolution.py
 pytest
 ```
 
 From repo root:
 
 ```powershell
-python backend/scripts/check_v3_ml_data_foundation.py
+python backend/scripts/check_v3_identity_resolution.py
 ```
 
-Manual Swagger checks:
+Endpoint checks from console:
 
-```text
-GET /api/v3/ml-data/coverage
-GET /api/v3/ml-data/contracts
-GET /api/v3/ml-data/conventions
+```powershell
+curl.exe -X POST "http://127.0.0.1:8000/api/v3/identity/rebuild?reset=true"
+curl.exe "http://127.0.0.1:8000/api/v3/identity/coverage"
+curl.exe "http://127.0.0.1:8000/api/v3/identity/artists?limit=5"
+curl.exe "http://127.0.0.1:8000/api/v3/identity/candidates?status=pending_review&limit=5"
 ```
 
 Expected facts:
 
-- 8 V3.2 tables exist.
-- Coverage endpoint returns all 8 tables.
-- Contracts endpoint explains raw/training/prediction responsibilities.
-- Conventions endpoint includes `source_type`, `confidence`, `extraction_method`, `label_type`, `model_type` and `prediction_status`.
+- Canonical artists exist.
+- Each artist has at least one alias.
+- Internal `nexus_seed` identity links are verified.
+- Low/pending/rejected external links are not feature eligible.
+- Admin review can verify or reject candidates.
 - No model training happens in this block.
 
-## V3.2 commit
+## V3.3 commit
 
 ```text
-build ml ready data foundation
+normalize artist identity resolution
 ```
 
-## V3.2 progress
+## V3.3 progress
 
 ```text
-10% -> 16%
+16% -> 22%
 ```
 
 ## Next block
 
-After V3.2 is validated and committed, continue with:
+After V3.3 is validated and committed, continue with:
 
 ```text
-V3.3 — Identidad de artistas y entity resolution
+V3.4 — Ingesta masiva híbrida y evaluación de herramientas
 ```
 
-Do not start ingestion or model training before V3.3 identity resolution defines
-how external profiles map to canonical artists.
+Do not start SoundCloud/YouTube/external ingestion before V3.3 identity review
+rules are in place.

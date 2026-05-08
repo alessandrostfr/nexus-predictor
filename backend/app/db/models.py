@@ -1057,3 +1057,139 @@ class MLPredictionModel(Base):
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class ArtistMasterModel(Base):
+    """Canonical V3 artist identity used before external profile ingestion.
+
+    This table does not replace the original `artists` seed table immediately.
+    It creates an ML-safe identity layer where external profiles, aliases and
+    review decisions can point to one canonical artist before any future feature
+    builder consumes platform metrics.
+    """
+
+    __tablename__ = "artist_master"
+    __table_args__ = (
+        UniqueConstraint("canonical_artist_key", name="uq_artist_master_key"),
+        UniqueConstraint("source_artist_slug", name="uq_artist_master_source_slug"),
+        Index("ix_artist_master_normalized_name", "normalized_name"),
+        Index("ix_artist_master_review_status", "review_status", "needs_manual_review"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    artist_id: Mapped[int | None] = mapped_column(ForeignKey("artists.id", ondelete="SET NULL"), nullable=True, index=True)
+    canonical_artist_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    source_artist_slug: Mapped[str] = mapped_column(String(255), nullable=False)
+    display_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    normalized_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    primary_genre_seed: Mapped[str | None] = mapped_column(String(160), nullable=True)
+    appearance_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    is_2026_artist: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    is_top_artist: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    needs_manual_review: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    review_status: Mapped[str] = mapped_column(String(60), nullable=False, default="seed_verified")
+    feature_eligibility_status: Mapped[str] = mapped_column(String(80), nullable=False, default="internal_seed_only")
+    alias_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    appearances_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    raw_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class ArtistAliasModel(Base):
+    """Alias/name variant belonging to a canonical artist."""
+
+    __tablename__ = "artist_aliases"
+    __table_args__ = (
+        UniqueConstraint("artist_master_id", "normalized_alias", "alias_type", name="uq_artist_alias_identity"),
+        Index("ix_artist_aliases_normalized", "normalized_alias"),
+        Index("ix_artist_aliases_confidence", "confidence", "status"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    artist_master_id: Mapped[int] = mapped_column(ForeignKey("artist_master.id", ondelete="CASCADE"), nullable=False, index=True)
+    canonical_artist_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    alias: Mapped[str] = mapped_column(String(255), nullable=False)
+    normalized_alias: Mapped[str] = mapped_column(String(255), nullable=False)
+    alias_type: Mapped[str] = mapped_column(String(80), nullable=False, default="display_name")
+    source_key: Mapped[str] = mapped_column(String(160), nullable=False, default="nexus_seed")
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="high")
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="active")
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    raw_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class ArtistIdentityLinkModel(Base):
+    """Reviewed or pending link between a canonical artist and an external profile."""
+
+    __tablename__ = "artist_identity_links"
+    __table_args__ = (
+        UniqueConstraint("artist_master_id", "platform", "profile_url", name="uq_artist_identity_link_url"),
+        UniqueConstraint("artist_master_id", "platform", "external_id", name="uq_artist_identity_link_external_id"),
+        Index("ix_artist_identity_links_platform_status", "platform", "match_status"),
+        Index("ix_artist_identity_links_feature_eligible", "is_feature_eligible", "confidence"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    artist_master_id: Mapped[int] = mapped_column(ForeignKey("artist_master.id", ondelete="CASCADE"), nullable=False, index=True)
+    artist_id: Mapped[int | None] = mapped_column(ForeignKey("artists.id", ondelete="SET NULL"), nullable=True, index=True)
+    canonical_artist_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    platform: Mapped[str] = mapped_column(String(80), nullable=False)
+    profile_name: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    normalized_profile_name: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    profile_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    confidence_score: Mapped[float | None] = mapped_column(Float, nullable=True)
+    match_status: Mapped[str] = mapped_column(String(60), nullable=False, default="pending_review")
+    match_method: Mapped[str] = mapped_column(String(120), nullable=False, default="seed_match")
+    source_table: Mapped[str | None] = mapped_column(String(120), nullable=True)
+    source_record_id: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    is_primary: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    is_feature_eligible: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    requires_manual_review: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    reviewed_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    reviewed_by: Mapped[str | None] = mapped_column(String(120), nullable=True)
+    review_notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    raw_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class ArtistIdentityCandidateModel(Base):
+    """Candidate external profile that needs verification or rejection."""
+
+    __tablename__ = "artist_identity_candidates"
+    __table_args__ = (
+        UniqueConstraint("candidate_key", name="uq_artist_identity_candidate_key"),
+        Index("ix_artist_identity_candidates_status", "status", "confidence"),
+        Index("ix_artist_identity_candidates_artist", "artist_master_id", "status"),
+        Index("ix_artist_identity_candidates_platform", "platform", "status"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    artist_master_id: Mapped[int] = mapped_column(ForeignKey("artist_master.id", ondelete="CASCADE"), nullable=False, index=True)
+    artist_id: Mapped[int | None] = mapped_column(ForeignKey("artists.id", ondelete="SET NULL"), nullable=True)
+    canonical_artist_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    candidate_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    platform: Mapped[str] = mapped_column(String(80), nullable=False)
+    candidate_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    normalized_candidate_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    candidate_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    match_score: Mapped[float] = mapped_column(Float, nullable=False, default=0)
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="pending_review")
+    suggested_action: Mapped[str] = mapped_column(String(80), nullable=False, default="manual_review")
+    match_method: Mapped[str] = mapped_column(String(120), nullable=False, default="name_similarity")
+    source_table: Mapped[str | None] = mapped_column(String(120), nullable=True)
+    source_record_id: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    evidence_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    reviewed_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    reviewed_by: Mapped[str | None] = mapped_column(String(120), nullable=True)
+    review_notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)

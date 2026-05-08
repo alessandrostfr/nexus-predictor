@@ -20,48 +20,54 @@ Nothing is called ML unless it has:
 
 - V3.0 closed: predictive audit and ML-first branch guardrails.
 - V3.1 closed: continuous Nexus 2026 event contract.
-- V3.2 active/delivered: ML-ready data foundation.
+- V3.2 closed: ML-ready data foundation.
+- V3.3 active/delivered: artist identity resolution.
 
-## V3.2 foundation
+## V3.3 identity foundation
 
-V3.2 creates the storage layer that future blocks need before training real ML:
+V3.3 creates the identity layer required before external ingestion:
 
 ```text
-raw_sources
-raw_snapshots
-normalized_metrics
-ml_datasets
-ml_feature_snapshots
-ml_labels
-ml_model_runs
-ml_predictions
+artist_master
+artist_aliases
+artist_identity_links
+artist_identity_candidates
 ```
 
-This block does not train models. It prepares reproducibility.
+This block does not train models. It prevents future models from using Spotify,
+SoundCloud, YouTube or social metrics attached to the wrong artist.
 
-## Data honesty rules
+## Identity honesty rules
 
-- Raw snapshots are evidence storage, not predictions.
-- Normalized metrics are feature candidates, not model outputs.
-- Labels can be confirmed, inferred or proxy; proxies must be documented.
-- Model runs must store metrics before being treated as useful.
-- Frontend must eventually consume `ml_predictions` via API, not fake constants.
-- OR-Tools remains optimization, not ML.
+- Internal `nexus_seed` identity can be verified because it comes from the current dataset.
+- External profiles require confidence gates before feature usage.
+- Only `verified` and `high` links can become feature eligible.
+- `medium`, `low`, `unknown`, `pending_review` and `rejected` links are blocked from ML features.
+- Top/2026 artists require careful review for external profiles.
 
-## V3.2 validation
+## V3.3 validation
 
 From backend:
 
 ```powershell
 alembic upgrade head
-pytest tests/test_api_v3_ml_data_foundation.py
+pytest tests/test_api_v3_identity_resolution.py
 pytest
 ```
 
 From repo root:
 
 ```powershell
-python backend/scripts/check_v3_ml_data_foundation.py
+python backend/scripts/check_v3_identity_resolution.py
+```
+
+Endpoint checks from console:
+
+```powershell
+curl.exe -X POST "http://127.0.0.1:8000/api/v3/identity/rebuild?reset=true"
+curl.exe "http://127.0.0.1:8000/api/v3/identity/coverage"
+curl.exe "http://127.0.0.1:8000/api/v3/identity/artists?limit=5"
+curl.exe "http://127.0.0.1:8000/api/v3/identity/candidates?status=pending_review&limit=5"
 ```
 
 ## Operational methodology
@@ -72,6 +78,6 @@ Before each new block:
 2. Re-read the exact roadmap block.
 3. Detect missing scope before implementation.
 4. Deliver complete files and ZIP with root folder `nexus-predictor/`.
-5. Provide concrete validations.
+5. Provide concrete validations and console endpoint checks.
 6. Suggest one English commit message.
 7. Report block and total V3 progress.
