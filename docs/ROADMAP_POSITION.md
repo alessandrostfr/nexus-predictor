@@ -1,6 +1,6 @@
 # Roadmap position — Nexus Predictor V3
 
-Current block: **V3.1 — Contrato real Nexus 2026 y calendario continuo**.
+Current block: **V3.2 — Arquitectura de datos ML-ready**.
 
 ## Current status
 
@@ -10,9 +10,16 @@ V3.0 is closed and committed with:
 audit predictive core for ml first v3
 ```
 
-V3.1 starts from the updated V3 branch and fixes the most important time-data
-contract before any ML training happens: Nexus 2026 must be represented as one
-continuous event, not as separate Friday/Saturday functional days.
+V3.1 is closed and committed with:
+
+```text
+define continuous nexus 2026 event contract
+```
+
+V3.2 starts from the updated V3 branch after the continuous Nexus 2026 contract.
+Its purpose is to create the reproducible storage foundation for future ML work:
+raw snapshots, normalized metrics, datasets, features, labels, model runs and
+persisted predictions.
 
 ## Active branch
 
@@ -38,91 +45,90 @@ refactor/v3-ml-first
 - V3 roadmap ML-first created.
 - V3 roadmap stack section added.
 - V3.0 Predictive audit and ML-first branch guardrails.
+- V3.1 Continuous Nexus 2026 event contract.
 
-## V3.1 scope
+## V3.2 scope
 
-V3.1 implements:
+V3.2 implements:
 
-- `event_contracts` table.
-- `event_time_windows` table.
-- V3.1 SQLAlchemy models.
+- `raw_sources` table.
+- `raw_snapshots` table.
+- `normalized_metrics` table.
+- `ml_datasets` table.
+- `ml_feature_snapshots` table.
+- `ml_labels` table.
+- `ml_model_runs` table.
+- `ml_predictions` table.
+- V3.2 SQLAlchemy models.
 - Alembic migration.
-- `EventContractService`.
-- `/api/v3/events/2026/contract` endpoint.
-- `/api/v3/events/2026/time-windows` endpoint.
-- `/api/v3/events/2026/contract/validation` endpoint.
-- `backend/scripts/check_v3_event_contract.py`.
-- Documentation of the continuous 12:00-06:00 rule.
-- Adjustment of generated 2026 timetable shells away from Friday/Saturday split.
+- Pydantic schemas for inspection/debug.
+- `/api/v3/ml-data/coverage` endpoint.
+- `/api/v3/ml-data/contracts` endpoint.
+- `/api/v3/ml-data/conventions` endpoint.
+- `backend/scripts/check_v3_ml_data_foundation.py`.
+- Documentation of source/confidence conventions.
 
-## V3.1 data contract
+## V3.2 decisions
 
 ```text
-Event: Nexus Festival 2026
-Start: 13/06/2026 12:00
-End: 14/06/2026 06:00
-Duration: 18 hours
-Functional day key: nexus_day
-Visible label: Evento continuo
+raw_payload storage: PostgreSQL JSONB
+snapshot retention: no automatic deletion in V3.2
 ```
 
-Peak/closing windows may be stored as evidence metadata, but they are not
-measured attendance labels and must not be treated as ML targets.
+The project keeps snapshots conservatively during the ML research phase so later
+normalization, feature engineering and training can be reproduced.
 
-## V3.1 validation
+## V3.2 validation
 
 From backend:
 
 ```powershell
 alembic upgrade head
-pytest tests/test_api_v3_event_contract.py
+pytest tests/test_api_v3_ml_data_foundation.py
 pytest
 ```
 
 From repo root:
 
 ```powershell
-python backend/scripts/check_v3_event_contract.py
+python backend/scripts/check_v3_ml_data_foundation.py
 ```
 
 Manual Swagger checks:
 
 ```text
-POST /api/v3/events/2026/contract/rebuild?reset=true
-GET  /api/v3/events/2026/contract
-GET  /api/v3/events/2026/time-windows
-GET  /api/v3/events/2026/contract/validation
+GET /api/v3/ml-data/coverage
+GET /api/v3/ml-data/contracts
+GET /api/v3/ml-data/conventions
 ```
 
 Expected facts:
 
-- `duration_hours=18`.
-- 18 one-hour windows.
-- First boundary `12:00`.
-- Last boundary `06:00`.
-- `functional_day_key=nexus_day`.
-- No 2026 Friday/Saturday split.
-- At least one window crosses midnight.
+- 8 V3.2 tables exist.
+- Coverage endpoint returns all 8 tables.
+- Contracts endpoint explains raw/training/prediction responsibilities.
+- Conventions endpoint includes `source_type`, `confidence`, `extraction_method`, `label_type`, `model_type` and `prediction_status`.
+- No model training happens in this block.
 
-## V3.1 commit
+## V3.2 commit
 
 ```text
-define continuous nexus 2026 event contract
+build ml ready data foundation
 ```
 
-## V3.1 progress
+## V3.2 progress
 
 ```text
-5% -> 10%
+10% -> 16%
 ```
 
 ## Next block
 
-After V3.1 is validated and committed, continue with:
+After V3.2 is validated and committed, continue with:
 
 ```text
-V3.2 — Arquitectura de datos ML-ready
+V3.3 — Identidad de artistas y entity resolution
 ```
 
-Do not start model training before V3.1-V3.8 have established data contracts,
-identity resolution, ingestion, labels/proxies and features.
+Do not start ingestion or model training before V3.3 identity resolution defines
+how external profiles map to canonical artists.

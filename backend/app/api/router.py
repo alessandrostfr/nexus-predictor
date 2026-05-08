@@ -25,6 +25,7 @@ from app.api import (
     spotify,
     venue,
     v3_events,
+    v3_ml_data,
 )
 
 api_router = APIRouter()
@@ -45,3 +46,4 @@ api_router.include_router(probable_timetables.router, prefix="/probable-timetabl
 api_router.include_router(optimized_timetables.router, prefix="/optimized-timetables", tags=["optimized-timetables-v2"])
 api_router.include_router(social_platforms.router, prefix="/social-platforms", tags=["social-platforms-v2"])
 api_router.include_router(v3_events.router, prefix="/v3/events", tags=["events-v3"])
+api_router.include_router(v3_ml_data.router, prefix="/v3/ml-data", tags=["ml-data-v3"])

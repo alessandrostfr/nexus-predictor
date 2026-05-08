@@ -8,7 +8,7 @@ can be traced back to a source, URL, capture date, confidence level and notes.
 
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Index, Integer, String, Text, UniqueConstraint
+from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Index, Integer, JSON, String, Text, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.database import Base
@@ -783,5 +783,277 @@ class EventTimeWindowModel(Base):
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
 
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class RawSourceModel(Base):
+    """V3 ML-ready registry for raw data sources.
+
+    This table is separate from the V2 evidence `sources` table because V3 needs
+    ingestion-oriented metadata: access method, legal/ToS risk, ML value, cost,
+    and whether a source should be reviewed before its snapshots become model
+    features.
+    """
+
+    __tablename__ = "raw_sources"
+    __table_args__ = (
+        UniqueConstraint("source_key", name="uq_raw_sources_source_key"),
+        Index("ix_raw_sources_type_confidence", "source_type", "confidence"),
+        Index("ix_raw_sources_active_ml_value", "is_active", "ml_value"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    source_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    name: Mapped[str] = mapped_column(String(255), nullable=False)
+    source_type: Mapped[str] = mapped_column(String(80), nullable=False)
+    base_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    access_method: Mapped[str] = mapped_column(String(80), nullable=False, default="unknown")
+    extraction_method: Mapped[str] = mapped_column(String(80), nullable=False, default="manual")
+    trust_level: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    ml_value: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    legal_risk: Mapped[str] = mapped_column(String(40), nullable=False, default="unknown")
+    cost_level: Mapped[str] = mapped_column(String(40), nullable=False, default="free_or_unknown")
+    is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    requires_review: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    raw_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class RawSnapshotModel(Base):
+    """Raw captured payload from an external/internal source.
+
+    Raw snapshots are the audit trail of V3. They keep the original payload so
+    future normalization, entity-resolution and feature-engineering logic can be
+    rerun without pretending the data appeared magically inside a model.
+    """
+
+    __tablename__ = "raw_snapshots"
+    __table_args__ = (
+        UniqueConstraint("snapshot_key", name="uq_raw_snapshots_snapshot_key"),
+        Index("ix_raw_snapshots_entity", "entity_type", "entity_key"),
+        Index("ix_raw_snapshots_source_captured", "source_key", "captured_at"),
+        Index("ix_raw_snapshots_status", "status"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    raw_source_id: Mapped[int | None] = mapped_column(ForeignKey("raw_sources.id", ondelete="SET NULL"), nullable=True, index=True)
+    source_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    entity_type: Mapped[str] = mapped_column(String(80), nullable=False)
+    entity_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    snapshot_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    captured_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    source_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    extraction_method: Mapped[str] = mapped_column(String(80), nullable=False)
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="captured")
+    schema_version: Mapped[str] = mapped_column(String(80), nullable=False, default="v3.2")
+    content_hash: Mapped[str | None] = mapped_column(String(128), nullable=True)
+    raw_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    normalized_hint_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class NormalizedMetricModel(Base):
+    """Metric normalized from raw/evidence payloads into ML-friendly shape."""
+
+    __tablename__ = "normalized_metrics"
+    __table_args__ = (
+        Index("ix_normalized_metrics_entity_metric", "entity_type", "entity_key", "metric_key"),
+        Index("ix_normalized_metrics_source", "source_key", "confidence"),
+        Index("ix_normalized_metrics_feature_candidate", "feature_candidate"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    raw_snapshot_id: Mapped[int | None] = mapped_column(ForeignKey("raw_snapshots.id", ondelete="SET NULL"), nullable=True, index=True)
+    source_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    entity_type: Mapped[str] = mapped_column(String(80), nullable=False)
+    entity_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    metric_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    metric_value_numeric: Mapped[float | None] = mapped_column(Float, nullable=True)
+    metric_value_text: Mapped[str | None] = mapped_column(Text, nullable=True)
+    metric_unit: Mapped[str | None] = mapped_column(String(80), nullable=True)
+    value_type: Mapped[str] = mapped_column(String(40), nullable=False, default="numeric")
+    normalized_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    captured_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    source_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    extraction_method: Mapped[str] = mapped_column(String(80), nullable=False, default="unknown")
+    source_method: Mapped[str] = mapped_column(String(80), nullable=False, default="normalized_from_raw")
+    feature_candidate: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    raw_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class MLDatasetModel(Base):
+    """Versioned dataset definition used for training, evaluation or prediction."""
+
+    __tablename__ = "ml_datasets"
+    __table_args__ = (
+        UniqueConstraint("dataset_key", name="uq_ml_datasets_dataset_key"),
+        Index("ix_ml_datasets_target_version", "model_target", "dataset_version"),
+        Index("ix_ml_datasets_status", "status"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    dataset_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    model_target: Mapped[str] = mapped_column(String(120), nullable=False)
+    dataset_version: Mapped[str] = mapped_column(String(80), nullable=False)
+    dataset_kind: Mapped[str] = mapped_column(String(80), nullable=False, default="training")
+    entity_type: Mapped[str] = mapped_column(String(80), nullable=False, default="artist")
+    row_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    feature_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    label_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    start_year: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    end_year: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    split_strategy: Mapped[str] = mapped_column(String(120), nullable=False, default="not_built_yet")
+    source_snapshot_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    generated_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="draft")
+    is_training_dataset: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    feature_schema_json: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    label_schema_json: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    filters_json: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    lineage_json: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class MLFeatureSnapshotModel(Base):
+    """Feature vector for one entity within a versioned dataset."""
+
+    __tablename__ = "ml_feature_snapshots"
+    __table_args__ = (
+        UniqueConstraint("dataset_key", "entity_type", "entity_key", "feature_set_name", "feature_version", name="uq_ml_feature_snapshot_identity"),
+        Index("ix_ml_feature_snapshots_dataset", "dataset_id", "feature_set_name"),
+        Index("ix_ml_feature_snapshots_entity", "entity_type", "entity_key"),
+        Index("ix_ml_feature_snapshots_status", "status"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    dataset_id: Mapped[int | None] = mapped_column(ForeignKey("ml_datasets.id", ondelete="SET NULL"), nullable=True, index=True)
+    dataset_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    entity_type: Mapped[str] = mapped_column(String(80), nullable=False)
+    entity_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    feature_set_name: Mapped[str] = mapped_column(String(120), nullable=False)
+    feature_version: Mapped[str] = mapped_column(String(80), nullable=False)
+    feature_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    feature_columns_json: Mapped[list[object]] = mapped_column(JSON, nullable=False, default=list)
+    missing_features_json: Mapped[list[object]] = mapped_column(JSON, nullable=False, default=list)
+    source_metric_keys_json: Mapped[list[object]] = mapped_column(JSON, nullable=False, default=list)
+    source_snapshot_ids_json: Mapped[list[object]] = mapped_column(JSON, nullable=False, default=list)
+    generated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    leakage_checked: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="draft")
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class MLLabelModel(Base):
+    """Versioned target/proxy label used by supervised ML training."""
+
+    __tablename__ = "ml_labels"
+    __table_args__ = (
+        Index("ix_ml_labels_target_version", "model_target", "label_version"),
+        Index("ix_ml_labels_entity", "entity_type", "entity_key"),
+        Index("ix_ml_labels_type_confidence", "label_type", "confidence"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    dataset_id: Mapped[int | None] = mapped_column(ForeignKey("ml_datasets.id", ondelete="SET NULL"), nullable=True, index=True)
+    entity_type: Mapped[str] = mapped_column(String(80), nullable=False)
+    entity_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    model_target: Mapped[str] = mapped_column(String(120), nullable=False)
+    label_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    label_version: Mapped[str] = mapped_column(String(80), nullable=False)
+    label_value_numeric: Mapped[float | None] = mapped_column(Float, nullable=True)
+    label_value_text: Mapped[str | None] = mapped_column(Text, nullable=True)
+    label_value_category: Mapped[str | None] = mapped_column(String(120), nullable=True)
+    source_method: Mapped[str] = mapped_column(String(120), nullable=False)
+    label_type: Mapped[str] = mapped_column(String(60), nullable=False, default="proxy")
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    evidence_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    generated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="draft")
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class MLModelRunModel(Base):
+    """Training/evaluation run metadata for baselines and real ML models."""
+
+    __tablename__ = "ml_model_runs"
+    __table_args__ = (
+        UniqueConstraint("run_key", name="uq_ml_model_runs_run_key"),
+        Index("ix_ml_model_runs_target_version", "model_target", "model_version"),
+        Index("ix_ml_model_runs_status", "status"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    run_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    model_name: Mapped[str] = mapped_column(String(160), nullable=False)
+    model_target: Mapped[str] = mapped_column(String(120), nullable=False)
+    model_type: Mapped[str] = mapped_column(String(80), nullable=False)
+    algorithm: Mapped[str] = mapped_column(String(120), nullable=False)
+    model_version: Mapped[str] = mapped_column(String(80), nullable=False)
+    dataset_id: Mapped[int | None] = mapped_column(ForeignKey("ml_datasets.id", ondelete="SET NULL"), nullable=True, index=True)
+    dataset_key: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    trained: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    training_started_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    training_finished_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    training_rows: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    validation_rows: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    feature_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    metrics_json: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    parameters_json: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    artifact_path: Mapped[str | None] = mapped_column(Text, nullable=True)
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="draft")
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class MLPredictionModel(Base):
+    """Persisted output generated by a model run for an entity/year."""
+
+    __tablename__ = "ml_predictions"
+    __table_args__ = (
+        UniqueConstraint("run_key", "prediction_key", name="uq_ml_predictions_run_prediction"),
+        Index("ix_ml_predictions_target_year", "model_target", "prediction_year"),
+        Index("ix_ml_predictions_entity", "entity_type", "entity_key"),
+        Index("ix_ml_predictions_final", "is_final", "status"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    model_run_id: Mapped[int | None] = mapped_column(ForeignKey("ml_model_runs.id", ondelete="SET NULL"), nullable=True, index=True)
+    feature_snapshot_id: Mapped[int | None] = mapped_column(ForeignKey("ml_feature_snapshots.id", ondelete="SET NULL"), nullable=True, index=True)
+    run_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    model_target: Mapped[str] = mapped_column(String(120), nullable=False)
+    prediction_year: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    entity_type: Mapped[str] = mapped_column(String(80), nullable=False)
+    entity_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    prediction_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    prediction_value_numeric: Mapped[float | None] = mapped_column(Float, nullable=True)
+    prediction_value_text: Mapped[str | None] = mapped_column(Text, nullable=True)
+    prediction_class: Mapped[str | None] = mapped_column(String(120), nullable=True)
+    prediction_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    confidence_score: Mapped[float | None] = mapped_column(Float, nullable=True)
+    drivers_json: Mapped[list[object]] = mapped_column(JSON, nullable=False, default=list)
+    generated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    status: Mapped[str] = mapped_column(String(60), nullable=False, default="draft")
+    is_final: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)

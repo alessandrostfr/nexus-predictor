@@ -4,69 +4,74 @@ Nexus Predictor V3 rebuilds the predictive core around real Machine Learning.
 This guide is intentionally strict: heuristics, manual scoring and optimization
 must never be presented as final ML.
 
+## Central rule
+
+Nothing is called ML unless it has:
+
+- training data;
+- features;
+- target or documented proxy;
+- a real training step such as `fit()`;
+- validation metrics;
+- persisted predictions;
+- model/version metadata.
+
 ## Current roadmap position
 
-```text
-Branch target: refactor/v3-ml-first
-Last closed block: V3.0 — Auditoría crítica y nueva rama ML-first
-Current block: V3.1 — Contrato real Nexus 2026 y calendario continuo
-Progress after V3.1 validation and commit: 10%
-Commit message: define continuous nexus 2026 event contract
-```
+- V3.0 closed: predictive audit and ML-first branch guardrails.
+- V3.1 closed: continuous Nexus 2026 event contract.
+- V3.2 active/delivered: ML-ready data foundation.
 
-## ML honesty rule
+## V3.2 foundation
+
+V3.2 creates the storage layer that future blocks need before training real ML:
 
 ```text
-Nothing is called ML unless it has a training dataset, features, target/proxy,
-a real training step, validation metrics, model metadata and persisted predictions.
+raw_sources
+raw_snapshots
+normalized_metrics
+ml_datasets
+ml_feature_snapshots
+ml_labels
+ml_model_runs
+ml_predictions
 ```
 
-## V3.1 rule
+This block does not train models. It prepares reproducibility.
 
-Nexus 2026 must be represented as one continuous event:
+## Data honesty rules
 
-```text
-13/06/2026 12:00 -> 14/06/2026 06:00
-Duration: 18 hours
-Functional day key: nexus_day
-Visible label: Evento continuo
-```
+- Raw snapshots are evidence storage, not predictions.
+- Normalized metrics are feature candidates, not model outputs.
+- Labels can be confirmed, inferred or proxy; proxies must be documented.
+- Model runs must store metrics before being treated as useful.
+- Frontend must eventually consume `ml_predictions` via API, not fake constants.
+- OR-Tools remains optimization, not ML.
 
-Do not split 2026 into Friday/Saturday functional days. Historical editions may
-keep their true multi-day structure, but 2026 predictions, timetable shells,
-saturation windows and future ML features must consume the V3.1 contract.
-
-## Naming conventions from V3 onward
-
-- `ml_`: real trained models and persisted outputs.
-- `baseline_`: honest reference models/rules.
-- `heuristic_`: deterministic domain rules.
-- `scoring_`: manual weighted formulas.
-- `optimizer_`: OR-Tools or mathematical assignment logic.
-- `evidence_`: sourced facts, snapshots and manually reviewed data.
-- `feature_`: ML-ready columns built from data.
-- `proxy_`: approximate target when direct labels do not exist.
-
-## V3.1 validation
-
-From repo root:
-
-```powershell
-python backend/scripts/check_v3_event_contract.py
-```
+## V3.2 validation
 
 From backend:
 
 ```powershell
 alembic upgrade head
-pytest tests/test_api_v3_event_contract.py
+pytest tests/test_api_v3_ml_data_foundation.py
 pytest
 ```
 
-## Next block
+From repo root:
 
-After V3.1 is validated and committed, continue with:
-
-```text
-V3.2 — Arquitectura de datos ML-ready
+```powershell
+python backend/scripts/check_v3_ml_data_foundation.py
 ```
+
+## Operational methodology
+
+Before each new block:
+
+1. Review the updated repository sent by Alessandro.
+2. Re-read the exact roadmap block.
+3. Detect missing scope before implementation.
+4. Deliver complete files and ZIP with root folder `nexus-predictor/`.
+5. Provide concrete validations.
+6. Suggest one English commit message.
+7. Report block and total V3 progress.
