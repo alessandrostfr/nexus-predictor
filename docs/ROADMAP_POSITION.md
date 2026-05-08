@@ -1,134 +1,79 @@
 # Roadmap position — Nexus Predictor V3
 
-Current block: **V3.3 — Identidad de artistas y entity resolution**.
+Current main roadmap block: **V3.4 — Ingesta masiva híbrida y evaluación de herramientas**.
 
-## Current status
+Current operative subroadmap: **V3.4-A — Arquitectura, contratos, seguridad, idempotencia y registros**.
 
-V3.0 is closed and committed with:
+## Important navigation rule
 
-```text
-audit predictive core for ml first v3
-```
-
-V3.1 is closed and committed with:
+V3.4 now has its own approved **Subroadmap operativo V3.4**. Treat it as a temporary branch inside the main V3 roadmap:
 
 ```text
-define continuous nexus 2026 event contract
+V3 roadmap
+└── V3.4 — Ingesta masiva híbrida y evaluación de herramientas
+    ├── V3.4-A — Arquitectura, contratos, seguridad, idempotencia y registros
+    ├── V3.4-B — Configuración, credenciales y probes oficiales
+    ├── V3.4-C — yt-dlp, scraping controlado y evaluación open-source
+    ├── V3.4-D — Normalización, calidad, readiness, fallback manual y contratos de métricas
+    ├── V3.4-E — Run real de ingesta para todos los artistas Nexus 2026
+    └── V3.4-F — Prefect, admin review, checks finales y cierre del bloque
 ```
 
-V3.2 is closed and committed with:
+When V3.4-F is closed, return to the main V3 roadmap at **V3.5 — SoundCloud-first artist intelligence**.
 
-```text
-build ml ready data foundation
+## Closed V3 blocks
+
+- **V3.0** closed: critical predictive audit and ML-first branch guardrails.
+- **V3.1** closed: real Nexus 2026 continuous event contract.
+- **V3.2** closed: ML-ready data foundation.
+- **V3.3** closed: canonical artist identity and entity resolution.
+
+## Current V3.4-A objective
+
+Create the common technical base for external collectors before making real API calls:
+
+- collector package contracts;
+- source registry;
+- tool evaluation registry;
+- run and run-item manifests;
+- secret policy;
+- extraction policy;
+- idempotency/deduplication helpers;
+- UTC/source timestamp rules;
+- dry-run behavior;
+- architecture checks.
+
+## Current source of truth
+
+Use both documents together:
+
+1. `nexus_predictor_v3_roadmap.pdf` for the main V3 direction and success criteria.
+2. `nexus_predictor_v3_4_subroadmap_operativo_final.pdf` for the detailed V3.4-A → V3.4-F execution path.
+
+## Current progress
+
+- Main V3 progress before V3.4: **22%**.
+- V3.4-A target progress after validation/commit: **23.5%**.
+- V3.4 full target after V3.4-F: **32%**.
+
+## Commit for this macropaso
+
+```bash
+git add .
+git commit -m "build external collector architecture"
 ```
 
-V3.3 starts from the updated V3 branch after the ML-ready data foundation. Its
-purpose is to define canonical artist identity before V3.4+ ingestion attaches
-external platform metrics to artists.
+## Methodology reminder
 
-## Active branch
+For each macropaso:
 
-```text
-refactor/v3-ml-first
-```
-
-## Completed before this point
-
-- V1 MVP complete.
-- V2.0 Foundations.
-- V2.1 Evidence layer.
-- V2.2 Spotify real/cache.
-- V2.3 External ingestion base.
-- V2.4 Social/music platforms and Last.fm foundations.
-- V2.5 Multi-genre classification.
-- V2.6 Historical timetables 2022-2025.
-- V2.7 Demand/popularity scoring model.
-- V2.8 Probable 2026 timetable.
-- V2.9 Optimized timetable variants.
-- V2.10 Premium Next.js + TypeScript frontend.
-- V2.11 Professional map and timetable UX.
-- V3 roadmap ML-first created.
-- V3 roadmap stack section added.
-- V3.0 Predictive audit and ML-first branch guardrails.
-- V3.1 Continuous Nexus 2026 event contract.
-- V3.2 ML-ready data foundation.
-
-## V3.3 scope
-
-V3.3 implements:
-
-- `artist_master` table.
-- `artist_aliases` table.
-- `artist_identity_links` table.
-- `artist_identity_candidates` table.
-- Deterministic name normalization utilities.
-- Seed rebuild from current artists/profile data.
-- Admin review endpoint for verified/rejected decisions.
-- Feature eligibility gate: only verified/high external links can feed ML features.
-- Minimal frontend page at `/admin/data-review`.
-- `backend/scripts/check_v3_identity_resolution.py`.
-- Documentation of identity-resolution conventions.
-
-## V3.3 decisions
-
-```text
-minimum feature confidence = verified/high
-top/2026 artists = external profiles require manual review unless verified/high
-```
-
-## V3.3 validation
-
-From backend:
-
-```powershell
-alembic upgrade head
-pytest tests/test_api_v3_identity_resolution.py
-pytest
-```
-
-From repo root:
-
-```powershell
-python backend/scripts/check_v3_identity_resolution.py
-```
-
-Endpoint checks from console:
-
-```powershell
-curl.exe -X POST "http://127.0.0.1:8000/api/v3/identity/rebuild?reset=true"
-curl.exe "http://127.0.0.1:8000/api/v3/identity/coverage"
-curl.exe "http://127.0.0.1:8000/api/v3/identity/artists?limit=5"
-curl.exe "http://127.0.0.1:8000/api/v3/identity/candidates?status=pending_review&limit=5"
-```
-
-Expected facts:
-
-- Canonical artists exist.
-- Each artist has at least one alias.
-- Internal `nexus_seed` identity links are verified.
-- Low/pending/rejected external links are not feature eligible.
-- Admin review can verify or reject candidates.
-- No model training happens in this block.
-
-## V3.3 commit
-
-```text
-normalize artist identity resolution
-```
-
-## V3.3 progress
-
-```text
-16% -> 22%
-```
-
-## Next block
-
-After V3.3 is validated and committed, continue with:
-
-```text
-V3.4 — Ingesta masiva híbrida y evaluación de herramientas
-```
-
-Do not start SoundCloud/YouTube/external ingestion before V3.3 identity review
-rules are in place.
+- review the updated repository first;
+- reread the active roadmap/subroadmap block before coding;
+- deliver complete files in a ZIP with root folder `nexus-predictor/`;
+- keep code commented;
+- avoid fake ML and fake frontend data;
+- include specific validations;
+- include PowerShell endpoint checks with `ConvertTo-Json -Depth 30`;
+- include expected results;
+- suggest commit in English;
+- report block and project percentages.

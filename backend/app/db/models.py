@@ -837,6 +837,7 @@ class RawSnapshotModel(Base):
         Index("ix_raw_snapshots_entity", "entity_type", "entity_key"),
         Index("ix_raw_snapshots_source_captured", "source_key", "captured_at"),
         Index("ix_raw_snapshots_status", "status"),
+        Index("ix_raw_snapshots_artist_source", "canonical_artist_key", "source_key"),
     )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
@@ -844,13 +845,19 @@ class RawSnapshotModel(Base):
     source_key: Mapped[str] = mapped_column(String(160), nullable=False)
     entity_type: Mapped[str] = mapped_column(String(80), nullable=False)
     entity_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    canonical_artist_key: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    collector_run_id: Mapped[int | None] = mapped_column(ForeignKey("collector_runs.id", ondelete="SET NULL"), nullable=True, index=True)
+    collector_key: Mapped[str | None] = mapped_column(String(160), nullable=True)
     snapshot_key: Mapped[str] = mapped_column(String(255), nullable=False)
     captured_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    source_reported_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     source_url: Mapped[str | None] = mapped_column(Text, nullable=True)
     extraction_method: Mapped[str] = mapped_column(String(80), nullable=False)
     confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
     status: Mapped[str] = mapped_column(String(60), nullable=False, default="captured")
-    schema_version: Mapped[str] = mapped_column(String(80), nullable=False, default="v3.2")
+    schema_version: Mapped[str] = mapped_column(String(80), nullable=False, default="v3.4")
+    collector_version: Mapped[str | None] = mapped_column(String(80), nullable=True)
+    normalizer_version: Mapped[str | None] = mapped_column(String(80), nullable=True)
     content_hash: Mapped[str | None] = mapped_column(String(128), nullable=True)
     raw_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
     normalized_hint_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
@@ -867,6 +874,7 @@ class NormalizedMetricModel(Base):
         Index("ix_normalized_metrics_entity_metric", "entity_type", "entity_key", "metric_key"),
         Index("ix_normalized_metrics_source", "source_key", "confidence"),
         Index("ix_normalized_metrics_feature_candidate", "feature_candidate"),
+        Index("ix_normalized_metrics_artist_metric", "canonical_artist_key", "metric_key"),
     )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
@@ -874,6 +882,9 @@ class NormalizedMetricModel(Base):
     source_key: Mapped[str] = mapped_column(String(160), nullable=False)
     entity_type: Mapped[str] = mapped_column(String(80), nullable=False)
     entity_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    canonical_artist_key: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    collector_run_id: Mapped[int | None] = mapped_column(ForeignKey("collector_runs.id", ondelete="SET NULL"), nullable=True, index=True)
+    collector_key: Mapped[str | None] = mapped_column(String(160), nullable=True)
     metric_key: Mapped[str] = mapped_column(String(160), nullable=False)
     metric_value_numeric: Mapped[float | None] = mapped_column(Float, nullable=True)
     metric_value_text: Mapped[str | None] = mapped_column(Text, nullable=True)
@@ -881,11 +892,16 @@ class NormalizedMetricModel(Base):
     value_type: Mapped[str] = mapped_column(String(40), nullable=False, default="numeric")
     normalized_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     captured_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    source_reported_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
     source_url: Mapped[str | None] = mapped_column(Text, nullable=True)
     extraction_method: Mapped[str] = mapped_column(String(80), nullable=False, default="unknown")
     source_method: Mapped[str] = mapped_column(String(80), nullable=False, default="normalized_from_raw")
+    collector_version: Mapped[str | None] = mapped_column(String(80), nullable=True)
+    normalizer_version: Mapped[str | None] = mapped_column(String(80), nullable=True)
+    metric_schema_version: Mapped[str] = mapped_column(String(80), nullable=False, default="v3.4")
     feature_candidate: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    is_diagnostic_only: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     raw_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
@@ -1193,3 +1209,105 @@ class ArtistIdentityCandidateModel(Base):
     review_notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class SourceToolEvaluationModel(Base):
+    """Registry of evaluated external APIs, tools, scrapers and fallbacks."""
+
+    __tablename__ = "source_tool_evaluations"
+    __table_args__ = (
+        UniqueConstraint("tool_key", "source_target", name="uq_source_tool_evaluation_identity"),
+        Index("ix_source_tool_evaluations_source_target", "source_target", "decision"),
+        Index("ix_source_tool_evaluations_tool_target", "tool_key", "source_target"),
+        Index("ix_source_tool_evaluations_license_risk", "license_risk", "legal_risk"),
+        Index("ix_source_tool_evaluations_candidate", "candidate_for", "tool_type"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    tool_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    source_target: Mapped[str] = mapped_column(String(160), nullable=False)
+    source_key: Mapped[str | None] = mapped_column(String(160), nullable=True)
+    tool_name: Mapped[str] = mapped_column(String(255), nullable=False)
+    tool_type: Mapped[str] = mapped_column(String(80), nullable=False)
+    candidate_for: Mapped[str] = mapped_column(String(160), nullable=False)
+    access_method: Mapped[str] = mapped_column(String(80), nullable=False)
+    license_name: Mapped[str | None] = mapped_column(String(160), nullable=True)
+    license_risk: Mapped[str] = mapped_column(String(60), nullable=False, default="unknown")
+    legal_risk: Mapped[str] = mapped_column(String(60), nullable=False, default="unknown")
+    maintenance_status: Mapped[str] = mapped_column(String(80), nullable=False, default="unknown")
+    integration_complexity: Mapped[str] = mapped_column(String(60), nullable=False, default="medium")
+    data_quality_expectation: Mapped[str] = mapped_column(String(80), nullable=False, default="medium")
+    ml_value: Mapped[str] = mapped_column(String(40), nullable=False, default="medium")
+    decision: Mapped[str] = mapped_column(String(100), nullable=False, default="spike_required")
+    decision_reason: Mapped[str] = mapped_column(Text, nullable=False)
+    docs_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    repo_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    supports_cache: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    supports_rate_limit: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    requires_credentials: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    requires_manual_review: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    evaluation_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class CollectorRunModel(Base):
+    """One external-ingestion execution manifest."""
+
+    __tablename__ = "collector_runs"
+    __table_args__ = (
+        UniqueConstraint("run_key", name="uq_collector_runs_run_key"),
+        Index("ix_collector_runs_status", "status", "is_active_for_features"),
+        Index("ix_collector_runs_scope_started", "artist_scope", "started_at"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    run_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    status: Mapped[str] = mapped_column(String(80), nullable=False, default="running")
+    dry_run: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    is_active_for_features: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    artist_scope: Mapped[str] = mapped_column(String(120), nullable=False, default="nexus_2026")
+    artist_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    processed_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    source_keys_json: Mapped[list[object]] = mapped_column(JSON, nullable=False, default=list)
+    manifest_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    warning_payload: Mapped[list[object]] = mapped_column(JSON, nullable=False, default=list)
+    started_by: Mapped[str] = mapped_column(String(120), nullable=False, default="system")
+    started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    duration_ms: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    safe_error_message: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class CollectorRunItemModel(Base):
+    """Per-artist/per-source result inside an external-ingestion run."""
+
+    __tablename__ = "collector_run_items"
+    __table_args__ = (
+        Index("ix_collector_run_items_run_artist_source", "collector_run_id", "canonical_artist_key", "source_key"),
+        Index("ix_collector_run_items_artist_source", "canonical_artist_key", "source_key"),
+        Index("ix_collector_run_items_status", "status", "source_key"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    collector_run_id: Mapped[int] = mapped_column(ForeignKey("collector_runs.id", ondelete="CASCADE"), nullable=False, index=True)
+    canonical_artist_key: Mapped[str] = mapped_column(String(255), nullable=False)
+    source_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    collector_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    status: Mapped[str] = mapped_column(String(80), nullable=False, default="skipped")
+    raw_snapshot_id: Mapped[int | None] = mapped_column(ForeignKey("raw_snapshots.id", ondelete="SET NULL"), nullable=True, index=True)
+    normalized_metric_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    profile_candidate_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    feature_candidate_metric_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    duration_ms: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    http_status: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    error_type: Mapped[str | None] = mapped_column(String(120), nullable=True)
+    safe_error_message: Mapped[str | None] = mapped_column(Text, nullable=True)
+    retry_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    quota_cost_estimated: Mapped[float | None] = mapped_column(Float, nullable=True)
+    item_payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+

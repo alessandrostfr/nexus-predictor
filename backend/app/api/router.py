@@ -25,6 +25,7 @@ from app.api import (
     spotify,
     venue,
     v3_events,
+    v3_external_ingestion,
     v3_identity,
     v3_ml_data,
 )
@@ -49,3 +50,4 @@ api_router.include_router(social_platforms.router, prefix="/social-platforms", t
 api_router.include_router(v3_events.router, prefix="/v3/events", tags=["events-v3"])
 api_router.include_router(v3_ml_data.router, prefix="/v3/ml-data", tags=["ml-data-v3"])
 api_router.include_router(v3_identity.router, prefix="/v3/identity", tags=["identity-v3"])
+api_router.include_router(v3_external_ingestion.router, prefix="/v3/external-ingestion", tags=["external-ingestion-v3"])

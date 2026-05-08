@@ -21,63 +21,35 @@ Nothing is called ML unless it has:
 - V3.0 closed: predictive audit and ML-first branch guardrails.
 - V3.1 closed: continuous Nexus 2026 event contract.
 - V3.2 closed: ML-ready data foundation.
-- V3.3 active/delivered: artist identity resolution.
+- V3.3 closed: artist identity resolution.
+- V3.4 active: external ingestion factory, executed through the approved V3.4 subroadmap.
+- Current operative macropaso: V3.4-A — collector architecture, contracts, security, idempotency and registries.
 
-## V3.3 identity foundation
+## V3.4 subroadmap rule
 
-V3.3 creates the identity layer required before external ingestion:
+V3.4 is temporarily split into six internal macropasos:
 
-```text
-artist_master
-artist_aliases
-artist_identity_links
-artist_identity_candidates
-```
+1. V3.4-A — Architecture, contracts, security, idempotency and registries.
+2. V3.4-B — Credentials and official API probes.
+3. V3.4-C — yt-dlp, controlled scraping and open-source evaluation.
+4. V3.4-D — Normalization, quality, readiness and manual fallback.
+5. V3.4-E — Real ingestion run for all Nexus 2026 artists.
+6. V3.4-F — Prefect, admin review and final block checks.
 
-This block does not train models. It prevents future models from using Spotify,
-SoundCloud, YouTube or social metrics attached to the wrong artist.
+After V3.4-F, continue the main roadmap at V3.5.
 
-## Identity honesty rules
+## V3.4-A architecture foundation
 
-- Internal `nexus_seed` identity can be verified because it comes from the current dataset.
-- External profiles require confidence gates before feature usage.
-- Only `verified` and `high` links can become feature eligible.
-- `medium`, `low`, `unknown`, `pending_review` and `rejected` links are blocked from ML features.
-- Top/2026 artists require careful review for external profiles.
+V3.4-A creates the offline collector architecture only. It does not call external APIs.
 
-## V3.3 validation
+New concepts:
 
-From backend:
+- `source_tool_evaluations`: evaluated APIs/tools/scrapers/fallbacks.
+- `collector_runs`: run manifests and rollback/is_active_for_features controls.
+- `collector_run_items`: per-artist/per-source statuses.
+- `backend/app/collectors/*`: shared collector contracts, cache/rate-limit policy, secret safety and deduplication helpers.
+- `raw_snapshots` and `normalized_metrics` gain canonical artist, run, timestamp and version lineage fields.
 
-```powershell
-alembic upgrade head
-pytest tests/test_api_v3_identity_resolution.py
-pytest
-```
+## ML honesty reminder
 
-From repo root:
-
-```powershell
-python backend/scripts/check_v3_identity_resolution.py
-```
-
-Endpoint checks from console:
-
-```powershell
-curl.exe -X POST "http://127.0.0.1:8000/api/v3/identity/rebuild?reset=true"
-curl.exe "http://127.0.0.1:8000/api/v3/identity/coverage"
-curl.exe "http://127.0.0.1:8000/api/v3/identity/artists?limit=5"
-curl.exe "http://127.0.0.1:8000/api/v3/identity/candidates?status=pending_review&limit=5"
-```
-
-## Operational methodology
-
-Before each new block:
-
-1. Review the updated repository sent by Alessandro.
-2. Re-read the exact roadmap block.
-3. Detect missing scope before implementation.
-4. Deliver complete files and ZIP with root folder `nexus-predictor/`.
-5. Provide concrete validations and console endpoint checks.
-6. Suggest one English commit message.
-7. Report block and total V3 progress.
+V3.4 data is evidence and potential future input. It is not prediction, not a label, and not ML output.
