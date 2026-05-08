@@ -87,7 +87,7 @@ def get_optimized_timetable_integrity(year: int, db: Session = Depends(get_db)) 
 def list_optimized_slots(
     year: int,
     variant_key: str | None = Query(default=None, description=f"One of: {', '.join(VARIANT_ORDER)}"),
-    event_day: str | None = Query(default=None, description="Optional day filter such as friday or saturday."),
+    event_day: str | None = Query(default=None, description="Optional functional day filter. For 2026 V3.1 use nexus_day."),
     room: str | None = Query(default=None, description="Canonical room or known alias such as New Crystal."),
     artist_slug: str | None = Query(default=None, description="Optional artist slug filter."),
     only_headliners: bool = Query(default=False, description="Return only optimized headliner slots."),

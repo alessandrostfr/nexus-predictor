@@ -695,3 +695,93 @@ class V2OptimizedTimetableSlotModel(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
+
+class EventContractModel(Base):
+    """Functional event contract used by V3 data and ML pipelines.
+
+    This table fixes how an edition is represented in time. V3.1 uses it to
+    model Nexus 2026 as one continuous 18-hour event instead of two separated
+    calendar days. Future ML datasets should read this contract rather than
+    inventing their own date/day interpretation.
+    """
+
+    __tablename__ = "event_contracts"
+    __table_args__ = (
+        UniqueConstraint("year", name="uq_event_contracts_year"),
+        Index("ix_event_contracts_event_key", "event_key"),
+        Index("ix_event_contracts_year_continuous", "year", "continuous_event"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    year: Mapped[int] = mapped_column(Integer, nullable=False)
+    event_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    name: Mapped[str] = mapped_column(String(255), nullable=False)
+    event_type: Mapped[str] = mapped_column(String(80), nullable=False, default="festival")
+    venue: Mapped[str] = mapped_column(String(255), nullable=False, default="Fabrik Madrid")
+    city: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    timezone: Mapped[str] = mapped_column(String(80), nullable=False, default="Europe/Madrid")
+
+    starts_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    ends_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    start_label: Mapped[str] = mapped_column(String(40), nullable=False)
+    end_label: Mapped[str] = mapped_column(String(40), nullable=False)
+    duration_hours: Mapped[int] = mapped_column(Integer, nullable=False)
+    duration_minutes: Mapped[int] = mapped_column(Integer, nullable=False)
+
+    continuous_event: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    functional_day_key: Mapped[str] = mapped_column(String(80), nullable=False, default="nexus_day")
+    visible_label: Mapped[str] = mapped_column(String(160), nullable=False, default="Evento continuo")
+
+    source_status: Mapped[str] = mapped_column(String(80), nullable=False, default="researched_event_contract")
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="high")
+    extraction_method: Mapped[str] = mapped_column(String(80), nullable=False, default="manual_researched_contract")
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    peak_windows_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
+
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+
+class EventTimeWindowModel(Base):
+    """One continuous time window inside an event contract.
+
+    Windows are stored as minutes from event start, not as independent calendar
+    days. This prevents the 2026 event from being split into Friday/Saturday in
+    downstream timetable, saturation and ML feature code.
+    """
+
+    __tablename__ = "event_time_windows"
+    __table_args__ = (
+        UniqueConstraint("year", "window_key", name="uq_event_time_windows_year_key"),
+        Index("ix_event_time_windows_contract_order", "event_contract_id", "window_index"),
+        Index("ix_event_time_windows_year_start", "year", "start_minutes_from_event_start"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    event_contract_id: Mapped[int] = mapped_column(ForeignKey("event_contracts.id", ondelete="CASCADE"), nullable=False)
+    year: Mapped[int] = mapped_column(Integer, nullable=False)
+    window_index: Mapped[int] = mapped_column(Integer, nullable=False)
+    window_key: Mapped[str] = mapped_column(String(120), nullable=False)
+    label: Mapped[str] = mapped_column(String(120), nullable=False)
+
+    starts_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    ends_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    start_time: Mapped[str] = mapped_column(String(5), nullable=False)
+    end_time: Mapped[str] = mapped_column(String(5), nullable=False)
+    start_minutes_from_event_start: Mapped[int] = mapped_column(Integer, nullable=False)
+    end_minutes_from_event_start: Mapped[int] = mapped_column(Integer, nullable=False)
+    duration_minutes: Mapped[int] = mapped_column(Integer, nullable=False, default=60)
+
+    crosses_midnight: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    functional_day_key: Mapped[str] = mapped_column(String(80), nullable=False, default="nexus_day")
+    slot_type: Mapped[str] = mapped_column(String(80), nullable=False, default="standard")
+    is_peak_window: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+
+    evidence_status: Mapped[str] = mapped_column(String(80), nullable=False, default="contract_window")
+    confidence: Mapped[str] = mapped_column(String(40), nullable=False, default="high")
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    raw_json: Mapped[str] = mapped_column(Text, nullable=False, default="{}")
+
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)

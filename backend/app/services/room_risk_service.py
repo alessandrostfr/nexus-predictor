@@ -68,10 +68,26 @@ ROOM_CANDIDATE_LIMITS: dict[str, int] = {
 }
 
 DEFAULT_TIME_BANDS = [
-    {"key": "18-21", "label": "18:00-21:00 · Entrada / warm-up", "simulation_multiplier": 0.40},
-    {"key": "21-00", "label": "21:00-00:00 · Subida", "simulation_multiplier": 0.72},
-    {"key": "00-03", "label": "00:00-03:00 · Pico", "simulation_multiplier": 1.32},
-    {"key": "03-06", "label": "03:00-06:00 · Cierre", "simulation_multiplier": 0.96},
+    # V3.1 continuous event shell. These are theoretical display bands until an
+    # official timetable exists; they mirror the 18 one-hour contract windows.
+    {"key": "12-13", "label": "12:00-13:00 · Apertura", "simulation_multiplier": 0.22},
+    {"key": "13-14", "label": "13:00-14:00 · Apertura", "simulation_multiplier": 0.24},
+    {"key": "14-15", "label": "14:00-15:00 · Entrada", "simulation_multiplier": 0.28},
+    {"key": "15-16", "label": "15:00-16:00 · Entrada", "simulation_multiplier": 0.32},
+    {"key": "16-17", "label": "16:00-17:00 · Warm-up", "simulation_multiplier": 0.38},
+    {"key": "17-18", "label": "17:00-18:00 · Warm-up", "simulation_multiplier": 0.44},
+    {"key": "18-19", "label": "18:00-19:00 · Subida", "simulation_multiplier": 0.54},
+    {"key": "19-20", "label": "19:00-20:00 · Subida", "simulation_multiplier": 0.62},
+    {"key": "20-21", "label": "20:00-21:00 · Subida", "simulation_multiplier": 0.72},
+    {"key": "21-22", "label": "21:00-22:00 · Build-up", "simulation_multiplier": 0.84},
+    {"key": "22-23", "label": "22:00-23:00 · Build-up", "simulation_multiplier": 0.96},
+    {"key": "23-00", "label": "23:00-00:00 · Cruce medianoche", "simulation_multiplier": 1.08},
+    {"key": "00-01", "label": "00:00-01:00 · Pico", "simulation_multiplier": 1.22},
+    {"key": "01-02", "label": "01:00-02:00 · Pico", "simulation_multiplier": 1.32},
+    {"key": "02-03", "label": "02:00-03:00 · Pico", "simulation_multiplier": 1.28},
+    {"key": "03-04", "label": "03:00-04:00 · Cierre", "simulation_multiplier": 1.10},
+    {"key": "04-05", "label": "04:00-05:00 · Cierre", "simulation_multiplier": 0.96},
+    {"key": "05-06", "label": "05:00-06:00 · Última hora", "simulation_multiplier": 0.78},
 ]
 
 
@@ -342,53 +358,77 @@ class RoomRiskService:
         return modifiers.get(slug, 0.75)
 
     def _time_band_room_curve(self, slug: str, band_key: str) -> float:
-        """Give each room a different theoretical hourly curve before official timetable.
+        """Return a room-specific curve for the V3.1 continuous event shell.
 
-        The curve uses the artist-demand ranking as the base signal and then
-        distributes pressure through the night: Open Air tends to peak earlier,
-        Main Room and Hangar peak around the central hours, and Area 19/Hangar
-        stay stronger in the closing window. This avoids a flat map while the
-        official timetable is still missing.
+        The keys are hourly bands such as ``12-13`` or ``23-00``. This is still a
+        theoretical room-flow curve, not a measured attendance label. It exists
+        only so the legacy room-risk heatmap respects the 12:00-06:00 contract
+        until the real ML heatmap arrives in V3.12.
         """
+        try:
+            start_hour = int(band_key.split("-", 1)[0])
+        except (ValueError, IndexError):
+            start_hour = 21
+
+        if 12 <= start_hour < 17:
+            phase = "opening"
+        elif 17 <= start_hour < 21:
+            phase = "build_up"
+        elif start_hour in {21, 22, 23}:
+            phase = "late_build"
+        elif start_hour in {0, 1, 2}:
+            phase = "peak"
+        else:
+            phase = "closing"
+
         curves = {
-            "18-21": {
-                "open-air": 1.16,
+            "opening": {
+                "open-air": 1.18,
                 "crystal-area": 1.08,
                 "club-area": 1.04,
-                "main-room": 0.74,
-                "hangar": 0.66,
+                "main-room": 0.66,
+                "hangar": 0.62,
                 "satelite": 0.72,
-                "area-19": 0.78,
+                "area-19": 0.74,
             },
-            "21-00": {
-                "open-air": 1.20,
-                "main-room": 0.96,
-                "hangar": 0.92,
-                "satelite": 0.84,
-                "area-19": 1.05,
-                "crystal-area": 0.92,
-                "club-area": 0.82,
-            },
-            "00-03": {
-                "main-room": 1.18,
-                "hangar": 1.18,
-                "satelite": 1.06,
-                "open-air": 0.90,
-                "area-19": 1.04,
+            "build_up": {
+                "open-air": 1.18,
+                "main-room": 0.86,
+                "hangar": 0.82,
+                "satelite": 0.88,
+                "area-19": 0.92,
                 "crystal-area": 0.96,
+                "club-area": 0.90,
+            },
+            "late_build": {
+                "open-air": 1.08,
+                "main-room": 1.04,
+                "hangar": 1.00,
+                "satelite": 0.96,
+                "area-19": 1.04,
+                "crystal-area": 0.92,
                 "club-area": 0.86,
             },
-            "03-06": {
+            "peak": {
+                "main-room": 1.20,
+                "hangar": 1.18,
+                "satelite": 1.04,
+                "open-air": 0.94,
+                "area-19": 1.08,
+                "crystal-area": 0.94,
+                "club-area": 0.88,
+            },
+            "closing": {
                 "hangar": 1.20,
                 "area-19": 1.16,
                 "satelite": 0.92,
                 "main-room": 0.82,
-                "open-air": 0.72,
-                "crystal-area": 0.82,
-                "club-area": 0.76,
+                "open-air": 0.74,
+                "crystal-area": 0.84,
+                "club-area": 0.78,
             },
         }
-        return curves.get(band_key, {}).get(slug, 1.0)
+        return curves.get(phase, {}).get(slug, 1.0)
 
     def _official_slot_pressure(
         self,

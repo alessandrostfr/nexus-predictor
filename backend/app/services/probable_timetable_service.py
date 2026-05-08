@@ -74,27 +74,19 @@ DEFAULT_ROOM_CAPACITY = {
     "crystal-area": 750,
 }
 
-# V2.8 keeps a realistic, conservative shell based on the 2025 seven-room model.
-# It leaves some unused theoretical capacity because the 2026 lineup currently
-# has fewer unique artists than the full 2025 two-day timetable.
+# V3.1 corrects the 2026 structure: the event is one continuous 18-hour
+# contract, not two separate Friday/Saturday functional days. These slots are
+# still V2.8 heuristic/probable rows, but their time shell now follows the V3.1
+# event contract from 12:00 to 06:00.
 ROOM_DAY_PLAN: dict[str, dict[str, dict[str, int]]] = {
-    "friday": {
-        "main-room": {"start": 21, "slots": 10},
-        "open-air": {"start": 21, "slots": 8},
-        "hangar": {"start": 21, "slots": 8},
-        "area-19": {"start": 21, "slots": 6},
-        "satelite": {"start": 21, "slots": 5},
-        "club-area": {"start": 21, "slots": 5},
-        "crystal-area": {"start": 21, "slots": 5},
-    },
-    "saturday": {
-        "main-room": {"start": 21, "slots": 10},
-        "open-air": {"start": 21, "slots": 8},
-        "hangar": {"start": 21, "slots": 8},
-        "area-19": {"start": 21, "slots": 6},
-        "satelite": {"start": 21, "slots": 5},
-        "club-area": {"start": 21, "slots": 5},
-        "crystal-area": {"start": 21, "slots": 5},
+    "nexus_day": {
+        "main-room": {"start": 12, "slots": 18},
+        "open-air": {"start": 12, "slots": 18},
+        "hangar": {"start": 12, "slots": 18},
+        "area-19": {"start": 12, "slots": 16},
+        "satelite": {"start": 12, "slots": 16},
+        "club-area": {"start": 12, "slots": 14},
+        "crystal-area": {"start": 12, "slots": 14},
     },
 }
 
@@ -478,7 +470,7 @@ class ProbableTimetableService:
     ) -> tuple[list[CandidateAssignment], list[str]]:
         """Assign each artist to the most probable day/room bucket."""
         buckets: dict[tuple[str, str], list[CandidateAssignment]] = defaultdict(list)
-        day_demand = {"friday": 0.0, "saturday": 0.0}
+        day_demand = {"nexus_day": 0.0}
         assignments: list[CandidateAssignment] = []
         warnings: list[str] = []
 
@@ -563,8 +555,8 @@ class ProbableTimetableService:
                         year=year,
                         timetable_kind="probable",
                         event_day=day,
-                        festival_day=1 if day == "friday" else 2,
-                        date_label=f"Nexus Festival {year} {day.title()} (probable, not official)",
+                        festival_day=1,
+                        date_label=f"Nexus Festival {year} continuous event (probable, not official)",
                         room_name=room["name"],
                         room_slug=room_slug,
                         room_capacity=room["capacity"],
@@ -695,9 +687,18 @@ class ProbableTimetableService:
 
     @staticmethod
     def _day_balance_score(day: str, day_demand: dict[str, float], demand_score: float) -> float:
-        """Score a candidate day based on demand balance between days."""
-        other_day = "saturday" if day == "friday" else "friday"
-        projected_gap = abs((day_demand[day] + demand_score) - day_demand[other_day])
+        """Score a candidate functional day.
+
+        V3.1 has a single functional event day for 2026. When only one day exists,
+        there is no Friday/Saturday balancing problem, so the score remains
+        neutral and the assignment is driven by room/demand/slot fit.
+        """
+        if set(day_demand) == {"nexus_day"}:
+            return 72.0
+        other_days = [candidate for candidate in day_demand if candidate != day]
+        if not other_days:
+            return 72.0
+        projected_gap = min(abs((day_demand[day] + demand_score) - day_demand[other_day]) for other_day in other_days)
         return normalize_score(100.0 - min(60.0, projected_gap / 8.0))
 
     @staticmethod
@@ -849,8 +850,8 @@ class ProbableTimetableService:
             summaries.append(
                 ProbableTimetableDaySummary(
                     event_day=day,
-                    festival_day=1 if day == "friday" else 2,
-                    date_label=f"Nexus Festival 2026 {day.title()} (probable, not official)",
+                    festival_day=1,
+                    date_label="Nexus Festival 2026 continuous event (probable, not official)",
                     slot_count=len(items),
                     room_count=len({item.room_slug for item in items}),
                     first_start_time=items[0].start_time,

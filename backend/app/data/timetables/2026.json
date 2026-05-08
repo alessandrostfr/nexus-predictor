@@ -3,32 +3,102 @@
   "status": "official_timetable_pending",
   "source_status": "no_official_timetable_yet",
   "official_available": false,
-  "generated_for_block": 8,
+  "generated_for_block": "V3.1 continuous event contract",
   "notes": [
     "The official Nexus 2026 timetable and room allocation have not been published yet.",
-    "Block 8 exposes a theoretical simulation based on the Block 5 demand model, room fit, capacity and hourly flow curves.",
-    "When the official timetable is available, replace slots with real room_slug/start_time/end_time/artist_slugs entries."
+    "V3.1 represents Nexus 2026 as one continuous event from 13/06/2026 12:00 to 14/06/2026 06:00.",
+    "Hourly bands below are display/simulation windows, not official slots and not ML saturation labels."
   ],
   "time_bands": [
     {
-      "key": "18-21",
-      "label": "18:00-21:00 · Entrada / warm-up",
-      "simulation_multiplier": 0.4
+      "key": "12-13",
+      "label": "12:00-13:00 · Apertura",
+      "simulation_multiplier": 0.22
     },
     {
-      "key": "21-00",
-      "label": "21:00-00:00 · Subida",
+      "key": "13-14",
+      "label": "13:00-14:00 · Apertura",
+      "simulation_multiplier": 0.24
+    },
+    {
+      "key": "14-15",
+      "label": "14:00-15:00 · Entrada",
+      "simulation_multiplier": 0.28
+    },
+    {
+      "key": "15-16",
+      "label": "15:00-16:00 · Entrada",
+      "simulation_multiplier": 0.32
+    },
+    {
+      "key": "16-17",
+      "label": "16:00-17:00 · Warm-up",
+      "simulation_multiplier": 0.38
+    },
+    {
+      "key": "17-18",
+      "label": "17:00-18:00 · Warm-up",
+      "simulation_multiplier": 0.44
+    },
+    {
+      "key": "18-19",
+      "label": "18:00-19:00 · Subida",
+      "simulation_multiplier": 0.54
+    },
+    {
+      "key": "19-20",
+      "label": "19:00-20:00 · Subida",
+      "simulation_multiplier": 0.62
+    },
+    {
+      "key": "20-21",
+      "label": "20:00-21:00 · Subida",
       "simulation_multiplier": 0.72
     },
     {
-      "key": "00-03",
-      "label": "00:00-03:00 · Pico",
-      "simulation_multiplier": 1.16
+      "key": "21-22",
+      "label": "21:00-22:00 · Build-up",
+      "simulation_multiplier": 0.84
     },
     {
-      "key": "03-06",
-      "label": "03:00-06:00 · Cierre",
-      "simulation_multiplier": 0.86
+      "key": "22-23",
+      "label": "22:00-23:00 · Build-up",
+      "simulation_multiplier": 0.96
+    },
+    {
+      "key": "23-00",
+      "label": "23:00-00:00 · Cruce medianoche",
+      "simulation_multiplier": 1.08
+    },
+    {
+      "key": "00-01",
+      "label": "00:00-01:00 · Pico",
+      "simulation_multiplier": 1.22
+    },
+    {
+      "key": "01-02",
+      "label": "01:00-02:00 · Pico",
+      "simulation_multiplier": 1.32
+    },
+    {
+      "key": "02-03",
+      "label": "02:00-03:00 · Pico",
+      "simulation_multiplier": 1.28
+    },
+    {
+      "key": "03-04",
+      "label": "03:00-04:00 · Cierre",
+      "simulation_multiplier": 1.1
+    },
+    {
+      "key": "04-05",
+      "label": "04:00-05:00 · Cierre",
+      "simulation_multiplier": 0.96
+    },
+    {
+      "key": "05-06",
+      "label": "05:00-06:00 · Última hora",
+      "simulation_multiplier": 0.78
     }
   ],
   "slots": [],
@@ -44,5 +114,14 @@
       "Artist Name"
     ],
     "source_status": "official|estimated|manual_draft"
+  },
+  "event_contract": {
+    "event_key": "nexus-2026-continuous",
+    "starts_at": "2026-06-13T12:00:00",
+    "ends_at": "2026-06-14T06:00:00",
+    "timezone": "Europe/Madrid",
+    "duration_hours": 18,
+    "functional_day_key": "nexus_day",
+    "source_status": "researched_event_contract"
   }
 }

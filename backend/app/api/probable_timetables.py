@@ -74,7 +74,7 @@ def get_probable_timetable_year(year: int, db: Session = Depends(get_db)) -> Api
 @router.get("/{year}/slots", response_model=ApiResponse[ProbableTimetableSlotList])
 def list_probable_timetable_slots(
     year: int,
-    event_day: str | None = Query(default=None, description="Optional day filter such as friday or saturday."),
+    event_day: str | None = Query(default=None, description="Optional functional day filter. For 2026 V3.1 use nexus_day."),
     room: str | None = Query(default=None, description="Canonical room or known alias such as New Crystal."),
     artist_slug: str | None = Query(default=None, description="Optional artist slug filter."),
     only_headliners: bool = Query(default=False, description="Return only predicted headliner slots."),
@@ -123,7 +123,7 @@ def get_probable_timetable_artist_slot(
 @router.get("/{year}/rooms", response_model=ApiResponse[list[ProbableTimetableRoomSummary]])
 def list_probable_timetable_rooms(
     year: int,
-    event_day: str | None = Query(default=None, description="Optional day filter such as friday or saturday."),
+    event_day: str | None = Query(default=None, description="Optional functional day filter. For 2026 V3.1 use nexus_day."),
     db: Session = Depends(get_db),
 ) -> ApiResponse[list[ProbableTimetableRoomSummary]]:
     """Return room summaries for the predicted timetable."""

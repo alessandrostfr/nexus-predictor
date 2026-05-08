@@ -1,22 +1,18 @@
 # Roadmap position — Nexus Predictor V3
 
-Current block: **V3.0 — Auditoría crítica y nueva rama ML-first**.
-
-## Source of truth
-
-Before working on any block, use:
-
-1. The latest repository sent by Alessandro.
-2. The current block in the V3 roadmap.
-3. The V3 operational methodology.
-
-Do not start implementation by memory alone.
+Current block: **V3.1 — Contrato real Nexus 2026 y calendario continuo**.
 
 ## Current status
 
-Nexus Predictor V3 starts from the closed V2/V2.11 repository state.
+V3.0 is closed and committed with:
 
-V3 exists because the previous predictive core used a mixture of evidence-backed scoring, deterministic heuristics and optimization, but not a complete trained ML pipeline with datasets, targets/proxies, training runs, metrics, model artifacts and persisted model outputs.
+```text
+audit predictive core for ml first v3
+```
+
+V3.1 starts from the updated V3 branch and fixes the most important time-data
+contract before any ML training happens: Nexus 2026 must be represented as one
+continuous event, not as separate Friday/Saturday functional days.
 
 ## Active branch
 
@@ -41,63 +37,92 @@ refactor/v3-ml-first
 - V2.11 Professional map and timetable UX.
 - V3 roadmap ML-first created.
 - V3 roadmap stack section added.
+- V3.0 Predictive audit and ML-first branch guardrails.
 
-## V3.0 scope
+## V3.1 scope
 
-V3.0 is intentionally documentation/audit-first:
+V3.1 implements:
 
-- Review current repository state.
-- Review roadmap V3.0.
-- Classify V2 predictive services.
-- Inventory predictive endpoints.
-- Identify reusable evidence/data/frontend assets.
-- Identify scoring/heuristic/optimization pieces that must not be called ML.
-- Create/update `README_V3.md`.
-- Create/update `docs/v3-predictive-audit.md`.
-- Create `docs/v3-0-closure-decisions.md`.
-- Strengthen `backend/scripts/check_v3_predictive_audit.py`.
-- Keep frontend and predictive runtime code unchanged.
+- `event_contracts` table.
+- `event_time_windows` table.
+- V3.1 SQLAlchemy models.
+- Alembic migration.
+- `EventContractService`.
+- `/api/v3/events/2026/contract` endpoint.
+- `/api/v3/events/2026/time-windows` endpoint.
+- `/api/v3/events/2026/contract/validation` endpoint.
+- `backend/scripts/check_v3_event_contract.py`.
+- Documentation of the continuous 12:00-06:00 rule.
+- Adjustment of generated 2026 timetable shells away from Friday/Saturday split.
 
-## V3.0 validation
+## V3.1 data contract
 
-From repo root:
-
-```powershell
-python backend/scripts/check_v3_predictive_audit.py
+```text
+Event: Nexus Festival 2026
+Start: 13/06/2026 12:00
+End: 14/06/2026 06:00
+Duration: 18 hours
+Functional day key: nexus_day
+Visible label: Evento continuo
 ```
+
+Peak/closing windows may be stored as evidence metadata, but they are not
+measured attendance labels and must not be treated as ML targets.
+
+## V3.1 validation
 
 From backend:
 
 ```powershell
+alembic upgrade head
+pytest tests/test_api_v3_event_contract.py
 pytest
 ```
 
-## V3.0 commit
+From repo root:
 
-```text
-audit predictive core for ml first v3
+```powershell
+python backend/scripts/check_v3_event_contract.py
 ```
 
-## V3.0 progress
+Manual Swagger checks:
 
 ```text
-0% -> 5%
+POST /api/v3/events/2026/contract/rebuild?reset=true
+GET  /api/v3/events/2026/contract
+GET  /api/v3/events/2026/time-windows
+GET  /api/v3/events/2026/contract/validation
 ```
 
-This progress applies only after the V3.0 validation passes and the commit is created.
+Expected facts:
+
+- `duration_hours=18`.
+- 18 one-hour windows.
+- First boundary `12:00`.
+- Last boundary `06:00`.
+- `functional_day_key=nexus_day`.
+- No 2026 Friday/Saturday split.
+- At least one window crosses midnight.
+
+## V3.1 commit
+
+```text
+define continuous nexus 2026 event contract
+```
+
+## V3.1 progress
+
+```text
+5% -> 10%
+```
 
 ## Next block
 
-After V3.0 is validated locally and committed, continue with:
+After V3.1 is validated and committed, continue with:
 
 ```text
-V3.1 — Contrato real Nexus 2026 y calendario continuo
+V3.2 — Arquitectura de datos ML-ready
 ```
 
-V3.1 must correct the 2026 event structure to a continuous event:
-
-```text
-13/06/2026 12:00 -> 14/06/2026 06:00
-```
-
-Do not start model training before V3.1-V3.8 have established data contracts, identity resolution, ingestion, labels/proxies and features.
+Do not start model training before V3.1-V3.8 have established data contracts,
+identity resolution, ingestion, labels/proxies and features.

@@ -588,8 +588,10 @@ class OptimizedTimetableService:
         rank = artist.artist_rank or 9999
         top_rooms = ["main-room", "open-air", "hangar"]
         room_bonus = 16 if slot.room_slug in top_rooms else 0
-        day_bonus = 6 if (rank % 2 == 0 and slot.event_day == "saturday") or (rank % 2 == 1 and slot.event_day == "friday") else 0
-        return room_bonus + day_bonus
+        # V3.1 models Nexus 2026 as one continuous functional day. Keep the
+        # fan-experience bonus focused on the sequential room path, not on a
+        # Friday/Saturday split that no longer exists for 2026.
+        return room_bonus
 
     def _top_artist_spread_bonus(self, artist: ArtistPayload, slot: CandidateSlot) -> float:
         """Spread top-card artists across medium/large rooms for anti-crowding."""
@@ -665,7 +667,7 @@ class OptimizedTimetableService:
             variant_description=config["description"],
             event_day=slot.event_day,
             festival_day=slot.festival_day,
-            date_label=f"Nexus Festival {year} {slot.event_day.title()} ({config['name']}, optimized, not official)",
+            date_label=f"Nexus Festival {year} continuous event ({config['name']}, optimized, not official)",
             room_name=slot.room_name,
             room_slug=slot.room_slug,
             room_capacity=slot.room_capacity,
@@ -785,7 +787,7 @@ class OptimizedTimetableService:
             summaries.append(
                 OptimizedTimetableDaySummary(
                     event_day=day,
-                    festival_day=1 if day == "friday" else 2,
+                    festival_day=1,
                     slot_count=len(items),
                     room_count=len({row.room_slug for row in items}),
                     first_start_time=ordered[0].start_time if ordered else None,
