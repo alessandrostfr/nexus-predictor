@@ -1,112 +1,75 @@
 # V3.4 external ingestion contract
 
-This document defines the architecture contract introduced in **V3.4-A — Arquitectura, contratos, seguridad, idempotencia y registros**.
+This document defines the architecture contract introduced in **V3.4-A** and expanded in **V3.4-B**.
 
-V3.4-A does not collect live data. It creates the structure required so later macropasos can collect external data without breaking ML honesty.
+## V3.4-B official API contract
 
-## Central rule
+V3.4-B introduces official API collectors:
 
-No external value can become a future ML feature unless it has:
+- `SpotifyOfficialCollector`
+- `LastFmOfficialCollector`
+- `MusicBrainzOfficialCollector`
+- `YouTubeOfficialCollector`
+- `SoundCloudOfficialProbe`
 
-- canonical artist identity;
-- source key;
-- collector key and version;
-- normalizer version;
-- raw snapshot or documented manual evidence;
-- confidence;
-- extraction method;
-- cache policy;
-- rate-limit policy;
-- feature-candidate gate.
+All collectors must follow these rules:
 
-## Source registry
+- no network calls during pytest;
+- no credential values returned by API endpoints;
+- no API keys/tokens stored in `raw_payload`;
+- raw snapshots persist only when explicitly requested;
+- normalized metrics must reference `raw_snapshot_id`;
+- ambiguous sources such as YouTube channel matching and MusicBrainz candidates are evidence/profile candidates before they become features.
 
-The source registry is backed by `raw_sources` and by the static contracts in `backend/app/collectors/registry.py`.
+## Metrics expected by source
 
-Each source contract defines:
+Spotify may emit when the current official API response contains the fields:
 
-- `source_key`;
-- `source_type`;
-- `access_method`;
-- `requires_credentials`;
-- `credential_env_vars`;
-- `rate_limit_policy`;
-- `cache_policy`;
-- `legal_risk`;
-- `ml_value`;
-- `cost_level`;
-- `supported_entities`;
-- `can_run_without_credentials`;
-- `collector_version`;
-- `normalizer_version`;
-- `schema_version`.
+- `spotify_followers_total`
+- `spotify_popularity_score`
+- `spotify_genres`
+- `spotify_artist_url`
+- `spotify_image_url`
+- `spotify_external_id`
 
-Credential values are never returned, logged or persisted.
+If Spotify omits/deprecates followers, artist popularity, genres or track popularity, the probe must not invent values. It must return `partial`, expose `unavailable_metric_keys`, and persist only the official fields actually returned. Exact track play counts and monthly listeners are not exposed by the official Spotify Web API.
 
-## Tool registry
+Last.fm may emit:
 
-The table `source_tool_evaluations` stores evaluated APIs, libraries, scrapers and fallbacks. It exists so we do not create scrapers blindly.
+- `lastfm_listeners_total`
+- `lastfm_playcount_total`
+- `lastfm_tags`
+- `lastfm_bio_available`
+- `lastfm_url`
 
-Minimum evaluated tools in V3.4-A:
+MusicBrainz may emit:
 
-- Spotify Web API direct client;
-- Last.fm API direct client;
-- MusicBrainz Web Service;
-- YouTube Data API;
-- SoundCloud official/access probe;
-- yt-dlp metadata-only candidate;
-- NewPipeExtractor spike;
-- httpx + BeautifulSoup static pages;
-- Playwright last resort.
+- `musicbrainz_mbid`
+- `musicbrainz_country`
+- `musicbrainz_type`
+- `musicbrainz_disambiguation`
+- `musicbrainz_match_confidence`
 
-## Runs
+YouTube may emit candidate metrics when `YOUTUBE_API_KEY` exists, but defaults to `feature_candidate=false` until review.
 
-`collector_runs` stores execution manifests.
+SoundCloud official access may be `access_unconfirmed` or `access_unavailable`; V3.4-C will prepare metadata-only fallback if official access is not viable.
 
-Important fields:
+## Credential states
 
-- `status`: `running`, `completed`, `completed_with_warnings`, `failed`, `cancelled`;
-- `dry_run`;
-- `is_active_for_features`;
-- `artist_scope`;
-- `artist_count`;
-- `processed_count`;
-- `manifest_payload`;
-- `warning_payload`.
+Allowed safe credential states are:
 
-A failed or cancelled run must not feed future feature engineering.
+- `configured`
+- `missing`
 
-## Run items
+Allowed source states include:
 
-`collector_run_items` stores per-artist/per-source status.
+- `configured`
+- `not_configured`
+- `access_unconfirmed`
+- `access_unavailable`
+- `invalid_credentials`
+- `rate_limited`
 
-Important fields:
+## ML honesty
 
-- `collector_run_id`;
-- `canonical_artist_key`;
-- `source_key`;
-- `collector_key`;
-- `status`;
-- `raw_snapshot_id`;
-- `normalized_metric_count`;
-- `profile_candidate_count`;
-- `feature_candidate_metric_count`;
-- `safe_error_message`.
-
-## Raw snapshots and metrics
-
-V3.4-A extends the V3.2 tables with:
-
-- `canonical_artist_key`;
-- `collector_run_id`;
-- `collector_key`;
-- `source_reported_at`;
-- `collector_version`;
-- `normalizer_version`.
-
-`normalized_metrics` also gets:
-
-- `metric_schema_version`;
-- `is_diagnostic_only`.
-
-These fields exist before live ingestion so later data can be replayed, audited and filtered safely.
+V3.4-B does not create ML labels, trained models or predictions. It creates traceable raw evidence and normalized metric candidates for later quality gates and feature engineering.

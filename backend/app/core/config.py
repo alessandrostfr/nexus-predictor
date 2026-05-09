@@ -8,14 +8,25 @@ one safe settings object.
 from __future__ import annotations
 
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+# Resolve dotenv files from the repository layout instead of the current shell
+# directory. This keeps scripts working both from the project root:
+#   python backend/scripts/check_v3_external_credentials.py
+# and from the backend directory:
+#   python scripts/check_v3_external_credentials.py
+BACKEND_DIR = Path(__file__).resolve().parents[2]
+PROJECT_DIR = BACKEND_DIR.parent
+PROJECT_ENV_FILE = PROJECT_DIR / ".env"
+BACKEND_ENV_FILE = BACKEND_DIR / ".env"
+
 
 class Settings(BaseSettings):
-    """Backend configuration loaded from environment variables or `.env`.
+    """Backend configuration loaded from environment variables or dotenv files.
 
-    V3.4-A expands the configuration contract for future collectors, but it must
+    V3.4 expands the configuration contract for future collectors, but it must
     keep the V2 integration settings alive because Spotify, Last.fm and other
     V2 evidence services are still reused as data sources for V3.
     """
@@ -80,7 +91,9 @@ class Settings(BaseSettings):
     ENABLE_YTDLP_METADATA_COLLECTOR: bool = False
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        # Load root .env first when it exists, then backend/.env so the backend
+        # local file wins. This fixes V3.4-B scripts executed from the repo root.
+        env_file=(str(PROJECT_ENV_FILE), str(BACKEND_ENV_FILE)),
         env_file_encoding="utf-8",
         extra="ignore",
     )
@@ -141,7 +154,7 @@ class Settings(BaseSettings):
     # Legacy lower-case compatibility aliases.
     #
     # The V2 services were written before the V3.4 collector contract and use
-    # lower-case setting access in several places. Keep these aliases so V3.4-A
+    # lower-case setting access in several places. Keep these aliases so V3.4
     # does not regress the V2 evidence integrations that V3 will reuse.
     # ------------------------------------------------------------------
     @property
@@ -213,7 +226,7 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     """Return a cached settings instance.
 
-    Caching avoids reparsing `.env` on every import and keeps configuration
+    Caching avoids reparsing dotenv files on every import and keeps configuration
     predictable during local development and tests.
     """
     return Settings()

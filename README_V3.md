@@ -23,14 +23,15 @@ Nothing is called ML unless it has:
 - V3.2 closed: ML-ready data foundation.
 - V3.3 closed: artist identity resolution.
 - V3.4 active: external ingestion factory, executed through the approved V3.4 subroadmap.
-- Current operative macropaso: V3.4-A — collector architecture, contracts, security, idempotency and registries.
+- V3.4-A closed: collector architecture, contracts, security, idempotency and registries.
+- Current operative macropaso: V3.4-B — credentials and official API probes.
 
 ## V3.4 subroadmap rule
 
 V3.4 is temporarily split into six internal macropasos:
 
-1. V3.4-A — Architecture, contracts, security, idempotency and registries.
-2. V3.4-B — Credentials and official API probes.
+1. V3.4-A — Architecture, contracts, security, idempotency and registries. ✅ closed
+2. V3.4-B — Credentials and official API probes. ← current
 3. V3.4-C — yt-dlp, controlled scraping and open-source evaluation.
 4. V3.4-D — Normalization, quality, readiness and manual fallback.
 5. V3.4-E — Real ingestion run for all Nexus 2026 artists.
@@ -38,17 +39,17 @@ V3.4 is temporarily split into six internal macropasos:
 
 After V3.4-F, continue the main roadmap at V3.5.
 
-## V3.4-A architecture foundation
+## V3.4-B official API probes
 
-V3.4-A creates the offline collector architecture only. It does not call external APIs.
+V3.4-B introduces controlled official API probes for:
 
-New concepts:
+- Spotify Web API;
+- Last.fm API;
+- MusicBrainz Web Service;
+- YouTube Data API;
+- SoundCloud official/access probe.
 
-- `source_tool_evaluations`: evaluated APIs/tools/scrapers/fallbacks.
-- `collector_runs`: run manifests and rollback/is_active_for_features controls.
-- `collector_run_items`: per-artist/per-source statuses.
-- `backend/app/collectors/*`: shared collector contracts, cache/rate-limit policy, secret safety and deduplication helpers.
-- `raw_snapshots` and `normalized_metrics` gain canonical artist, run, timestamp and version lineage fields.
+Tests remain offline. Real calls require explicit opt-in with `execute_real_calls=true`; persistence requires both `execute_real_calls=true` and `persist=true`.
 
 ## ML honesty reminder
 

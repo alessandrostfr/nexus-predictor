@@ -1,0 +1,9 @@
+diff --git a/backend/tests/test_api_v3_external_api_probes.py b/backend/tests/test_api_v3_external_api_probes.py
+--- a/backend/tests/test_api_v3_external_api_probes.py
++++ b/backend/tests/test_api_v3_external_api_probes.py
+@@
+-    assert "not exact plays" in result.normalized_hint_payload["official_api_limitation"].lower()
++    limitation = result.normalized_hint_payload["official_api_limitation"].lower()
++    assert "play counts" in limitation
++    assert "monthly listeners" in limitation
++    assert "not exposed" in limitation

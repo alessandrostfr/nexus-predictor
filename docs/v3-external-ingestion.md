@@ -4,43 +4,29 @@ V3.4 is the data factory for future ML blocks. It does not train models and does
 
 ## Current macropaso
 
-**V3.4-A — Arquitectura, contratos, seguridad, idempotencia y registros**
+**V3.4-B — Configuración, credenciales y probes oficiales**
 
-This macropaso creates:
+V3.4-A created the offline collector architecture. V3.4-B now adds official API credential diagnostics and controlled probes for Spotify, Last.fm, MusicBrainz, YouTube and SoundCloud.
 
-- collector contracts;
-- source registry;
-- source capability matrix;
-- tool evaluation registry;
-- run and run-item tables;
-- dry-run endpoint;
-- secret policy;
-- extraction policy;
-- idempotency helpers;
-- UTC/source timestamp fields;
-- minimum coverage indexes.
+## API endpoints available after V3.4-B
 
-## API endpoints introduced in V3.4-A
+V3.4-A endpoints remain:
 
 - `GET /api/v3/external-ingestion/architecture`
 - `GET /api/v3/external-ingestion/sources`
 - `GET /api/v3/external-ingestion/tools`
 - `POST /api/v3/external-ingestion/dry-run`
 
-These endpoints are offline and safe: they do not call external APIs.
+V3.4-B adds:
 
-## PowerShell validation examples
+- `GET /api/v3/external-ingestion/credentials`
+- `POST /api/v3/external-ingestion/official-probes`
 
-```powershell
-Invoke-RestMethod "http://127.0.0.1:8000/api/v3/external-ingestion/architecture" | ConvertTo-Json -Depth 30
-Invoke-RestMethod "http://127.0.0.1:8000/api/v3/external-ingestion/sources" | ConvertTo-Json -Depth 30
-Invoke-RestMethod "http://127.0.0.1:8000/api/v3/external-ingestion/tools" | ConvertTo-Json -Depth 30
-Invoke-RestMethod "http://127.0.0.1:8000/api/v3/external-ingestion/dry-run" -Method POST -ContentType "application/json" -Body '{"limit":5,"sources":["spotify_web_api","youtube_data_api"]}' | ConvertTo-Json -Depth 30
-```
+## Offline by default
 
-## Expected result
+`official-probes` does not make external calls unless this flag is true:
 
-- Architecture returns `ready: true`.
-- Sources return configured/not_configured states without secret values.
-- Tools include yt-dlp, NewPipeExtractor and Playwright decisions.
-- Dry-run returns `would_persist_raw_snapshots: false` and `would_persist_normalized_metrics: false`.
+
+## Spotify current API limitation
+
+Real Spotify probes may return URL/image/external-id while omitting followers, artist popularity, genres or track popularity. That is handled as a `partial` official probe with `unavailable_metric_keys`; the system must not invent missing values.

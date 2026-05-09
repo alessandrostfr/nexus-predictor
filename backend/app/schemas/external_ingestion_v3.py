@@ -142,3 +142,87 @@ class V34DryRunResponse(BaseModel):
     would_persist_raw_snapshots: bool = False
     would_persist_normalized_metrics: bool = False
     manifest: dict[str, object]
+
+
+class V34CredentialSourceStatus(BaseModel):
+    """Sanitized credential/configuration status for one official API source."""
+
+    source_key: str
+    source_name: str
+    collector_key: str
+    requires_credentials: bool
+    credential_env_vars: list[str]
+    credential_status: dict[str, str] = Field(default_factory=dict)
+    configured_status: str
+    can_run_real_probe: bool
+    official_api_preferred: bool = True
+    next_action: str
+
+
+class V34CredentialStatusResponse(BaseModel):
+    """V3.4-B credential diagnostic response."""
+
+    block: str = "V3.4-B"
+    total: int
+    configured: int
+    not_configured: int
+    secret_values_exposed: bool = False
+    sources: list[V34CredentialSourceStatus]
+
+
+class V34OfficialProbeRequest(BaseModel):
+    """Official API probe request.
+
+    ``execute_real_calls`` defaults to false so tests and quick diagnostics are
+    offline. To validate real APIs, set it to true explicitly.
+    """
+
+    artist_scope: str = "nexus_2026"
+    limit: int | None = Field(default=5, ge=1, le=50)
+    sources: list[str] | None = None
+    execute_real_calls: bool = False
+    persist: bool = False
+    started_by: str = "local_validation"
+
+
+class V34OfficialProbeResultRecord(BaseModel):
+    """Per-artist/per-source probe result returned by V3.4-B."""
+
+    canonical_artist_key: str
+    artist_name: str
+    source_key: str
+    collector_key: str
+    status: str
+    confidence: str
+    profile_name: str | None = None
+    source_url: str | None = None
+    external_id: str | None = None
+    metric_keys: list[str] = Field(default_factory=list)
+    metric_count: int = 0
+    feature_candidate_metric_count: int = 0
+    profile_candidate_count: int = 0
+    unavailable_metric_keys: list[str] = Field(default_factory=list)
+    field_presence: dict[str, bool] = Field(default_factory=dict)
+    official_api_limitation: str | None = None
+    persisted_raw_snapshot_id: int | None = None
+    safe_error_message: str | None = None
+    quota_cost_estimated: float | None = None
+
+
+class V34OfficialProbeResponse(BaseModel):
+    """V3.4-B official probe run response."""
+
+    block: str = "V3.4-B"
+    artist_scope: str
+    artist_count: int
+    selected_artist_count: int
+    selected_sources: list[str]
+    execute_real_calls: bool
+    persist: bool
+    collector_run_id: int | None = None
+    raw_snapshots_created: int = 0
+    raw_snapshots_reused: int = 0
+    normalized_metrics_created: int = 0
+    collector_run_items_created: int = 0
+    warnings: list[str] = Field(default_factory=list)
+    results: list[V34OfficialProbeResultRecord]
