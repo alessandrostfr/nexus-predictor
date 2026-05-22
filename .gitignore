@@ -47,3 +47,7 @@ backend/logs/
 frontend/.next/
 frontend/out/
 frontend/tsconfig.tsbuildinfo
+
+#mis comandos
+
+miscomandos.md
