@@ -1744,3 +1744,151 @@ strong {
     grid-template-columns: 1fr;
   }
 }
+
+/* Production hotfix 3: restore rooms layout and heatmap visibility. */
+.rooms-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.venue-card {
+  min-height: 260px;
+}
+
+.room-focus-card {
+  min-height: 260px;
+}
+
+.room-heatmap-card {
+  grid-column: 1 / -1;
+  overflow: hidden;
+}
+
+.room-list-card {
+  grid-column: 1 / -1;
+}
+
+.room-heatmap-card .card-header {
+  margin-bottom: 18px;
+}
+
+.heatmap-list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  max-height: 620px;
+  overflow: auto;
+  padding: 4px 4px 8px;
+}
+
+.heat-cell {
+  display: grid;
+  gap: 5px;
+  min-height: 104px;
+  padding: 13px;
+  border: 1px solid var(--line-soft);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.025)
+    ),
+    rgba(8, 8, 14, 0.76);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.heat-cell time {
+  color: var(--yellow);
+  font-size: 0.82rem;
+  font-weight: 950;
+}
+
+.heat-cell strong {
+  color: var(--text-0);
+  font-size: 0.9rem;
+  line-height: 1.15;
+}
+
+.heat-cell span,
+.heat-cell em {
+  color: var(--text-2);
+  font-size: 0.76rem;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.heat-cell.low {
+  border-color: rgba(52, 211, 153, 0.26);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(52, 211, 153, 0.16),
+      transparent 36%
+    ),
+    rgba(255, 255, 255, 0.045);
+}
+
+.heat-cell.medium {
+  border-color: rgba(248, 248, 113, 0.32);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(248, 248, 113, 0.18),
+      transparent 36%
+    ),
+    rgba(255, 255, 255, 0.045);
+}
+
+.heat-cell.high {
+  border-color: rgba(251, 146, 60, 0.38);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(251, 146, 60, 0.2),
+      transparent 36%
+    ),
+    rgba(255, 255, 255, 0.045);
+}
+
+.heat-cell.critical,
+.heat-cell.extreme {
+  border-color: rgba(255, 56, 100, 0.46);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255, 56, 100, 0.22),
+      transparent 36%
+    ),
+    rgba(255, 255, 255, 0.045);
+}
+
+@media (max-width: 1180px) {
+  .rooms-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .room-heatmap-card,
+  .room-list-card {
+    grid-column: auto;
+  }
+
+  .heatmap-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .heatmap-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .heatmap-list {
+    grid-template-columns: 1fr;
+  }
+}
