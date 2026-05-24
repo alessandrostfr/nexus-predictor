@@ -9,7 +9,7 @@
     "prestart": "node ./scripts/cleanup-legacy-vite.mjs",
     "dev": "next dev -H 127.0.0.1 -p 3000",
     "build": "next build",
-    "start": "next start -H 127.0.0.1 -p 3000",
+    "start": "next start -H 0.0.0.0 -p 3000",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
