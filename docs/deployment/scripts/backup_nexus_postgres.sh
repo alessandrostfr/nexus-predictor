@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 
-# Backup PostgreSQL for Nexus Predictor production.
-# Generates a compressed dump of the nexus_predictor database.
-# Must run on the VPS where the nexus-postgres container exists.
+# Backup PostgreSQL de Nexus Predictor en producción.
+# Genera un dump comprimido de la base nexus_predictor.
+# Debe ejecutarse en el VPS donde existe el contenedor nexus-postgres.
 
 set -Eeuo pipefail
 umask 077
@@ -25,7 +25,7 @@ gzip -t "${BACKUP_FILE}"
 chmod 600 "${BACKUP_FILE}"
 chown alessandro:alessandro "${BACKUP_FILE}"
 
-# Simple retention: remove Nexus PostgreSQL backups older than 14 days.
+# Retención simple: eliminar backups PostgreSQL de Nexus con más de 14 días.
 find "${BACKUP_DIR}" -name "nexus_postgres_*.sql.gz" -type f -mtime +14 -delete
 
 echo "Backup created successfully:"
